@@ -14,7 +14,7 @@
         <form id="form1" class="col-md-12" runat="server">
             <div>
                 <h1>Register</h1>
-                <!-- This is a server controller. 
+                <!-- This is a server controller. Ostehaps
                 The ID is used to access properties from server-side code -->
                 <div class="form-group">
                     <asp:Label ID="emailLabel" runat="server" Text="Label">Email: </asp:Label>
