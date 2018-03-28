@@ -9,12 +9,13 @@ namespace webForm
     {
         // properties
         /*
-         * title
-         * category
-         * price
-         * description (skal måske ændres)
-         * picture
-         * student
+         * Title
+         * Year
+         * Category
+         * Price
+         * Description (skal måske ændres)
+         * Picture
+         * Student
          */ 
 
         // constructors
