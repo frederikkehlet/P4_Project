@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <form id="form1" class="col-md-12" runat="server">
+        <form id="form1" class="col-md-6" runat="server">
             <div>
                 <h1>Register</h1>
                 <!-- This is a server controller.
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="form-group">
-                    <!-- UserCreated method to be used here instead-->
+                    <!-- UserCreated method to be used here instead, hej frederik, kan du se det her-->
                     <asp:Button ID="submitButton" runat="server" Text="Submit" OnClick="submitButton_Click" class="btn btn-primary" />
                 </div>
                 
