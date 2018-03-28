@@ -23,22 +23,22 @@
 
                 <div class="form-group">
                     <asp:Label ID="passwordLabel" runat="server" Text="Label">Password: </asp:Label>
-                    <asp:TextBox ID="passwordTextBox" runat="server" type="password" required="required" class="form-control"></asp:TextBox>
+                    <asp:TextBox ID="passwordTextBox" runat="server" type="password" required="required" placeholder="Password" class="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <asp:Label ID="firstNameLabel" runat="server" Text="Label">First name: </asp:Label>
-                    <asp:TextBox ID="firstNameTextBox" runat="server" required="required" class="form-control"></asp:TextBox>
+                    <asp:TextBox ID="firstNameTextBox" runat="server" required="required" placeholder="First name" class="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <asp:Label ID="lastNameLabel" runat="server" Text="Label">Last name: </asp:Label>
-                    <asp:TextBox ID="lastNameTextBox" runat="server" required="required" class="form-control"></asp:TextBox>
+                    <asp:TextBox ID="lastNameTextBox" runat="server" required="required"  placeholder="Last name" class="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <asp:Label ID="phoneLabel" runat="server" Text="Label">Phone number: </asp:Label>
-                    <asp:TextBox ID="phoneTextBox" runat="server" type="tel" required="required" class="form-control"></asp:TextBox>
+                    <asp:TextBox ID="phoneTextBox" runat="server" type="tel" required="required" placeholder="Phone" class="form-control"></asp:TextBox>
                 </div>
 
                 <div class="form-group">
