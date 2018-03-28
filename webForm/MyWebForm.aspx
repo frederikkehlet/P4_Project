@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="form-group">
-                    <!-- UserCreated method to be used here instead, hej frederik, kan du se det her-->
+                    <!-- UserCreated method to be used here instead, Hello world-->
                     <asp:Button ID="submitButton" runat="server" Text="Submit" OnClick="submitButton_Click" class="btn btn-primary" />
                 </div>
                 
