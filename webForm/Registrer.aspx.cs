@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace webForm
 {
-    public partial class MyWebForm : System.Web.UI.Page
+    public partial class Registrer : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

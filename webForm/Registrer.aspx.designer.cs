@@ -10,7 +10,7 @@
 namespace webForm {
     
     
-    public partial class MyWebForm {
+    public partial class Registrer {
         
         /// <summary>
         /// form1 control.
