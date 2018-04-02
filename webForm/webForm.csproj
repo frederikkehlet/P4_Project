@@ -76,6 +76,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Default.aspx" />
     <Content Include="Registrer.aspx" />
     <Content Include="CSS\style.css" />
     <Content Include="Web.config" />
@@ -84,6 +85,13 @@
   <ItemGroup>
     <Compile Include="Ad.cs" />
     <Compile Include="DBConnect.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registrer.aspx.cs">
       <DependentUpon>Registrer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

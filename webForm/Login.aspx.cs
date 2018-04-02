@@ -26,6 +26,8 @@ namespace webForm
             if (result == "") queryResult.Text = "No results found";
             else
             {
+                Session["user"] = email;
+                Response.Redirect("~/Default.aspx");
                 /* hvis der er resultater, videresendes brugeren til main page */
             }    
         }
