@@ -23,7 +23,7 @@ namespace webForm
             string query = "SELECT * FROM users WHERE email = '" + email + "' AND password = '" + password + "';";
             string result = connection.Select(query);
 
-            if (result == "") queryResult.Text = "No results found";
+            if (result == "") queryResult.Text = "Login failed";
             else
             {
                 Session["user"] = email;
