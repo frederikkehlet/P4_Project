@@ -18,10 +18,10 @@
         <div class="card card-container">
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_1x.png" />
             <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin">
+            <form class="form-signin" runat="server">
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" />
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" />
+                <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address"></asp:TextBox>
+                <asp:TextBox runat="server" type="password" ID="inputPassword" class="form-control" placeholder="Password"></asp:TextBox>
                 <div id="remember" class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me" />
@@ -29,11 +29,11 @@
                    
                     </label>
                 </div>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+                <asp:Button ID="loginButton" runat="server" class="btn btn-lg btn-primary btn-block btn-signin" type="submit" OnClick="loginClick" Text="Log in" />
             </form>
-            <a href="#" class="forgot-password">Forgot the password?
-            </a>
+            <a href="#" class="forgot-password">Forgot the password?</a>
         </div>
+        <asp:Literal ID="queryResult" runat="server"></asp:Literal>
     </div>
 </body>
 </html>
