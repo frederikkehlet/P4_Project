@@ -7,13 +7,6 @@ namespace webForm
 {
     public class Student
     {
-        // instance variables
-        private string firstName;
-        private string lastName;
-        private string email;
-        private string password;
-        private int phone;
-
         // properties
         public string FirstName { get; set; }
         public string LastName { get; set; }
