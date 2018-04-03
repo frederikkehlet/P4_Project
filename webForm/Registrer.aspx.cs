@@ -16,20 +16,45 @@ namespace webForm
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
+            bool result = checkEmail();
+
+            if (result)
+            {
+                string email = emailTextBox.Text;
+                string password = passwordTextBox.Text; //needs to be encrypted first
+                string firstName = firstNameTextBox.Text;
+                string lastName = lastNameTextBox.Text;
+                int phoneNumber = Convert.ToInt32(phoneTextBox.Text);
+
+                // create a student object using constructor
+                Student student = new Student(firstName, lastName, email, phoneNumber, password);
+
+                // create the user in db
+                student.UserCreated();
+
+                //Feedback after submission
+                string message = "<span style='color:green;'>User registered</span>";
+                feedback.Text = message; 
+            }
+            else
+            {
+                string message = "<span style='color:red;'>Email already exists</span>";
+                EmailStatus.Text = message;
+            }
+            
+        }
+
+        protected bool checkEmail()
+        {
             string email = emailTextBox.Text;
-            string password = passwordTextBox.Text; //needs to be encrypted first
-            string firstName = firstNameTextBox.Text;
-            string lastName = lastNameTextBox.Text;
-            int phoneNumber = Convert.ToInt32(phoneTextBox.Text);
 
-            // create a student object using constructor
-            Student student = new Student(firstName,lastName,email,phoneNumber,password);
+            DBConnect connection = new DBConnect();
+            string query = "SELECT * FROM users WHERE email = '" + email + "';";
+            string result = connection.Select(query);
 
-            // create the user in db
-            student.UserCreated();
+            if (result != "") return false;
+            else return true;
 
-            //Feedback after submission
-            feedback.Text = "User registered";
         }
     }
 }
