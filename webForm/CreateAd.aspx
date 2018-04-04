@@ -20,49 +20,43 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-
     </script>
 </head>
 <body>
-    <div class ="container">
-    <form id="form1" runat="server">
-         <div class="form-group">
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <div class="container">
+        <form id="form1" runat="server" class="col-md-12">
             <h1>Create an ad</h1>
-            Title of book:
-            <asp:TextBox ID="Title" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
-            Book category:
-            <asp:DropDownList ID="Booktype" runat="server">
-                <asp:ListItem Value="a" Text="Non fiction" />
-                <asp:ListItem Value="b" Text="Fiction" />
-            </asp:DropDownList>
-        </div>   
-        <div class="form-group">
-            <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
-            Price:
-            <asp:TextBox ID="Price" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-            <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
-            Description:
-            <asp:TextBox ID="Description" runat="server"></asp:TextBox>
-        </div>
-        <div class="form-group">
-             <asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
-             <img id="imgpreview" height="200" width="200" src="" style="border-width: 0px; visibility: hidden;" />
-             <asp:FileUpload ID="Picture" runat="server" onchange="showpreview(this);" />   
-        </div>
-            <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
-            Create ad:
+            <div class="form-group">
+                <asp:Label ID="Label1" runat="server" Text="Label">Title of book:</asp:Label>
+                <asp:TextBox ID="Title" runat="server"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="Label2" runat="server" Text="Label">Book category:</asp:Label>
+                <asp:DropDownList ID="Booktype" runat="server">
+                    <asp:ListItem Value="a" Text="Non fiction" />
+                    <asp:ListItem Value="b" Text="Fiction" />
+                </asp:DropDownList>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="Label3" runat="server" Text="Label">Price:</asp:Label>
+                <asp:TextBox ID="Price" runat="server"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="Label4" runat="server" Text="Label">Description:</asp:Label>
+                <asp:TextBox ID="Description" runat="server"></asp:TextBox>
+            </div>
+            <div class="form-group">
+                <asp:Label ID="Label5" runat="server" Text="Label">Upload image</asp:Label>
+                <asp:Image ID="Image1" runat="server" />
+                <asp:FileUpload ID="Picture" runat="server" onchange="showpreview(this);" />
+            </div>
+            <asp:Label ID="Label6" runat="server" Text="Label">Create ad:</asp:Label>
             <asp:Button ID="Created" runat="server" Text="Create" OnClick="Created_Click" />
-        <div class="form-group">
-            <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
-            <asp:Literal ID="Feedback" runat="server"></asp:Literal>
-        </div>
-    </form>
+            <div class="form-group">
+                <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+                <asp:Literal ID="Feedback" runat="server"></asp:Literal>
+            </div>
+        </form>
     </div>
 </body>
 </html>
