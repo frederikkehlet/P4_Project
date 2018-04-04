@@ -8,15 +8,18 @@ namespace webForm
     public class Ad 
     {
         // properties
-        /*
-         * Title
-         * Year
-         * Category
-         * Price
-         * Description (skal måske ændres)
-         * Picture
-         * Student
-         */ 
+
+        public String Title;
+        public int Year;
+        public String Category;
+        public int Price;
+        public String Description;
+         /* Ved ikke lige hvordan dette skal laves til en property
+         * Picture 
+         */
+         /* Er det student.cs oder was?
+         * Student 
+         */
 
         // constructors
 
