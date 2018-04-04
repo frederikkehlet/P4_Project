@@ -10,7 +10,7 @@
 namespace webForm {
     
     
-    public partial class MyWebForm {
+    public partial class Registrer {
         
         /// <summary>
         /// form1 control.
@@ -38,6 +38,15 @@ namespace webForm {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
+        
+        /// <summary>
+        /// EmailStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal EmailStatus;
         
         /// <summary>
         /// passwordLabel control.

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyWebForm.aspx.cs" Inherits="webForm.MyWebForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registrer.aspx.cs" Inherits="webForm.Registrer" %>
 
 <!DOCTYPE html>
 
@@ -7,6 +7,7 @@
     <title>Register</title>
     <link href="CSS/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
@@ -19,6 +20,7 @@
                 <div class="form-group">
                     <asp:Label ID="emailLabel" runat="server" Text="Label">Email: </asp:Label>
                     <asp:TextBox ID="emailTextBox" runat="server" type="email" required="required" placeholder="Email" class="form-control"></asp:TextBox>
+                    <asp:Literal ID="EmailStatus" runat="server"></asp:Literal>
                 </div>
 
                 <div class="form-group">

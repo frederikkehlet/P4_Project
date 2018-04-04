@@ -7,20 +7,13 @@ namespace webForm
 {
     public class Student
     {
-        // add properties
-        /*
-         * firstName
-         * lastName
-         * email
-         * password
-         * phone
-         * ad
-         */
+        // properties
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public int Phone { get; set; }
+        public int ID { get; set; }
 
         // add constructor(s)
         // ??? the constructor creates a user and adds it to the db
@@ -39,6 +32,7 @@ namespace webForm
          * UserEdited()
          * UserDeleted()
          */
+
         public void UserCreated()
         {
             string query = String.Format("INSERT INTO users(first_name, last_name, email, phone, password) " +
@@ -46,6 +40,16 @@ namespace webForm
 
             DBConnect connection = new DBConnect();
             connection.Insert(query);
+        }
+
+        public void UserEdited()
+        {
+            /* WIP */
+        }
+
+        public void UserDeleted()
+        {
+            /* WIP */
         }
     }
 }

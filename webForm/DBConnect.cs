@@ -113,32 +113,31 @@ namespace webForm
         }
 
         // select statement
-        public List<string>[] Select(string tableName, int length)
+        public string Select(string query)
         {
-            string query = "SELECT * FROM " + tableName;
-
             //Create a list to store the result
-            List<string>[] list = new List<string>[length];
+            List<string> list = new List<string>();
 
-            for (int i = 0; i < length; i++)
-            {
-                list[i] = new List<string>();
-            }
+            string result = "";
 
             //Open connection
             if (this.OpenConnection() == true)
             {
                 //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
+                
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
 
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                    list[0].Add(dataReader["id"] + "");
-                    list[1].Add(dataReader["name"] + "");
-                    list[2].Add(dataReader["age"] + "");
+                    list.Add(dataReader["id"].ToString());
+                    list.Add(dataReader["first_name"].ToString());
+                    list.Add(dataReader["last_name"].ToString());
+                    list.Add(dataReader["email"].ToString());
+                    list.Add(dataReader["phone"].ToString());
+                    list.Add(dataReader["password"].ToString());
                 }
 
                 //close Data Reader
@@ -148,11 +147,15 @@ namespace webForm
                 this.CloseConnection();
 
                 //return list to be displayed
-                return list;
+                foreach (var item in list)
+                {
+                    result += item + "\n";
+                }
+                return result;
             }
             else
             {
-                return list;
+                return result;
             }
         }
 
