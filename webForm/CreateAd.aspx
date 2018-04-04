@@ -7,20 +7,6 @@
     <title>Create an ad</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        function showpreview(input) {
-
-            if (input.files && input.files[0]) {
-
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#imgpreview').css('visibility', 'visible');
-                    $('#imgpreview').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
@@ -47,10 +33,11 @@
                 <asp:TextBox ID="Description" runat="server" class="form-control"></asp:TextBox>
             </div>
 
-            <div class="form-group">
-                <asp:Label ID="Label5" runat="server" Text="Label">Upload image</asp:Label>
-                <asp:Image ID="Image1" runat="server" />
-                <asp:FileUpload ID="Picture" runat="server" onchange="showpreview(this);" />
+            <div class="form-group">                
+                <div class="custom-file">   
+                    <asp:Label ID="customFile" runat="server" class="custom-file-label">Upload image</asp:Label>
+                    <asp:FileUpload ID="FileUpload1" runat="server" class="custom-file" for="customFile"/>
+                </div>
             </div>
 
             <asp:Label ID="Label6" runat="server" Text="Label">Create ad:</asp:Label>

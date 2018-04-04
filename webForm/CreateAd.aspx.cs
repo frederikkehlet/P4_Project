@@ -24,7 +24,6 @@ namespace webForm
             string type = BookType.SelectedValue;
             string price = Price.Text;
             string description = Description.Text;
-            string upload = Picture.FileName;
             // how to DB?
             Feedback.Text = "Your ad has been created";
             //Kan fjerne if og flytte det her ned, burde give samme resultalt.
