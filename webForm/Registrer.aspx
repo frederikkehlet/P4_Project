@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container">
         <form id="form1" class="col-md-12" runat="server">
             <div>
                 <h1>Register</h1>

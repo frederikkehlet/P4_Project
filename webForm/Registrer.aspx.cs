@@ -20,21 +20,29 @@ namespace webForm
 
             if (result)
             {
-                string email = emailTextBox.Text;
-                string password = passwordTextBox.Text; //needs to be encrypted first
-                string firstName = firstNameTextBox.Text;
-                string lastName = lastNameTextBox.Text;
-                int phoneNumber = Convert.ToInt32(phoneTextBox.Text);
+                try
+                {
+                    string email = emailTextBox.Text;
+                    string password = passwordTextBox.Text; //needs to be encrypted first
+                    string firstName = firstNameTextBox.Text;
+                    string lastName = lastNameTextBox.Text;
+                    int phoneNumber = Convert.ToInt32(phoneTextBox.Text);
 
-                // create a student object using constructor
-                Student student = new Student(firstName, lastName, email, phoneNumber, password);
+                    // create a student object using constructor
+                    Student student = new Student(firstName, lastName, email, phoneNumber, password);
 
-                // create the user in db
-                student.UserCreated();
+                    // create the user in db
+                    student.UserCreated();
 
-                //Feedback after submission
-                string message = "<span style='color:green;'>User registered</span>";
-                feedback.Text = message;  
+                    //Feedback after submission
+                    string message = "<span style='color:green;'>User registered</span>";
+                    feedback.Text = message;
+                }
+                catch (FormatException)
+                {
+
+                    feedback.Text = "Phone number invalid";
+                }
             }
             else
             {
