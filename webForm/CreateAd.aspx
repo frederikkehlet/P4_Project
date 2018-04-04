@@ -9,13 +9,13 @@
                 <asp:Label ID="Label1" runat="server" Text="Label">Title of book:</asp:Label>
                 <asp:TextBox ID="Title" runat="server" class="form-control"></asp:TextBox>
             </div>
-
-            <asp:DropDownList ID="BookType" runat="server">
+            <div>
+            <asp:DropDownList CssClass="form-control" ID="BookType"  runat="server">
+                <asp:ListItem Value="">Chose a category</asp:ListItem>
                 <asp:ListItem Value="a">Fiction</asp:ListItem>
-                <asp:ListItem Value="b">non-fiction</asp:ListItem>
+                <asp:ListItem Value="b">Non-Fiction</asp:ListItem>
             </asp:DropDownList>
-
-
+            </div>
             <div class="form-group">
                 <asp:Label ID="Label3" runat="server" Text="Label">Price:</asp:Label>
                 <asp:TextBox ID="Price" runat="server" class="form-control"></asp:TextBox>
@@ -32,8 +32,6 @@
                     <asp:FileUpload ID="FileUpload1" runat="server" class="custom-file" for="customFile" />
                 </div>
             </div>
-
-            <asp:Label ID="Label6" runat="server" Text="Label">Create ad:</asp:Label>
             <asp:Button ID="Created" runat="server" Text="Create" OnClick="Created_Click" class="btn btn-primary" />
             <asp:Literal ID="Feedback" runat="server"></asp:Literal>
         </form>
