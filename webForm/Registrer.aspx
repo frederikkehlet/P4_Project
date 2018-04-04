@@ -23,7 +23,7 @@
             }
         }</script>
 
-    <div class="container-fluid">
+    <div class="container">
         <form id="form1" class="col-md-12" runat="server">
             <div>
                 <h1>Register</h1>
