@@ -1,14 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateAd.aspx.cs" Inherits="webForm.CreateAd" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="CreateAd.aspx.cs" Inherits="webForm.CreateAd" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Create an ad</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
-</head>
-<body>
     <div class="container">
         <form id="form1" runat="server" class="col-md-12">
             <h1>Create an ad</h1>
@@ -33,10 +26,10 @@
                 <asp:TextBox ID="Description" runat="server" class="form-control"></asp:TextBox>
             </div>
 
-            <div class="form-group">                
-                <div class="custom-file">   
+            <div class="form-group">
+                <div class="custom-file">
                     <asp:Label ID="customFile" runat="server" class="custom-file-label">Upload image</asp:Label>
-                    <asp:FileUpload ID="FileUpload1" runat="server" class="custom-file" for="customFile"/>
+                    <asp:FileUpload ID="FileUpload1" runat="server" class="custom-file" for="customFile" />
                 </div>
             </div>
 
@@ -45,5 +38,6 @@
             <asp:Literal ID="Feedback" runat="server"></asp:Literal>
         </form>
     </div>
-</body>
-</html>
+
+</asp:Content>
+

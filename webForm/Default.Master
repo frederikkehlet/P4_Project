@@ -4,33 +4,35 @@
 
 <html>
 <head runat="server">
-    <title>hej</title>
+    <title>Student Market</title>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
-       <link href="CSS/style.css" rel="stylesheet" />
+
+    <link href="CSS/style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-    <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Student Market</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="CreateAd.aspx">Browse ads</a></li>
-      <li><a href="#">hmm</a></li>
-    </ul>
-  </div>
-</nav>
-
 </head>
+
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="Default.aspx">Student Market</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="CreateAd.aspx">Creat Ad</a></li>
+                <li><a href="Login.aspx">Login</a></li>
+                <li><a href="Registrer.aspx">Registrer</a></li>
+            </ul>
         </div>
-    </form>
+    </nav>
+
+    <div>
+        <asp:ContentPlaceHolder ID="Body" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
 </body>
 </html>
