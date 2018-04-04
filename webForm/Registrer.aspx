@@ -11,7 +11,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
-    <div class="container-fluid">
+    <script>
+        function validate(evt) {
+            var theEvent = evt || window.event;
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+            var regex = /[a-å]|\./;
+            if (!regex.test(key)) {
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }</script>
+
+    <div class="container">
         <form id="form1" class="col-md-12" runat="server">
             <div>
                 <h1>Register</h1>
@@ -30,12 +42,12 @@
 
                 <div class="form-group">
                     <asp:Label ID="firstNameLabel" runat="server" Text="Label">First name: </asp:Label>
-                    <asp:TextBox ID="firstNameTextBox" runat="server" required="required" placeholder="First name" class="form-control"></asp:TextBox>
+                    <asp:TextBox ID="firstNameTextBox" runat="server" required="required" placeholder="First name" class="form-control" onkeypress='validate(event)'></asp:TextBox>
                 </div>
 
                 <div class="form-group">
                     <asp:Label ID="lastNameLabel" runat="server" Text="Label">Last name: </asp:Label>
-                    <asp:TextBox ID="lastNameTextBox" runat="server" required="required"  placeholder="Last name" class="form-control"></asp:TextBox>
+                    <asp:TextBox ID="lastNameTextBox" runat="server" required="required" placeholder="Last name" class="form-control" onkeypress='validate(event)'></asp:TextBox>
                 </div>
 
                 <div class="form-group">
@@ -47,7 +59,7 @@
                     <!-- UserCreated method to be used here instead, hej frederik, kan du se det her, jo det kan ske -->
                     <asp:Button ID="submitButton" runat="server" Text="Submit" OnClick="submitButton_Click" class="btn btn-primary" />
                 </div>
-                
+
                 <asp:Literal ID="feedback" runat="server"></asp:Literal>
             </div>
         </form>
