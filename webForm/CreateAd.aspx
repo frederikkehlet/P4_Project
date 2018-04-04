@@ -55,12 +55,7 @@
 
             <asp:Label ID="Label6" runat="server" Text="Label">Create ad:</asp:Label>
             <asp:Button ID="Created" runat="server" Text="Create" OnClick="Created_Click" class="btn btn-primary" />
-
-            <div class="form-group">
-                <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
-                <asp:Literal ID="Feedback" runat="server"></asp:Literal>
-
-            </div>
+            <asp:Literal ID="Feedback" runat="server"></asp:Literal>
         </form>
     </div>
 </body>
