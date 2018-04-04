@@ -9,11 +9,11 @@ namespace webForm
     {
         // properties
 
-        public String Title;
-        public int Year;
-        public String Category;
-        public int Price;
-        public String Description;
+        public string Title { get; set; }
+        public int Year { get; set; }
+        public string Category { get; set; }
+        public float Price { get; set; }
+        public string Description { get; set; }
          /* Ved ikke lige hvordan dette skal laves til en property
          * Picture 
          */
