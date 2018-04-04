@@ -34,7 +34,7 @@ namespace webForm
 
                 //Feedback after submission
                 string message = "<span style='color:green;'>User registered</span>";
-                feedback.Text = message; 
+                feedback.Text = message;  
             }
             else
             {
