@@ -28,33 +28,38 @@
             <h1>Create an ad</h1>
             <div class="form-group">
                 <asp:Label ID="Label1" runat="server" Text="Label">Title of book:</asp:Label>
-                <asp:TextBox ID="Title" runat="server"></asp:TextBox>
+                <asp:TextBox ID="Title" runat="server" class="form-control"></asp:TextBox>
             </div>
-            <div class="form-group">
-                <asp:Label ID="Label2" runat="server" Text="Label">Book category:</asp:Label>
-                <asp:DropDownList ID="Booktype" runat="server">
-                    <asp:ListItem Value="a" Text="Non fiction" />
-                    <asp:ListItem Value="b" Text="Fiction" />
-                </asp:DropDownList>
-            </div>
+
+            <asp:DropDownList ID="BookType" runat="server">
+                <asp:ListItem Value="a">Fiction</asp:ListItem>
+                <asp:ListItem Value="b">non-fiction</asp:ListItem>
+            </asp:DropDownList>
+
+
             <div class="form-group">
                 <asp:Label ID="Label3" runat="server" Text="Label">Price:</asp:Label>
-                <asp:TextBox ID="Price" runat="server"></asp:TextBox>
+                <asp:TextBox ID="Price" runat="server" class="form-control"></asp:TextBox>
             </div>
+
             <div class="form-group">
                 <asp:Label ID="Label4" runat="server" Text="Label">Description:</asp:Label>
-                <asp:TextBox ID="Description" runat="server"></asp:TextBox>
+                <asp:TextBox ID="Description" runat="server" class="form-control"></asp:TextBox>
             </div>
+
             <div class="form-group">
                 <asp:Label ID="Label5" runat="server" Text="Label">Upload image</asp:Label>
                 <asp:Image ID="Image1" runat="server" />
                 <asp:FileUpload ID="Picture" runat="server" onchange="showpreview(this);" />
             </div>
+
             <asp:Label ID="Label6" runat="server" Text="Label">Create ad:</asp:Label>
-            <asp:Button ID="Created" runat="server" Text="Create" OnClick="Created_Click" />
+            <asp:Button ID="Created" runat="server" Text="Create" OnClick="Created_Click" class="btn btn-primary" />
+
             <div class="form-group">
                 <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
                 <asp:Literal ID="Feedback" runat="server"></asp:Literal>
+
             </div>
         </form>
     </div>

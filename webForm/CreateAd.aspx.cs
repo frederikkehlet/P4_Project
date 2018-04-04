@@ -20,11 +20,11 @@ namespace webForm
         */
         protected void Created_Click(object sender, EventArgs e)
         {
-            String title = Title.Text;
-            String type = Booktype.SelectedValue;
-            String price = Price.Text;
-            String description = Description.Text;
-            String upload = Picture.FileName;
+            string title = Title.Text;
+            string type = BookType.SelectedValue;
+            string price = Price.Text;
+            string description = Description.Text;
+            string upload = Picture.FileName;
             // how to DB?
             Feedback.Text = "Your ad has been created";
             //Kan fjerne if og flytte det her ned, burde give samme resultalt.
