@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static System.Security.Cryptography.MD5CryptoServiceProvider;
 
 namespace webForm
 {
     public partial class Registrer : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
 
+        {
+          
         }
 
         protected void submitButton_Click(object sender, EventArgs e)
@@ -23,7 +27,7 @@ namespace webForm
                 try
                 {
                     string email = emailTextBox.Text;
-                    string password = passwordTextBox.Text; //needs to be encrypted first
+                    string password = MD5Hash(passwordTextBox.Text);
                     string firstName = firstNameTextBox.Text;
                     string lastName = lastNameTextBox.Text;
                     int phoneNumber = Convert.ToInt32(phoneTextBox.Text);
@@ -63,6 +67,15 @@ namespace webForm
             if (result != "") return false;
             else return true;
 
+        }
+        private string MD5Hash(string input)
+        {
+            using (var md5 = MD5.Create())
+            {
+                var result = md5.ComputeHash(Encoding.ASCII.GetBytes(input));
+                var strResult = BitConverter.ToString(result);
+                return strResult.Replace("-", "");
+            }
         }
     }
 }
