@@ -14,6 +14,7 @@ namespace webForm
         public string Category { get; set; }
         public float Price { get; set; }
         public string Description { get; set; }
+        public string Image { get; set; }
          /* Ved ikke lige hvordan dette skal laves til en property
          * Picture 
          */
@@ -24,5 +25,9 @@ namespace webForm
         // constructors
 
         // methods
+        public void CreateAd()
+        {
+
+        }
     }
 }

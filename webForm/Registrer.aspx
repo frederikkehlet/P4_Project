@@ -16,12 +16,13 @@
             var theEvent = evt || window.event;
             var key = theEvent.keyCode || theEvent.which;
             key = String.fromCharCode(key);
-            var regex = /[a-å]|\./;
+            var regex = /[a-å,A-Å]|\./;
             if (!regex.test(key)) {
                 theEvent.returnValue = false;
                 if (theEvent.preventDefault) theEvent.preventDefault();
             }
-        }</script>
+        }
+    </script>
 
     <div class="container">
         <form id="form1" class="col-md-12" runat="server">

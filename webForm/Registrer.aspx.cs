@@ -45,7 +45,11 @@ namespace webForm
                 catch (FormatException)
                 {
 
-                    feedback.Text = "Phone number invalid";
+                    feedback.Text = "<span style='color:red;'>Phone number invalid</span>";
+                }
+                catch (Exception)
+                {
+                    feedback.Text = "<span style='color:red;'>Something went wrong</span>";
                 }
             }
             else
