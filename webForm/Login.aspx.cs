@@ -29,7 +29,7 @@ namespace webForm
                 Session["user"] = email;
                 Response.Redirect("~/Default.aspx");
                 /* hvis der er resultater, videresendes brugeren til main page */
-            }    
+            }   
         }
     }
 }

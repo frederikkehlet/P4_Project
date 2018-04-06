@@ -26,7 +26,7 @@ namespace webForm
                 try
                 {
                     string email = emailTextBox.Text;
-                    string password = (passwordTextBox.Text);
+                    string password = Convert.ToString(HashPassword(passwordTextBox.Text));
                     string firstName = firstNameTextBox.Text;
                     string lastName = lastNameTextBox.Text;
                     int phoneNumber = Convert.ToInt32(phoneTextBox.Text);
@@ -71,11 +71,11 @@ namespace webForm
             else return true;
 
         }
-        //public static byte[] HashPassword(string password)
-        //{
-            //var provider = new SHA1CryptoServiceProvider();
-            //var encoding = new UnicodeEncoding();
-          //  return provider.ComputeHash(encoding.GetBytes(password));
-        //}
+        public static byte[] HashPassword(string password)
+        {
+            var provider = new SHA1CryptoServiceProvider();
+            var encoding = new UnicodeEncoding();
+            return provider.ComputeHash(encoding.GetBytes(password));
+        }
     }
 }
