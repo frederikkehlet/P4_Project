@@ -15,15 +15,14 @@ namespace webForm
         public float Price { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
-
-         /* Vi skal checke hvilken student der er ejer af denne ad.
-         * Student 
-         */
+        public Student student { get; }
+        /* Vi skal checke hvilken student der er ejer af denne ad.
 
         // constructors
-
+    
         // methods
-        public void CreateAd()
+    
+    public void CreateAd()
         {
 
         }
