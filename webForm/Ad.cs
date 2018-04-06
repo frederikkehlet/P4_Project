@@ -5,7 +5,7 @@ using System.Web;
 
 namespace webForm
 {
-    public class Ad 
+    public class Ad
     {
         // properties
 
@@ -15,10 +15,8 @@ namespace webForm
         public float Price { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
-         /* Ved ikke lige hvordan dette skal laves til en property
-         * Picture 
-         */
-         /* Er det student.cs oder was?
+
+         /* Vi skal checke hvilken student der er ejer af denne ad.
          * Student 
          */
 
