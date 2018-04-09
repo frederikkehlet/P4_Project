@@ -22,15 +22,14 @@ namespace webForm
 
         private void Initialize()
         {
-            server = "localhost";
-            database = "student_market";
-            uid = "root";
-            password = "1234";
-            string connectionString;
-            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
-                database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-
-            connection = new MySqlConnection(connectionString);
+                server = "localhost";
+                database = "student_market";
+                uid = "root";
+                password = "1234";
+                string connectionString =String.Format("server={0};database={1};uid={2};password={3};",
+                    server, database, uid, password);
+                
+                connection = new MySqlConnection(connectionString);
         }
 
         // open connection to database
@@ -62,19 +61,36 @@ namespace webForm
         }
 
         // insert statement
-        public void Insert(string query)
+        public void Insert(string first_name, string last_name, string email, int phone, string password)
         {
             // open connection
             if (this.OpenConnection() == true)
             {
-                // create command and assign the query and connection from the constructor
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                try
+                {
+                    // create command 
+                    string commandText = String.Format("INSERT INTO users(first_name, last_name, email, phone, password) " +
+                   "VALUES(@first_name,@last_name,@email,@phone,@password);");
 
-                // execute command
-                cmd.ExecuteNonQuery();
+                    MySqlCommand cmd = new MySqlCommand(commandText, connection);
 
-                // close connection
-                this.CloseConnection();
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@first_name", first_name);
+                    cmd.Parameters.AddWithValue("@last_name", last_name);
+                    cmd.Parameters.AddWithValue("@email", email);
+                    cmd.Parameters.AddWithValue("@phone", phone);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    // execute command
+                    cmd.ExecuteNonQuery();
+
+                    // close connection
+                    this.CloseConnection();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }                
             }
         }
 

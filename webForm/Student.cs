@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Windows.Forms;
 
 namespace webForm
 {
@@ -35,11 +36,16 @@ namespace webForm
 
         public void UserCreated()
         {
-            string query = String.Format("INSERT INTO users(first_name, last_name, email, phone, password) " +
-                "VALUES('{0}','{1}','{2}','{3}','{4}');", FirstName, LastName, Email, Phone, Password);
-
-            DBConnect connection = new DBConnect();
-            connection.Insert(query);
+            try
+            {
+                DBConnect connection = new DBConnect();
+                connection.Insert(FirstName, LastName, Email, Phone, Password);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
         }
 
         public void UserEdited()
