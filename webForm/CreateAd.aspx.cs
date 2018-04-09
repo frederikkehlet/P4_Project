@@ -9,7 +9,6 @@ namespace webForm
 {
     public partial class CreateAd : System.Web.UI.Page
     {
-        /*
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["user"] == null)
@@ -17,7 +16,7 @@ namespace webForm
                 Response.Redirect("~/Login.aspx");
             }
         }
-        */
+        
         protected void Created_Click(object sender, EventArgs e)
         {
             string title = Title.Text;

@@ -11,7 +11,7 @@
             </div>
             <div>
             <asp:DropDownList CssClass="form-control" ID="BookType"  runat="server">
-                <asp:ListItem Value="">Chose a category</asp:ListItem>
+                <asp:ListItem Value="">Chose a category </asp:ListItem>
                 <asp:ListItem Value="a">Fiction</asp:ListItem>
                 <asp:ListItem Value="b">Non-Fiction</asp:ListItem>
             </asp:DropDownList>
