@@ -26,7 +26,7 @@ namespace webForm
             string Image = FileUpload1.FileName;
 
             // how to DB?
-            Feedback.Text = Image;
+            Feedback.Text = "Your ad has been created";
             //Kan fjerne if og flytte det her ned, burde give samme resultalt.
         }
     }

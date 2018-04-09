@@ -10,8 +10,8 @@
                 <asp:TextBox ID="Title" runat="server" class="form-control"></asp:TextBox>
             </div>
             <div>
-            <asp:DropDownList CssClass="form-control" ID="BookType"  runat="server">
-                <asp:ListItem Value="">Chose a category </asp:ListItem>
+            <asp:DropDownList CssClass="form-control" ID="BookType" runat="server">
+                <asp:ListItem Value="Chose a category"></asp:ListItem>
                 <asp:ListItem Value="a">Fiction</asp:ListItem>
                 <asp:ListItem Value="b">Non-Fiction</asp:ListItem>
             </asp:DropDownList>
@@ -32,7 +32,7 @@
                     <asp:FileUpload ID="FileUpload1" runat="server" class="custom-file" for="customFile" />
                 </div>
             </div>
-            <asp:Button ID="Created" runat="server" Text="Create" OnClick="Created_Click" class="btn btn-primary" />
+            <asp:Button ID="Created" runat="server" Text="Create" OnClick="Created_Click" class="btn btn-primary btn-lg" />
             <asp:Literal ID="Feedback" runat="server"></asp:Literal>
         </form>
     </div>
