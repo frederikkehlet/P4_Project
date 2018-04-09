@@ -46,22 +46,8 @@ namespace webForm
             }
         }
 
-        // close connection
-        private bool CloseConnection()
-        {
-            try
-            {
-                connection.Close();
-                return true;
-            }
-            catch (MySqlException)
-            {
-                return false;
-            }
-        }
-
-        // insert statement
-        public void Insert(string first_name, string last_name, string email, int phone, string password)
+        // insert statement for inserting user
+        public void InsertUser(string first_name, string last_name, string email, int phone, string password)
         {
             // open connection
             if (this.OpenConnection() == true)
@@ -85,7 +71,7 @@ namespace webForm
                     cmd.ExecuteNonQuery();
 
                     // close connection
-                    this.CloseConnection();
+                    connection.Close();
                 }
                 catch (Exception)
                 {
@@ -111,7 +97,7 @@ namespace webForm
                 //execute query
                 cmd.ExecuteNonQuery();
                 // close connection
-                this.CloseConnection();
+                connection.Close();
             }
         }
 
@@ -124,7 +110,7 @@ namespace webForm
             {
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.ExecuteNonQuery();
-                this.CloseConnection();
+                connection.Close();
             }
         }
 
@@ -160,7 +146,7 @@ namespace webForm
                 dataReader.Close();
 
                 //close Connection
-                this.CloseConnection();
+                connection.Close();
 
                 //return list to be displayed
                 foreach (var item in list)
