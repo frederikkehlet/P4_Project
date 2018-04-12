@@ -12,9 +12,8 @@ namespace webForm
     public partial class Registrer : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-
         {
-          
+              
         }
 
         protected void submitButton_Click(object sender, EventArgs e)
@@ -26,7 +25,7 @@ namespace webForm
                 try
                 {
                     string email = emailTextBox.Text;
-                    string password = Convert.ToString(HashPassword(passwordTextBox.Text));
+                    string password = passwordTextBox.Text;
                     string firstName = firstNameTextBox.Text;
                     string lastName = lastNameTextBox.Text;
                     int phoneNumber = Convert.ToInt32(phoneTextBox.Text);
@@ -46,9 +45,9 @@ namespace webForm
 
                     feedback.Text = "<span style='color:red;'>Phone number invalid</span>";
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    feedback.Text = "<span style='color:red;'>Something went wrong</span>";
+                    feedback.Text = "<span style='color:red;'>" + ex.Message + "</span>";
                 }
             }
             else
@@ -69,13 +68,6 @@ namespace webForm
 
             if (result != "") return false;
             else return true;
-
-        }
-        public static byte[] HashPassword(string password)
-        {
-            var provider = new SHA1CryptoServiceProvider();
-            var encoding = new UnicodeEncoding();
-            return provider.ComputeHash(encoding.GetBytes(password));
         }
     }
 }

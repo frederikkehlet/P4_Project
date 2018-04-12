@@ -16,10 +16,11 @@ namespace webForm
 
         protected void loginClick(object sender, EventArgs e)
         {
+            DBConnect connection = new DBConnect();
+
             string email = inputEmail.Text;
             string password = inputPassword.Text;
 
-            DBConnect connection = new DBConnect();
             string query = "SELECT * FROM users WHERE email = '" + email + "' AND password = '" + password + "';";
             string result = connection.Select(query);
 
