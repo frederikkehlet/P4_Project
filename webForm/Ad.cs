@@ -11,10 +11,12 @@ namespace webForm
 
         public string Title { get; set; }
         public int Year { get; set; }
+        // add datetime property
         public string Category { get; set; }
         public float Price { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
+        // add Student type
 
          /* Vi skal checke hvilken student der er ejer af denne ad.
          * Student 
