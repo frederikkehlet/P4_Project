@@ -66,7 +66,7 @@ namespace webForm
             string query = "SELECT * FROM users WHERE email = '" + email + "';";
             List<string> result = connection.Select(query);
 
-            if (result.Count == 0) return false;
+            if (result.Count != 0) return false;
             else return true;
         }
     }
