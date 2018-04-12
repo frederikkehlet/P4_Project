@@ -22,12 +22,12 @@ namespace webForm
             string password = inputPassword.Text;
 
             string query = "SELECT * FROM users WHERE email = '" + email + "' AND password = '" + password + "';";
-            string result = connection.Select(query);
+            List<string> result = connection.Select(query);
 
-            if (result == "") queryResult.Text = "Login failed";
+            if (result.Count == 0) queryResult.Text = "Login failed";
             else
             {
-                Session["user"] = email;
+                Session["user"] = result[0];
                 Response.Redirect("~/Default.aspx");
                 /* hvis der er resultater, videresendes brugeren til main page */
             }   

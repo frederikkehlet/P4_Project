@@ -64,9 +64,9 @@ namespace webForm
 
             DBConnect connection = new DBConnect();
             string query = "SELECT * FROM users WHERE email = '" + email + "';";
-            string result = connection.Select(query);
+            List<string> result = connection.Select(query);
 
-            if (result != "") return false;
+            if (result.Count == 0) return false;
             else return true;
         }
     }

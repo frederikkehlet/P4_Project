@@ -115,12 +115,10 @@ namespace webForm
         }
 
         // select statement
-        public string Select(string query)
+        public List<string> Select(string query)
         {
             //Create a list to store the result
             List<string> list = new List<string>();
-
-            string result = "";
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -149,15 +147,11 @@ namespace webForm
                 connection.Close();
 
                 //return list to be displayed
-                foreach (var item in list)
-                {
-                    result += item + "\n";
-                }
-                return result;
+                return list;
             }
             else
             {
-                return result;
+                return list;
             }
         }
 
