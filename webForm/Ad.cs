@@ -16,6 +16,7 @@ namespace webForm
         public float Price { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
+        
         // add Student type
 
          /* Vi skal checke hvilken student der er ejer af denne ad.
