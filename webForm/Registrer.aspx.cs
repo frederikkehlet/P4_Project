@@ -18,9 +18,10 @@ namespace webForm
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
-            bool result = checkEmail();
+            bool resultEmail = checkEmail();
+            bool resultPassword = checkPassword();
 
-            if (result)
+            if (resultEmail == true && resultPassword == true)
             {
                 try
                 {
@@ -50,10 +51,17 @@ namespace webForm
                     feedback.Text = "<span style='color:red;'>" + ex.Message + "</span>";
                 }
             }
+            else if (resultEmail == false)
+            {
+                PasswordStatus.Text = "";
+                string messageEmail = "<span style='color:red;'>Email already exists</span>";
+                EmailStatus.Text = messageEmail;
+            }
             else
             {
-                string message = "<span style='color:red;'>Email already exists</span>";
-                EmailStatus.Text = message;
+                EmailStatus.Text = "";
+                string messagePassword = "<span style='color:red;'>Password already exists</span>";
+                PasswordStatus.Text = messagePassword;
             }
             
         }
@@ -75,9 +83,12 @@ namespace webForm
             string password = passwordTextBox.Text;
 
             // needs hash
+            Hash hash = new Hash();
+            string hashedPassword = hash.GetMd5Hash(password);
 
             DBConnect connection = new DBConnect();
-            string query = "SELECT * FROM users WHERE password = '" + password + "';";
+
+            string query = "SELECT * FROM users WHERE password = '" + hashedPassword + "';";
             List<string> result = connection.Select(query);
 
             if (result.Count != 0) return false;

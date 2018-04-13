@@ -39,6 +39,7 @@
                 <div class="form-group">
                     <asp:Label ID="passwordLabel" runat="server" Text="Label">Password: </asp:Label>
                     <asp:TextBox ID="passwordTextBox" runat="server" type="password" required="required" placeholder="Password" class="form-control"></asp:TextBox>
+                    <asp:Literal ID="PasswordStatus" runat="server"></asp:Literal>
                 </div>
 
                 <div class="form-group">
