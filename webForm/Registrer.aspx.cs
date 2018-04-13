@@ -12,8 +12,7 @@ namespace webForm
     public partial class Registrer : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-              
+        {         
         }
 
         protected void submitButton_Click(object sender, EventArgs e)
@@ -42,8 +41,9 @@ namespace webForm
                     PhoneStatus.Text = "";
 
                     //Feedback after submission
-                    string message = "<span style='color:green;'>User registered</span>";
+                    string message = "<span style='color:green;'>User registered</span>" + "<meta http-equiv = 'refresh' content = '2; Login.aspx'>";
                     feedback.Text = message;
+
                 }
                 catch (FormatException)
                 {
