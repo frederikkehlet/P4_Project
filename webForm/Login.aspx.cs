@@ -11,31 +11,6 @@ namespace webForm
 {
     public partial class Login : System.Web.UI.Page
     {
-        private string Hash(string inputPassword)
-        {
-            {
-                string source = inputPassword;
-                using (MD5 md5Hash = MD5.Create())
-                {
-                    string hash = GetMd5Hash(md5Hash, source);
-                    return hash;
-                }
-            }
-
-
-        }
-        static string GetMd5Hash(MD5 md5Hash, string input)
-        {
-
-            byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
-            StringBuilder sBuilder = new StringBuilder();
-            for (int i = 0; i < data.Length; i++)
-            {
-                sBuilder.Append(data[i].ToString("x2"));
-            }
-            return sBuilder.ToString();
-        }
-
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -51,12 +26,11 @@ namespace webForm
             string query = "SELECT * FROM users WHERE email = '" + email +"';";
             List<string> result = connection.Select(query); 
 
-            
-            using (MD5 md5Hash = MD5.Create())
-            {
-                string hash = GetMd5Hash(md5Hash, password);
+            Hash hash = new Hash();
+    
+                string hashpwd = hash.GetMd5Hash(password);
 
-                if (hash == result[5])
+                if (hashpwd == result[5])
                 {
                     Session["user"] = result[0];
                     Response.Redirect("~/Default.aspx");
@@ -66,7 +40,7 @@ namespace webForm
                 {
                     queryResult.Text = "Login failed";
                 }
-            }
+            
         }
     }
 }
