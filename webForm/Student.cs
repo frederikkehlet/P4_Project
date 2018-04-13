@@ -19,7 +19,7 @@ namespace webForm
         public int Phone { get; set; }
         public int ID { get; set; }
 
-        private string Hash(string inputPassword)
+        public string Hash(string inputPassword)
         {
             string passwordSource = inputPassword;
             using (MD5 md5Hash = MD5.Create())
@@ -29,7 +29,7 @@ namespace webForm
             }
         }
 
-        static string GetMd5Hash(MD5 md5Hash, string input)
+        public string GetMd5Hash(MD5 md5Hash, string input)
         {
 
             // Convert the input string to a byte array and compute the hash.

@@ -11,6 +11,7 @@ namespace webForm
 {
     public partial class Login : System.Web.UI.Page
     {
+
         private string Hash(string inputPassword)
         {
             {
@@ -21,7 +22,6 @@ namespace webForm
                     return hash;
                 }
             }
-
 
         }
         static string GetMd5Hash(MD5 md5Hash, string input)
@@ -53,7 +53,7 @@ namespace webForm
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void loginClick(object sender, EventArgs e)
@@ -71,7 +71,7 @@ namespace webForm
             {
                 string hash = GetMd5Hash(md5Hash, source);
 
-                if (VerifyMd5Hash(md5Hash, source, hash))
+                if ())
                 {
                     Session["user"] = result[0];
                     Response.Redirect("~/Default.aspx");
