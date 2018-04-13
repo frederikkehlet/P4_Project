@@ -36,6 +36,9 @@ namespace webForm
                     // create the user in db
                     student.UserCreated();
 
+                    EmailStatus.Text = "";
+                    phone.Text = "";
+
                     //Feedback after submission
                     string message = "<span style='color:green;'>User registered</span>";
                     feedback.Text = message;
@@ -43,7 +46,7 @@ namespace webForm
                 catch (FormatException)
                 {
 
-                    feedback.Text = "<span style='color:red;'>Phone number invalid</span>";
+                    phone.Text = "<span style='color:red;'>Phone number invalid</span>";
                 }
                 catch (Exception ex)
                 {
@@ -55,6 +58,8 @@ namespace webForm
                 string message = "<span style='color:red;'>Email already exists</span>";
                 EmailStatus.Text = message;
             }
+
+
             
         }
 
