@@ -12,19 +12,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
-<body>
-    <h1>Login</h1>
+<body> 
     <div class="container">
+        <h1>Login</h1>
         <div class="card card-container">
-            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_1x.png" />
-            <p id="profile-name" class="profile-name-card"></p>
-            <form class="form-signin" runat="server">
+            <form class="col-md-6" runat="server">
                 <span id="reauth-email" class="reauth-email"></span>
-                <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address"></asp:TextBox>
-                <asp:TextBox runat="server" type="password" ID="inputPassword" class="form-control" placeholder="Password"></asp:TextBox>
+                <div class="form-group"> 
+                    <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address"></asp:TextBox>
+                </div>
+                <div class="form-group">   
+                    <asp:TextBox runat="server" type="password" ID="inputPassword" class="form-control" placeholder="Password"></asp:TextBox>
+                </div>                
                 <asp:Button ID="loginButton" runat="server" class="btn btn-lg btn-primary btn-block btn-signin" type="submit" OnClick="loginClick" Text="Log in" />
             </form>
-            <a href="#" class="forgot-password">Forgot the password?</a>
         </div>
         <asp:Literal ID="queryResult" runat="server"></asp:Literal>
     </div>
