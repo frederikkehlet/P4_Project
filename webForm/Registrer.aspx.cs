@@ -38,7 +38,8 @@ namespace webForm
                     student.UserCreated();
 
                     EmailStatus.Text = "";
-                    phone.Text = "";
+                    PasswordStatus.Text = "";
+                    PhoneStatus.Text = "";
 
                     //Feedback after submission
                     string message = "<span style='color:green;'>User registered</span>";
@@ -46,8 +47,7 @@ namespace webForm
                 }
                 catch (FormatException)
                 {
-
-                    phone.Text = "<span style='color:red;'>Phone number invalid</span>";
+                    PhoneStatus.Text = "<span style='color:red;'>Phone number invalid</span>";
                 }
                 catch (Exception ex)
                 {
@@ -56,12 +56,14 @@ namespace webForm
             }
             else if (resultEmail == false)
             {
+                PhoneStatus.Text = "";
                 PasswordStatus.Text = "";
                 string messageEmail = "<span style='color:red;'>Email already exists</span>";
                 EmailStatus.Text = messageEmail;
             }
             else
             {
+                PhoneStatus.Text = "";
                 EmailStatus.Text = "";
                 string messagePassword = "<span style='color:red;'>Password already exists</span>";
                 PasswordStatus.Text = messagePassword;
