@@ -49,7 +49,7 @@ namespace webForm
             string password = inputPassword.Text;
 
             string query = "SELECT * FROM users WHERE email = '" + email +"';";
-            List<string> result = connection.Select(query);
+            List<string> result = connection.Select(query); 
 
             
             using (MD5 md5Hash = MD5.Create())
