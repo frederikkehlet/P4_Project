@@ -130,6 +130,15 @@ namespace webForm {
         protected global::System.Web.UI.WebControls.TextBox phoneTextBox;
         
         /// <summary>
+        /// phone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal phone;
+        
+        /// <summary>
         /// submitButton control.
         /// </summary>
         /// <remarks>

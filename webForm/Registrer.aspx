@@ -55,6 +55,7 @@
                 <div class="form-group">
                     <asp:Label ID="phoneLabel" runat="server" Text="Label">Phone number: </asp:Label>
                     <asp:TextBox ID="phoneTextBox" runat="server" type="tel" required="required" placeholder="Phone" class="form-control"></asp:TextBox>
+                    <asp:Literal ID="phone" runat="server"></asp:Literal>
                 </div>
 
                 <div class="form-group">
