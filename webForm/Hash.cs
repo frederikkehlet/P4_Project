@@ -14,14 +14,6 @@ namespace webForm
         {
         }
 
-        public string HashMethode(string inputPassword)
-        {
-            string passwordSource = inputPassword;
-            
-                string hash = GetMd5Hash(inputPassword);
-                return hash;
-        }
-
         public string GetMd5Hash(string input)
         {
             byte[] data = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(input));

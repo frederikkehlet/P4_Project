@@ -26,7 +26,7 @@ namespace webForm
             LastName = lastName;
             Email = email;
             Phone = phone;
-            Password = hash.HashMethode(password);
+            Password = hash.GetMd5Hash(password);
             
         }
 
