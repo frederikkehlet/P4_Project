@@ -23,13 +23,15 @@ namespace webForm
             string email = inputEmail.Text;
             string password = inputPassword.Text;
 
-            string query = "SELECT * FROM users WHERE email = '" + email +"';";
-            List<string> result = connection.Select(query); 
-
             Hash hash = new Hash();
-    
-                string hashpwd = hash.GetMd5Hash(password);
 
+            string hashpwd = hash.GetMd5Hash(password);
+
+            string query = "SELECT * FROM users WHERE email = '" + email + "';";
+            List<string> result = connection.Select(query);
+
+            if (result.Count != 0)
+            {
                 if (hashpwd == result[5])
                 {
                     Session["user"] = result[0];
@@ -38,9 +40,14 @@ namespace webForm
                 }
                 else
                 {
-                    queryResult.Text = "Login failed";
+                    queryResult.Text = "Password incorrect";
                 }
-            
+            }
+            else
+            {
+                queryResult.Text = "Email incorrect";
+            }
+
         }
     }
 }

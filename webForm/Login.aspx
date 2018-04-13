@@ -22,13 +22,6 @@
                 <span id="reauth-email" class="reauth-email"></span>
                 <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address"></asp:TextBox>
                 <asp:TextBox runat="server" type="password" ID="inputPassword" class="form-control" placeholder="Password"></asp:TextBox>
-                <div id="remember" class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me" />
-                        Remember me
-                   
-                    </label>
-                </div>
                 <asp:Button ID="loginButton" runat="server" class="btn btn-lg btn-primary btn-block btn-signin" type="submit" OnClick="loginClick" Text="Log in" />
             </form>
             <a href="#" class="forgot-password">Forgot the password?</a>

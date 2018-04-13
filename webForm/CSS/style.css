@@ -1,6 +1,7 @@
 ﻿body {
     font-family: Verdana;
     background-color: #fff;
+    border-radius: 0;
 }
 
 .emailStatus {

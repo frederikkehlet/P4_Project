@@ -73,7 +73,7 @@ namespace webForm
             
         }
 
-        protected bool checkEmail()
+        private bool checkEmail()
         {
             string email = emailTextBox.Text;
 
@@ -85,7 +85,7 @@ namespace webForm
             else return true;
         }
 
-        protected bool checkPassword()
+        private bool checkPassword()
         {
             string password = passwordTextBox.Text;
 
