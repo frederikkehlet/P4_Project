@@ -29,7 +29,7 @@ namespace webForm
             }
         }
 
-        static string GetMd5Hash(MD5 md5Hash, string input)
+        private string GetMd5Hash(MD5 md5Hash, string input)
         {
 
             // Convert the input string to a byte array and compute the hash.

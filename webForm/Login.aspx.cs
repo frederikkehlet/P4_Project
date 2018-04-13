@@ -36,21 +36,6 @@ namespace webForm
             return sBuilder.ToString();
         }
 
-        static bool VerifyMd5Hash(MD5 md5Hash, string input, string hash)
-        {
-
-            string hashOfInput = GetMd5Hash(md5Hash, input);
-            StringComparer comparer = StringComparer.OrdinalIgnoreCase;
-
-            if (0 == comparer.Compare(hashOfInput, hash))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -66,12 +51,12 @@ namespace webForm
             string query = "SELECT * FROM users WHERE email = '" + email +"';";
             List<string> result = connection.Select(query);
 
-            string source = password;
+            
             using (MD5 md5Hash = MD5.Create())
             {
-                string hash = GetMd5Hash(md5Hash, source);
+                string hash = GetMd5Hash(md5Hash, password);
 
-                if (VerifyMd5Hash(md5Hash, source, hash))
+                if (hash == result[5])
                 {
                     Session["user"] = result[0];
                     Response.Redirect("~/Default.aspx");
