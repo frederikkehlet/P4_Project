@@ -69,5 +69,19 @@ namespace webForm
             if (result.Count != 0) return false;
             else return true;
         }
+
+        protected bool checkPassword()
+        {
+            string password = passwordTextBox.Text;
+
+            // needs hash
+
+            DBConnect connection = new DBConnect();
+            string query = "SELECT * FROM users WHERE password = '" + password + "';";
+            List<string> result = connection.Select(query);
+
+            if (result.Count != 0) return false;
+            else return true;
+        }
     }
 }

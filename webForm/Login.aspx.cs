@@ -24,7 +24,7 @@ namespace webForm
             string password = inputPassword.Text;
 
             string query = "SELECT * FROM users WHERE email = '" + email +"';";
-            List<string> result = connection.Select(query);
+            List<string> result = connection.Select(query); 
 
             Hash hash = new Hash();
     
