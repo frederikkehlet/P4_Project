@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Windows.Forms;
+using System.Text;
+using System.Web.Security;
+
 
 namespace webForm
 {
@@ -20,11 +21,13 @@ namespace webForm
         // ??? the constructor creates a user and adds it to the db
         public Student(string firstName, string lastName, string email, int phone, string password)
         {
+            Hash hash = new Hash();
             FirstName = firstName;
             LastName = lastName;
             Email = email;
             Phone = phone;
-            Password = password;
+            Password = hash.GetMd5Hash(password);
+            
         }
 
         // add methods
@@ -44,9 +47,9 @@ namespace webForm
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                //MessageBox.Show(e.Message);
             }
-            
+
         }
 
         public void UserEdited()
@@ -56,7 +59,7 @@ namespace webForm
 
         public void UserDeleted()
         {
-            /* WIP */ 
+            /* WIP */
         }
     }
 }
