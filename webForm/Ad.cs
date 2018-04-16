@@ -26,9 +26,10 @@ namespace webForm
          */
 
         // constructors
+        /*
         public Ad(string title, int year, category category, float price, string description, string image)
         {
-            //Title =
+            Title =;
             
         }
 
@@ -37,5 +38,7 @@ namespace webForm
         {
 
         }
+       */
     }
 }
+       

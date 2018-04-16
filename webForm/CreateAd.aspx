@@ -6,8 +6,12 @@
         <form id="form1" runat="server" class="col-md-12">
             <h1>Create an ad</h1>
             <div class="form-group">
-                <asp:Label ID="Label" runat="server" Text="Label">Title of book:</asp:Label>
+                <asp:Label ID="Titleofbook" runat="server" Text="Label">Title of book:</asp:Label>
                 <asp:TextBox ID="Title" runat="server" class="form-control"></asp:TextBox>
+            </div>
+            <div class ="form-group">
+                <asp:Label ID="Year1" runat="server" Text="Label">Year published</asp:Label>
+                <asp:TextBox ID="Year" runat="server" class="form-control" onkeypress='validateint(event)'></asp:TextBox>
             </div>
             <div>
             <asp:DropDownList CssClass="form-control" ID="BookType" runat="server">
@@ -17,12 +21,12 @@
             </asp:DropDownList>
             </div>
             <div class="form-group">
-                <asp:Label ID="Label3" runat="server" Text="Label">Price:</asp:Label>
-                <asp:TextBox ID="Price" runat="server" class="form-control"></asp:TextBox>
+                <asp:Label ID="Price1" runat="server" Text="Label">Price:</asp:Label>
+                <asp:TextBox ID="Price" runat="server" class="form-control" onkeypress='validateint(event)'></asp:TextBox>
             </div>
 
             <div class="form-group">
-                <asp:Label ID="Label4" runat="server" Text="Label">Description:</asp:Label>
+                <asp:Label ID="Description1" runat="server" Text="Label">Description:</asp:Label>
                 <asp:TextBox ID="Description" runat="server" class="form-control"></asp:TextBox>
             </div>
 
