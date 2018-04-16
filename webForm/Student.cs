@@ -45,9 +45,9 @@ namespace webForm
 
                 connection.InsertUser(FirstName, LastName, Email, Phone, Password);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                //MessageBox.Show(e.Message);
+                // Missing error message if user cannot be created
             }
 
         }

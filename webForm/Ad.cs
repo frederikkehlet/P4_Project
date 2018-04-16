@@ -5,14 +5,16 @@ using System.Web;
 
 namespace webForm
 {
+    public enum category {fiction, nonFicion};
+
     public class Ad
     {
         // properties
 
         public string Title { get; set; }
         public int Year { get; set; }
-        // add datetime property
-        public string Category { get; set; }
+        public DateTime Date { get; set; }
+        public category Category { get; set; }
         public float Price { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
@@ -24,6 +26,11 @@ namespace webForm
          */
 
         // constructors
+        public Ad(string title, int year, category category, float price, string description, string image)
+        {
+            Title =
+            
+        }
 
         // methods
         public void CreateAd()

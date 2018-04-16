@@ -6,7 +6,7 @@
         <form id="form1" runat="server" class="col-md-12">
             <h1>Create an ad</h1>
             <div class="form-group">
-                <asp:Label ID="Label1" runat="server" Text="Label">Title of book:</asp:Label>
+                <asp:Label ID="Label" runat="server" Text="Label">Title of book:</asp:Label>
                 <asp:TextBox ID="Title" runat="server" class="form-control"></asp:TextBox>
             </div>
             <div>
