@@ -29,7 +29,7 @@
             <div class="form-group">
                 <div class="custom-file">
                     <asp:Label ID="customFile" runat="server" class="custom-file-label">Upload image</asp:Label>
-                    <asp:FileUpload ID="FileUpload1" runat="server" class="custom-file" for="customFile" />
+                    <asp:FileUpload ID="FileUpload" runat="server" class="custom-file" for="customFile" />
                 </div>
             </div>
             <asp:Button ID="Created" runat="server" Text="Create" OnClick="Created_Click" class="btn btn-primary btn-lg" />

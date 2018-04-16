@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace webForm
 {
@@ -23,10 +25,21 @@ namespace webForm
             string type = BookType.SelectedValue;
             string price = Price.Text;
             string description = Description.Text;
-            string Image = FileUpload1.FileName;
+            string filePath = Server.MapPath(FileUpload.FileName);
+            Feedback.Text = filePath;
+
+            Bitmap j = new Bitmap(filePath);
+
+            j.Save(@"C:\test.jpg", ImageFormat.Jpeg);
+            
+            //image.Save(@"~\test.jpeg", ImageFormat.Jpeg);
+
+            //Response.WriteFile(fileName);
+            //Response.ContentType = "image/png";
 
             // how to DB?
-            Feedback.Text = "Your ad has been created";
+            
+            
             //Kan fjerne if og flytte det her ned, burde give samme resultalt.
         }
     }
