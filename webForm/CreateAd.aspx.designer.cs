@@ -22,13 +22,13 @@ namespace webForm {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Label control.
+        /// Titleofbook control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label;
+        protected global::System.Web.UI.WebControls.Label Titleofbook;
         
         /// <summary>
         /// Title control.
@@ -40,6 +40,24 @@ namespace webForm {
         protected global::System.Web.UI.WebControls.TextBox Title;
         
         /// <summary>
+        /// Year1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Year1;
+        
+        /// <summary>
+        /// Year control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Year;
+        
+        /// <summary>
         /// BookType control.
         /// </summary>
         /// <remarks>
@@ -49,13 +67,13 @@ namespace webForm {
         protected global::System.Web.UI.WebControls.DropDownList BookType;
         
         /// <summary>
-        /// Label3 control.
+        /// Price1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Label Price1;
         
         /// <summary>
         /// Price control.
@@ -67,13 +85,13 @@ namespace webForm {
         protected global::System.Web.UI.WebControls.TextBox Price;
         
         /// <summary>
-        /// Label4 control.
+        /// Description1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
+        protected global::System.Web.UI.WebControls.Label Description1;
         
         /// <summary>
         /// Description control.
