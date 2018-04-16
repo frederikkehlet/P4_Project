@@ -23,9 +23,11 @@ namespace webForm
         {
             string title = Title.Text;
             string type = BookType.SelectedValue;
-            string price = Price.Text;
-            int year = ;
+            float price = float.Parse(Price.Text);
+            int year = int.Parse(Year.Text);
             string description = Description.Text;
+            int user_id = Convert.ToInt32(Session["user"]);
+
             string filePath = Server.MapPath(FileUpload.FileName);
             Feedback.Text = filePath;
 
@@ -45,15 +47,21 @@ namespace webForm
                 try
                 {
                     DBConnect connection = new DBConnect();
-                    connection.insertAd(pic, title, year, type, );
+                    connection.insertAd(pic, title, year, type, price, description, user_id);
                     
                     Label1.Visible = true;
                     Label1.Text = "Image Uploaded Sucessfully";  //after Sucessfully uploaded image
+
+                   string str = connection.getPic(user_id);
+
+                    Image1.ImageUrl = "data:Image/png;base64," + str;
                 }
                 catch(Exception em)
                 {
                     Feedback.Text = em.Message;
                 }
+
+
             }
             //Bitmap j = new Bitmap(filePath);
 

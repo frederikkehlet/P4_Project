@@ -16,8 +16,8 @@
             <div>
             <asp:DropDownList CssClass="form-control" ID="BookType" runat="server">
                 <asp:ListItem Value="Chose a category"></asp:ListItem>
-                <asp:ListItem Value="a">Fiction</asp:ListItem>
-                <asp:ListItem Value="b">Non-Fiction</asp:ListItem>
+                <asp:ListItem Value="fiction">Fiction</asp:ListItem>
+                <asp:ListItem Value="non-fiction">Non-Fiction</asp:ListItem>
             </asp:DropDownList>
             </div>
             <div class="form-group">
@@ -36,6 +36,9 @@
                 <div class="custom-file">
                     <asp:Label ID="customFile" runat="server" class="custom-file-label">Upload image</asp:Label>
                     <asp:FileUpload ID="FileUpload" runat="server" class="custom-file" for="customFile" />
+
+                    <asp:Image ID="Image1" runat="server" Width="250px" Height="250"  />
+
                 </div>
             </div>
             <asp:Button ID="Created" runat="server" Text="Create" OnClick="Created_Click" class="btn btn-primary btn-lg" />

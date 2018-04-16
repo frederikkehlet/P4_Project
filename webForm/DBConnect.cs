@@ -173,7 +173,7 @@ namespace webForm
 
         }
 
-        public void insertAd(Byte[] pic, string title, int year, category category, int price, string description, int user_id)
+        public void insertAd(Byte[] pic, string title, int year, string category, float price, string description, int user_id)
         {
             connection.Open();
             string query = "insert into ad (title, year, category, price, description, date, image, user_id) values (@title, @year, @category, @price, " +
@@ -191,6 +191,19 @@ namespace webForm
             com.Parameters.AddWithValue("@user_id", user_id);
             com.ExecuteNonQuery();
             connection.Close();
+        }
+
+
+        public string getPic(int user_id)
+        {
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT image FROM ad WHERE ad_id = MAX(ad_id) AND user_id = '" + user_id + "';";
+            byte[] buf = (byte[])cmd.ExecuteScalar();
+
+            string strBase64 = Convert.ToBase64String(buf);
+
+            return strBase64;
         }
     }
 }
