@@ -198,7 +198,7 @@ namespace webForm
         {
             connection.Open();
             MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT image FROM ad WHERE ad_id = MAX(ad_id) AND user_id = '" + user_id + "';";
+            cmd.CommandText = "SELECT image FROM ad WHERE ad_id = (SELECT max(ad_id) FROM ad WHERE user_id =" + user_id + ")";
             byte[] buf = (byte[])cmd.ExecuteScalar();
 
             string strBase64 = Convert.ToBase64String(buf);
