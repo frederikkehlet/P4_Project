@@ -172,5 +172,25 @@ namespace webForm
         {
 
         }
+
+        public void insertAd(Byte[] pic, string title, int year, category category, int price, string description, int user_id)
+        {
+            connection.Open();
+            string query = "insert into ad (title, year, category, price, description, date, image, user_id) values (@title, @year, @category, @price, " +
+                " @description, @date, @image, @user_id);";
+
+            MySqlCommand com = new MySqlCommand(query, connection);
+
+            com.Parameters.AddWithValue("@title", title);
+            com.Parameters.AddWithValue("@year", year);
+            com.Parameters.AddWithValue("@category", category);
+            com.Parameters.AddWithValue("@price", price);
+            com.Parameters.AddWithValue("@description", description);
+            com.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyyMMddHHmmss"));
+            com.Parameters.AddWithValue("@image", pic);
+            com.Parameters.AddWithValue("@user_id", user_id);
+            com.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }

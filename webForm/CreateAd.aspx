@@ -26,6 +26,8 @@
                 <asp:TextBox ID="Description" runat="server" class="form-control"></asp:TextBox>
             </div>
 
+            <asp:Label ID ="Label1" runat="server"></asp:Label>
+
             <div class="form-group">
                 <div class="custom-file">
                     <asp:Label ID="customFile" runat="server" class="custom-file-label">Upload image</asp:Label>
