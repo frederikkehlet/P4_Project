@@ -42,7 +42,6 @@ namespace webForm
             try
             {
                 DBConnect connection = new DBConnect();
-
                 connection.InsertUser(FirstName, LastName, Email, Phone, Password);
             }
             catch (Exception)

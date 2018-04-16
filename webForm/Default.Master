@@ -22,7 +22,7 @@
                 <a class="navbar-brand" href="Default.aspx">Student Market</a>
             </div>
             <ul class="nav navbar-nav">
-                <li class="active"><a href="CreateAd.aspx">Creat Ad</a></li>
+                <li class="active"><a href="CreateAd.aspx">Create Ad</a></li>
                 <li><a href="Login.aspx">Login</a></li>
                 <li><a href="Registrer.aspx">Registrer</a></li>
             </ul>
