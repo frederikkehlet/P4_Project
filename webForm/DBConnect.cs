@@ -55,11 +55,10 @@ namespace webForm
                 try
                 {
                     // create command 
-                    string query = String.Format("INSERT INTO users(first_name, last_name, email, phone, password) " +
-                   "VALUES(@first_name,@last_name,@email,@phone,@password);");
+                    string query = "INSERT INTO users(first_name, last_name, email, phone, password) " +
+                   "VALUES(@first_name,@last_name,@email,@phone,@password);";
 
                     MySqlCommand cmd = new MySqlCommand(query, connection);
-
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@first_name", first_name);
                     cmd.Parameters.AddWithValue("@last_name", last_name);
@@ -161,11 +160,10 @@ namespace webForm
             {
                 try
                 {
-                    string query = "insert into ad (title, year, category, price, description, date, image, user_id) values (@title, @year, @category, @price, " +
+                    string query = "INSERT INTO ad (title, year, category, price, description, date, image, user_id) VALUES (@title, @year, @category, @price, " +
                         " @description, @date, @image, @user_id);";
 
                     MySqlCommand cmd = new MySqlCommand(query, connection);
-
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@title", title);
                     cmd.Parameters.AddWithValue("@year", year);
@@ -186,7 +184,6 @@ namespace webForm
                     connection.Close();
                 }
             }
-
         }
 
         public string getPic(int user_id)
