@@ -22,14 +22,14 @@ namespace webForm
 
         private void Initialize()
         {
-                server = "localhost";
-                database = "student_market";
-                uid = "root";
-                password = "1234";
-                string connectionString =String.Format("server={0};database={1};uid={2};password={3};",
-                    server, database, uid, password);
-                
-                connection = new MySqlConnection(connectionString);
+            server = "localhost";
+            database = "student_market";
+            uid = "root";
+            password = "1234";
+            string connectionString = String.Format("server={0};database={1};uid={2};password={3};",
+                server, database, uid, password);
+
+            connection = new MySqlConnection(connectionString);
         }
 
         // open connection to database
@@ -55,10 +55,10 @@ namespace webForm
                 try
                 {
                     // create command 
-                    string commandText = String.Format("INSERT INTO users(first_name, last_name, email, phone, password) " +
+                    string query = String.Format("INSERT INTO users(first_name, last_name, email, phone, password) " +
                    "VALUES(@first_name,@last_name,@email,@phone,@password);");
 
-                    MySqlCommand cmd = new MySqlCommand(commandText, connection);
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
 
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@first_name", first_name);
@@ -66,17 +66,16 @@ namespace webForm
                     cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@phone", phone);
                     cmd.Parameters.AddWithValue("@password", password);
-
-                    // execute command
-                    cmd.ExecuteNonQuery();
-
-                    // close connection
-                    connection.Close();
+                    cmd.ExecuteNonQuery();                
                 }
                 catch (Exception)
                 {
                     throw;
-                }                
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -125,7 +124,7 @@ namespace webForm
             {
                 //Create Command
                 MySqlCommand cmd = new MySqlCommand(query, connection);
-                
+
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
 
@@ -155,44 +154,40 @@ namespace webForm
             }
         }
 
-        // count statement
-        /*public int Count()
+        // insert statement for inserting ads
+        public void InsertAd(string title, int year, string category, float price, string description, string date, Byte[] pic, int user_id)
         {
+            if (this.OpenConnection() == true)
+            {
+                try
+                {
+                    string query = "insert into ad (title, year, category, price, description, date, image, user_id) values (@title, @year, @category, @price, " +
+                        " @description, @date, @image, @user_id);";
 
-        }*/
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
 
-        // backup
-        public void Backup()
-        {
+                    cmd.Prepare();
+                    cmd.Parameters.AddWithValue("@title", title);
+                    cmd.Parameters.AddWithValue("@year", year);
+                    cmd.Parameters.AddWithValue("@category", category);
+                    cmd.Parameters.AddWithValue("@price", price);
+                    cmd.Parameters.AddWithValue("@description", description);
+                    cmd.Parameters.AddWithValue("@date", date);
+                    cmd.Parameters.AddWithValue("@image", pic);
+                    cmd.Parameters.AddWithValue("@user_id", user_id);
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
 
         }
-
-        // restore
-        public void Restore()
-        {
-
-        }
-
-        public void insertAd(Byte[] pic, string title, int year, string category, float price, string description, int user_id)
-        {
-            connection.Open();
-            string query = "insert into ad (title, year, category, price, description, date, image, user_id) values (@title, @year, @category, @price, " +
-                " @description, @date, @image, @user_id);";
-
-            MySqlCommand com = new MySqlCommand(query, connection);
-
-            com.Parameters.AddWithValue("@title", title);
-            com.Parameters.AddWithValue("@year", year);
-            com.Parameters.AddWithValue("@category", category);
-            com.Parameters.AddWithValue("@price", price);
-            com.Parameters.AddWithValue("@description", description);
-            com.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyyMMddHHmmss"));
-            com.Parameters.AddWithValue("@image", pic);
-            com.Parameters.AddWithValue("@user_id", user_id);
-            com.ExecuteNonQuery();
-            connection.Close();
-        }
-
 
         public string getPic(int user_id)
         {

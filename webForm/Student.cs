@@ -10,32 +10,34 @@ namespace webForm
     public class Student
     {
         // properties
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
+        public static string FirstName { get; set; }
+        public static string LastName { get; set; }
+        public static string Email { get; set; }
         public string Password { get; set; }
-        public int Phone { get; set; }
-        public int ID { get; set; }
+        public static int Phone { get; set; }
+        public static int ID { get; set; }
 
         // add constructor(s)
-        // ??? the constructor creates a user and adds it to the db
+        // this constructor is used for creating a user object and storing it in the db
         public Student(string firstName, string lastName, string email, int phone, string password)
-        {
-            Hash hash = new Hash();
+        {        
             FirstName = firstName;
             LastName = lastName;
             Email = email;
             Phone = phone;
-            Password = hash.GetMd5Hash(password);
-            
+            Password = hashedPassword(password);
         }
 
-        // add methods
-        /*
-         * UserCreated()
-         * UserEdited()
-         * UserDeleted()
-         */
+        /* this STATIC constructor is used for when the user 
+         is logged into the system we do not want to be able to access the pwd */
+        static Student(){ }
+
+        private string hashedPassword(string password)
+        {
+            Hash hash = new Hash();
+            string hashedpwd = hash.GetMd5Hash(password);
+            return hashedpwd;
+        }
 
         public void UserCreated()
         {
@@ -43,15 +45,16 @@ namespace webForm
             {
                 DBConnect connection = new DBConnect();
                 connection.InsertUser(FirstName, LastName, Email, Phone, Password);
+                List<string> result = connection.Select("SELECT * FROM users WHERE email = '" + Email + "';");
+                ID = int.Parse(result[0]);
             }
             catch (Exception)
             {
                 // Missing error message if user cannot be created
             }
-
         }
 
-        public void UserEdited()
+        public void UserEdited() // this method needs to change the STATIC properties of the student
         {
             /* WIP */
         }

@@ -29,16 +29,13 @@
                 <asp:Label ID="Description1" runat="server" Text="Label">Description:</asp:Label>
                 <asp:TextBox ID="Description" runat="server" class="form-control"></asp:TextBox>
             </div>
-
-            <asp:Label ID ="Label1" runat="server"></asp:Label>
-
+            
             <div class="form-group">
                 <div class="custom-file">
                     <asp:Label ID="customFile" runat="server" class="custom-file-label">Upload image</asp:Label>
                     <asp:FileUpload ID="FileUpload" runat="server" class="custom-file" for="customFile" />
-
                     <asp:Image ID="Image1" runat="server" Width="250px" Height="250"  />
-
+                    <asp:Literal ID="ImageFeedback" runat="server"></asp:Literal>
                 </div>
             </div>
             <asp:Button ID="Created" runat="server" Text="Create" OnClick="Created_Click" class="btn btn-primary btn-lg" />

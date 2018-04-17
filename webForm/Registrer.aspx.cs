@@ -43,7 +43,6 @@ namespace webForm
                     //Feedback after submission
                     string message = "<span style='color:green;'>User registered</span>" + "<meta http-equiv = 'refresh' content = '2; Login.aspx'>";
                     feedback.Text = message;
-
                 }
                 catch (FormatException)
                 {

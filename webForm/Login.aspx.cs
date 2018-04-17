@@ -35,8 +35,14 @@ namespace webForm
                 if (hashpwd == result[5])
                 {
                     Session["user"] = result[0];
-                    Response.Redirect("~/Default.aspx");
-                    /* hvis der er resultater, videresendes brugeren til main page */
+                    /* If login is succesful, we create a static user and redirects the user to the main page */
+                    Student.ID = int.Parse(result[0]);
+                    Student.FirstName = result[1];
+                    Student.LastName = result[2];
+                    Student.Email = result[3];
+                    Student.Phone = int.Parse(result[4]);
+
+                    Response.Redirect("~/Default.aspx");                 
                 }
                 else
                 {

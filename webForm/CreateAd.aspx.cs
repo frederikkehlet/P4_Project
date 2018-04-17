@@ -18,64 +18,45 @@ namespace webForm
                 Response.Redirect("~/Login.aspx");
             }
         }
-        
+
         protected void Created_Click(object sender, EventArgs e)
         {
-            string title = Title.Text;
-            string type = BookType.SelectedValue;
-            float price = float.Parse(Price.Text);
-            int year = int.Parse(Year.Text);
-            string description = Description.Text;
-            int user_id = Convert.ToInt32(Session["user"]);
-
-            string filePath = Server.MapPath(FileUpload.FileName);
-            Feedback.Text = filePath;
-
             if (!FileUpload.HasFile)
             {
-                Label1.Visible = true;
-                Label1.Text = "Please Select Image File";    //checking if file uploader has no file selected
+                ImageFeedback.Visible = true;
+                ImageFeedback.Text = "<span style='color:red;'>Please Select Image File</span>";    //checking if file uploader has no file selected
             }
             else
             {
-                int length = FileUpload.PostedFile.ContentLength;
-                byte[] pic = new byte[length];
-
-
-                FileUpload.PostedFile.InputStream.Read(pic, 0, length);
-
                 try
                 {
+                    // else create an ad object and store it in the db
+                    string title = Title.Text;
+                    string type = BookType.SelectedValue;
+                    float price = float.Parse(Price.Text);
+                    int year = int.Parse(Year.Text);
+                    string description = Description.Text;
+                    int user_id = Convert.ToInt32(Session["user"]);
+                    int length = FileUpload.PostedFile.ContentLength;
+                    byte[] pic = new byte[length];
+                    FileUpload.PostedFile.InputStream.Read(pic, 0, length);
+
+                    // instantiate the ad object and create it
+                    Ad ad = new Ad(title, year, type, price, description, pic, Student.ID);
+                    ad.CreateAd();
+
+                    ImageFeedback.Visible = true;
+                    ImageFeedback.Text = "<span style='color:green;'>Image Uploaded Sucessfully</span>";  //after Sucessfully uploaded image
+
                     DBConnect connection = new DBConnect();
-                    connection.insertAd(pic, title, year, type, price, description, user_id);
-                    
-                    Label1.Visible = true;
-                    Label1.Text = "Image Uploaded Sucessfully";  //after Sucessfully uploaded image
-
-                   string str = connection.getPic(user_id);
-
+                    string str = connection.getPic(user_id);
                     Image1.ImageUrl = "data:Image/png;base64," + str;
                 }
-                catch(Exception em)
+                catch (Exception em)
                 {
                     Feedback.Text = em.Message;
                 }
-
-
             }
-            //Bitmap j = new Bitmap(filePath);
-
-            //j.Save(@"C:\test.jpg", ImageFormat.Jpeg);
-
-            //image.Save(@"~\test.jpeg", ImageFormat.Jpeg);
-
-            //Response.WriteFile(fileName);
-            //Response.ContentType = "image/png";
-
-            // how to DB?
-
-
-            //Kan fjerne if og flytte det her ned, burde give samme resultalt.
         }
     }
 }

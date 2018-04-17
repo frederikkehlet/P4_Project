@@ -5,40 +5,41 @@ using System.Web;
 
 namespace webForm
 {
-    public enum category {fiction, nonFicion};
-
     public class Ad
     {
         // properties
-
         public string Title { get; set; }
         public int Year { get; set; }
-        public DateTime Date { get; set; }
-        public category Category { get; set; }
+        public string Date { get; set; }
+        public string Category { get; set; }
         public float Price { get; set; }
         public string Description { get; set; }
-        public string Image { get; set; }
-        
-        // add Student type
+        public byte[] Image { get; set; }
+        public int User_id { get; }
 
-         /* Vi skal checke hvilken student der er ejer af denne ad.
-         * Student 
-         */
-
-        // constructors
-        /*
-        public Ad(string title, int year, category category, float price, string description, string image)
+        // constructor
+        public Ad(string title, int year, string category, float price, string description, byte[] image, int user_id)
         {
-            Title =;
-            
+            Title = title;
+            Year = year;
+            Date = DateTime.Now.ToString("yyyyMMddHHmmss"); // inserted automatically
+            Category = category;
+            Price = price;
+            Description = description;
+            Image = image;
+            User_id = user_id;
         }
 
         // methods
         public void CreateAd()
         {
+            DBConnect connection = new DBConnect();
+            connection.InsertAd(Title, Year, Category, Price, Description, Date, Image, User_id);
+        }      
 
-        }
-       */
+        // AdEdited
+
+        // AdDeleted
     }
 }
        
