@@ -12,20 +12,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
-<body> 
+<body>
     <div class="container">
-        <h1>Login</h1>
-        <div class="card card-container">
-            <form class="col-md-6" runat="server">
-                <span id="reauth-email" class="reauth-email"></span>
-                <div class="form-group"> 
-                    <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address"></asp:TextBox>
+        <div class="row vertical-offset-100">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please sign in</h3>
+                    </div>
+                    <div class="card card-container">
+                        <form runat="server">
+                            <span id="reauth-email" class="reauth-email"></span>
+                            <div class="form-group">
+                                <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address"></asp:TextBox>
+                            </div>
+                            <div class="form-group">
+                                <asp:TextBox runat="server" type="password" ID="inputPassword" class="form-control" placeholder="Password"></asp:TextBox>
+                            </div>
+                            <asp:Button ID="loginButton" runat="server" class="btn btn-lg btn-primary btn-block btn-signin" type="submit" OnClick="loginClick" Text="Log in" />
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group">   
-                    <asp:TextBox runat="server" type="password" ID="inputPassword" class="form-control" placeholder="Password"></asp:TextBox>
-                </div>                
-                <asp:Button ID="loginButton" runat="server" class="btn btn-lg btn-primary btn-block btn-signin" type="submit" OnClick="loginClick" Text="Log in" />
-            </form>
+            </div>
         </div>
         <asp:Literal ID="queryResult" runat="server"></asp:Literal>
     </div>
