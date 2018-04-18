@@ -68,6 +68,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BrowseAds.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Default.Master" />
     <None Include="packages.config" />
@@ -87,6 +88,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ad.cs" />
+    <Compile Include="BrowseAds.aspx.cs">
+      <DependentUpon>BrowseAds.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BrowseAds.aspx.designer.cs">
+      <DependentUpon>BrowseAds.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CreateAd.aspx.cs">
       <DependentUpon>CreateAd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
