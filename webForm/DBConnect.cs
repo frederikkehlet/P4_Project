@@ -65,7 +65,7 @@ namespace webForm
                     cmd.Parameters.AddWithValue("@email", email);
                     cmd.Parameters.AddWithValue("@phone", phone);
                     cmd.Parameters.AddWithValue("@password", password);
-                    cmd.ExecuteNonQuery();                
+                    cmd.ExecuteNonQuery();
                 }
                 catch (Exception)
                 {
@@ -196,6 +196,14 @@ namespace webForm
             string strBase64 = Convert.ToBase64String(buf);
 
             return strBase64;
+        }
+
+        public void browseImage()
+        {
+
+            MySqlCommand cmd = new MySqlCommand();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            System.IO.Stream stream = reader.GetStream(1);
         }
     }
 }

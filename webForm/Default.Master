@@ -14,31 +14,38 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <style>
-        /* Remove the navbar's default margin-bottom and rounded borders */ 
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-    }
-    
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-    
-  .carousel-inner img {
-      width: 100%; /* Set width to 100% */
-      margin: auto;
-      min-height:200px;
-  }
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            width: 100%;
+            text-align: center;
+        }
 
-  /* Hide the carousel text when the screen is less than 600 pixels wide */
-  @media (max-width: 600px) {
-    .carousel-caption {
-      display: none; 
-    }
-  }
-  </style>
+        .li {
+            float: none;
+            display: inline-block;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+
+        .carousel-inner img {
+            width: 100%; /* Set width to 100% */
+            margin: auto;
+            min-height: 200px;
+        }
+
+        /* Hide the carousel text when the screen is less than 600 pixels wide */
+        @media (max-width: 600px) {
+            .carousel-caption {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -55,21 +62,36 @@
         }
     </script>
 
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="Default.aspx">Student Market</a>
             </div>
-            <ul class="nav navbar-nav">
-                <li><a href="BrowseAds.aspx">Browse ads</a></li>
-                <li><a href="CreateAd.aspx">Create Ad</a></li>
-            </ul>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="BrowseAds.aspx">Browse ads</a></li>
+                    <li><a href="CreateAd.aspx">Create Ad</a></li>
+                </ul>
+            </div>
 
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="Registrer.aspx"><span class="glyphicon glyphicon-user"></span>Registrer</a></li>
-                <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-            </ul>
 
+            <div>
+                <form class="form-inline" action="/action_page.php">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <input class="form-control" size="35" type="text" placeholder="Search">
+                            <button class="btn btn-success" type="submit">Search</button></li>
+                    </ul>
+                </form>
+            </div>
+
+
+            <div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item"><a href="Registrer.aspx"><span class="glyphicon glyphicon-user"></span>Registrer</a></li>
+                    <li class="nav-item"><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
