@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace webForm
 {
@@ -242,12 +243,15 @@ namespace webForm
             return strBase64;
         }
 
-        public void browseImage()
+        public MySqlDataAdapter imageConn()
         {
-
-            MySqlCommand cmd = new MySqlCommand();
-            MySqlDataReader reader = cmd.ExecuteReader();
-            System.IO.Stream stream = reader.GetStream(1);
+            connection.Open();
+            MySqlCommand cmd =  connection.CreateCommand();
+            cmd.CommandText = "SELECT * FROM ad;";
+            cmd.ExecuteNonQuery();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            connection.Close();
+            return da;
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace webForm
 {
@@ -42,6 +43,17 @@ namespace webForm
                     id++;
                 }
             }
+            browseImage();
+
         }
+        public void browseImage()
+        {
+            DBConnect db = new DBConnect();
+            DataTable dt = new DataTable();
+            db.imageConn().Fill(dt);
+            DataList1.DataSource = dt;
+            DataList1.DataBind();
+        }
+       
     }
 }
