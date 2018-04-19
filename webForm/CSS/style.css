@@ -7,3 +7,7 @@
 .emailStatus {
     color: red;
 }
+
+td {
+    padding: 100px;
+}
