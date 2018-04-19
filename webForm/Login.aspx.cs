@@ -28,7 +28,7 @@ namespace webForm
             string hashpwd = hash.GetMd5Hash(password);
 
             string query = "SELECT * FROM users WHERE email = '" + email + "';";
-            List<string> result = connection.Select(query);
+            List<string> result = connection.SelectUser(query);
 
             if (result.Count != 0)
             {

@@ -113,7 +113,7 @@ namespace webForm
         }
 
         // select statement
-        public List<string> Select(string query)
+        public List<string> SelectUser(string query)
         {
             //Create a list to store the result
             List<string> list = new List<string>();
@@ -153,6 +153,53 @@ namespace webForm
             }
         }
 
+        public List<Ad> SelectAd(string query)
+        {
+            //Create a list to store the ads
+            List<Ad> adList = new List<Ad>();
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                    int ad_id = Convert.ToInt32(dataReader["ad_id"]);
+                    string title = Convert.ToString(dataReader["title"]);
+                    int year = Convert.ToInt32(dataReader["year"]);
+                    string category = Convert.ToString(dataReader["category"]);
+                    float price = float.Parse(Convert.ToString(dataReader["price"]));
+                    string description = Convert.ToString(dataReader["description"]);
+                    string date = Convert.ToString(dataReader["date"]);
+                    byte[] image = (byte[])dataReader["image"];
+                    int user_id = Convert.ToInt32(dataReader["user_id"]);
+
+                    Ad ad = new Ad(title, year, category, price, description, image, user_id);
+                    adList.Add(ad);
+                }              
+
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                connection.Close();
+
+                //return list to be displayed
+                return adList;
+            }
+            else
+            {
+                connection.Close();
+                return adList;
+            }
+        }
+
         // insert statement for inserting ads
         public void InsertAd(string title, int year, string category, float price, string description, string date, Byte[] pic, int user_id)
         {
@@ -188,13 +235,10 @@ namespace webForm
 
         public string getPic(int user_id)
         {
-            connection.Open();
-            MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT image FROM ad WHERE ad_id = (SELECT max(ad_id) FROM ad WHERE user_id =" + user_id + ")";
-            byte[] buf = (byte[])cmd.ExecuteScalar();
-
+            MySqlCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT image FROM ad WHERE ad_id = (SELECT max(ad_id) FROM ad WHERE user_id =" + user_id + ")";
+            byte[] buf = (byte[])command.ExecuteScalar();
             string strBase64 = Convert.ToBase64String(buf);
-
             return strBase64;
         }
 

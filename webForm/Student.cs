@@ -45,7 +45,7 @@ namespace webForm
             {
                 DBConnect connection = new DBConnect();
                 connection.InsertUser(FirstName, LastName, Email, Phone, Password);
-                List<string> result = connection.Select("SELECT * FROM users WHERE email = '" + Email + "';");
+                List<string> result = connection.SelectUser("SELECT * FROM users WHERE email = '" + Email + "';");
                 ID = int.Parse(result[0]);
             }
             catch (Exception)
