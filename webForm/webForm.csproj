@@ -83,6 +83,7 @@
     <Content Include="CreateAd.aspx" />
     <Content Include="Registrer.aspx" />
     <Content Include="CSS\style.css" />
+    <Content Include="Userpage.aspx" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
   </ItemGroup>
@@ -133,6 +134,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Userpage.aspx.cs">
+      <DependentUpon>Userpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Userpage.aspx.designer.cs">
+      <DependentUpon>Userpage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
