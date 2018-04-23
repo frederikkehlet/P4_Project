@@ -23,10 +23,9 @@ namespace webForm
             return Words;
         }
        
-        public Lookup<float,Ad> Percentage()
+        public List<KeyValuePair<int, Ad>> Percentage()
         {
             int wordsSimilar = 0;
-            float percentage;
 
             string[] inputWords = Split(Input);
 
@@ -34,7 +33,8 @@ namespace webForm
 
             string query = "SELECT * FROM ad WHERE user_id != " + Student.ID + ";";
             List<Ad> ads = connection.SelectAd(query);
-            Lookup<float, Ad> sortedAd = new Lookup<float, Ad>();
+            // Lookup<float, Ad> sortedAd = new Lookup<float, Ad>();
+            List<KeyValuePair<int, Ad>> sortedAd = new List<KeyValuePair<int, Ad>>();
 
             foreach (var ad in ads)
             {
@@ -54,9 +54,8 @@ namespace webForm
                 }
 
                 // udregn procent
-                percentage = (wordsSimilar / dbwords.Length) * 100;
-
-                sortedAd.Add(percentage, ad);
+                KeyValuePair<int, Ad> item = new KeyValuePair<int, Ad>(wordsSimilar, ad);
+                if (wordsSimilar != 0) sortedAd.Add(item);              
             }
             return sortedAd;
         } 

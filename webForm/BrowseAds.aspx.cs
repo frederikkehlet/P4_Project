@@ -29,7 +29,6 @@ namespace webForm
             db.imageConn().Fill(dt);
             DataList1.DataSource = dt;
             DataList1.DataBind();
-        }
-       
+        }      
     }
 }

@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
+
     <div>
         <form class="form-inline" runat="server">
             <ul class="nav navbar-nav">
@@ -13,5 +14,37 @@
             </ul>
         </form>
     </div>
-
+    <asp:DataList ID="DataListSearch" runat="server">
+        <ItemTemplate>
+            <div>
+                <div>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tr class="success">
+                                <td>
+                                    <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" height="500" width="300" class="img-thumbnail" alt="Cinque Terre" />
+                                </td>
+                                <td>
+                                    <span><b>Title: </b><%#Eval("title")%></span>
+                                </td>
+                                <td>
+                                    <span><b>Price: </b><%#Eval("price")%></span>
+                                </td>
+                                <td>
+                                    <span><b>year</b></span>
+                                    <%#Eval("year")%>
+                                </td>
+                                <td>
+                                    <span><b>category: </b><%#Eval("category")%></span>
+                                </td>
+                                <td>
+                                    <span><b>Description: </b><%#Eval("description")%></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </ItemTemplate>
+    </asp:DataList>
 </asp:Content>

@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Reflection;
+using MySql.Data.MySqlClient;
 
 namespace webForm
 {
@@ -18,15 +21,33 @@ namespace webForm
         {
             Search search = new Search(searchBox.Text);
 
-            Dictionary<float, Ad> sortedAd = search.Percentage();
+            List<KeyValuePair<int, Ad>> sortedAd = search.Percentage();
 
-            foreach (KeyValuePair<float, Ad> p in sortedAd)
-            {
-                Console.WriteLine("{0} = {1}",
-                    p.Key,
-                    p.Value);
+            sortedAd = sortedAd.OrderByDescending(k => k.Key).ToList();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("image", typeof(byte[]));
+            dt.Columns.Add("title", typeof(string));
+            dt.Columns.Add("price", typeof(float));
+            dt.Columns.Add("year", typeof(int));
+            dt.Columns.Add("category", typeof(string));
+            dt.Columns.Add("description", typeof(string));
+
+            foreach (var ad in sortedAd)
+            {                
+                DataRow dr = dt.NewRow();
+                dr["image"] = ad.Value.Image;
+                dr["title"] = ad.Value.Title;
+                dr["price"] = ad.Value.Price;
+                dr["year"] = ad.Value.Year;
+                dr["category"] = ad.Value.Category;
+                dr["description"] = ad.Value.Description;
+
+                dt.Rows.Add(dr);      
             }
 
+            DataListSearch.DataSource = dt;
+            DataListSearch.DataBind();
         }
     }
 }
