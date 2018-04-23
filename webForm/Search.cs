@@ -14,6 +14,7 @@ namespace webForm
         {
             Input = input;
         }
+
         private string[] Split(string input)
         {
             // Split Input (string) into substrings. Split occurs each time a space is found.
