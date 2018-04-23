@@ -17,19 +17,17 @@ namespace webForm
         private string[] Split(string input)
         {
             // Split Input (string) into substrings. Split occurs each time a space is found.
-
             char[] space = { ' ' };
             string[] Words = input.Split(space);
             return Words;
         }
-
-        
-        public SortedDictionary<float,Ad> Percentage(string input)
+       
+        public SortedDictionary<float,Ad> Percentage()
         {
             int wordsSimilar = 0;
             float percentage;
 
-            string[] inputWords = Split(input);
+            string[] inputWords = Split(Input);
 
             DBConnect connection = new DBConnect();
 

@@ -9,26 +9,31 @@
             <div>
                 <asp:DataList ID="DataList1" runat="server">
                     <ItemTemplate>
-                        <table class="table">
-                            <tr>
-                                <td>
-                                    <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" height="100" width="100"/>
-                                </td>
-                                <td>
-                                    <span><b>Title</b></span>
-                                    <%#Eval("title")%>
-                                </td>
-                                <td>
-                                    <span><b>Price</b></span>
-                                    <%#Eval("price")%>
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr class="success">
+                                    <td>
+                                        <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" height="500" width="300" class="img-thumbnail" alt="Cinque Terre" />
+                                    </td>
+                                    <td>
+                                        <span><b>Title: </b><%#Eval("title")%></span>
+                                        
+                                    </td>
+                                    <td>
+                                        <span><b>Price: </b><%#Eval("price")%> Kr.</span>
+                                        
+                                    </td>
+                                    <td>
+                                        <a href="AdInfo.aspx?AD_ID=<%#Eval("ad_id")%>">Show more</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </ItemTemplate>
                 </asp:DataList>
             </div>
         </form>
 
 
-    </div>    
+    </div>
 </asp:Content>
