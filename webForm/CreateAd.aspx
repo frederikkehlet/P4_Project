@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <asp:Label ID="Price1" runat="server" Text="Label">Price:</asp:Label>
-                <asp:TextBox ID="Price" runat="server" class="form-control" onkeypress='validateint(event)'></asp:TextBox>
+                <asp:TextBox ID="Price" runat="server" maxlength="7" class="form-control" onkeypress='validateint(event)'></asp:TextBox>
             </div>
 
             <div class="form-group">
