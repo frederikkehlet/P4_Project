@@ -84,6 +84,7 @@
     <Content Include="CreateAd.aspx" />
     <Content Include="Registrer.aspx" />
     <Content Include="CSS\style.css" />
+    <Content Include="searchAd.aspx" />
     <Content Include="Userpage.aspx" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
@@ -136,6 +137,13 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Search.cs" />
+    <Compile Include="searchAd.aspx.cs">
+      <DependentUpon>searchAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="searchAd.aspx.designer.cs">
+      <DependentUpon>searchAd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Student.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

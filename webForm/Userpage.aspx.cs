@@ -21,7 +21,6 @@ namespace webForm
                 string query = "Select * FROM users WHERE user_id = " + Session["user_id"] + ";";
                 List<string> users = connection.SelectUser(query);
 
-                foreach ()
             }
         }
 
