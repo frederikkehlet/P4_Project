@@ -253,5 +253,25 @@ namespace webForm
             connection.Close();
             return da;
         }
+        public MySqlDataAdapter adConn(string ad_id)
+        {
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT * FROM ad WHERE ad_id = " + ad_id + ";";
+            cmd.ExecuteNonQuery();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            connection.Close();
+            return da;
+        }
+        public MySqlDataAdapter userConn(string ad_id)
+        {
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "select distinct users.first_name,users.last_name,users.email,users.phone from users join ad on ad.user_id = users.id where ad.ad_id =" + ad_id + ";";
+            cmd.ExecuteNonQuery();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            connection.Close();
+            return da;
+        }
     }
 }
