@@ -17,6 +17,9 @@
                                 <td>
                                     <%#Eval("title")%>
                                 </td>
+                                <td>
+                                    <a href="<%#Eval("ad_id") %>">Link</a> 
+                                </td>
                             </tr>
                         </table>
                     </ItemTemplate>
