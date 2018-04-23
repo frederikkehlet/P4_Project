@@ -9,16 +9,18 @@
             <div>
                 <asp:DataList ID="DataList1" runat="server">
                     <ItemTemplate>
-                        <table>
+                        <table class="table">
                             <tr>
                                 <td>
                                     <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" height="100" width="100"/>
                                 </td>
                                 <td>
+                                    <span><b>Title</b></span>
                                     <%#Eval("title")%>
                                 </td>
                                 <td>
-                                    <a href="<%#Eval("ad_id") %>">Link</a> 
+                                    <span><b>Price</b></span>
+                                    <%#Eval("price")%>
                                 </td>
                             </tr>
                         </table>

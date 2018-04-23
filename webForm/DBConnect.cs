@@ -247,7 +247,7 @@ namespace webForm
         {
             connection.Open();
             MySqlCommand cmd =  connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM ad;";
+            cmd.CommandText = "SELECT * FROM ad WHERE user_id != " + Student.ID + ";";
             cmd.ExecuteNonQuery();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             connection.Close();
