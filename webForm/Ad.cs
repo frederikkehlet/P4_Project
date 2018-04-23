@@ -37,6 +37,10 @@ namespace webForm
             connection.InsertAd(Title, Year, Category, Price, Description, Date, Image, User_id);
         }      
 
+        private void GetId()
+        {
+
+        }
         // AdEdited
 
         // AdDeleted
