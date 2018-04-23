@@ -22,7 +22,7 @@ namespace webForm
             return Words;
         }
        
-        public SortedDictionary<float,Ad> Percentage()
+        public Lookup<float,Ad> Percentage()
         {
             int wordsSimilar = 0;
             float percentage;
@@ -33,8 +33,7 @@ namespace webForm
 
             string query = "SELECT * FROM ad WHERE user_id != " + Student.ID + ";";
             List<Ad> ads = connection.SelectAd(query);
-            List<float> percentageList = new List<float>();
-            SortedDictionary<float, Ad> sortedAd = new SortedDictionary<float, Ad>();
+            Lookup<float, Ad> sortedAd = new Lookup<float, Ad>();
 
             foreach (var ad in ads)
             {

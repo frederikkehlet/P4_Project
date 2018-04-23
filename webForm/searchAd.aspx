@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div>
-        <form class="form-inline" action="/action_page.php">
+        <form class="form-inline" runat="server">
             <ul class="nav navbar-nav">
                 <li>
                     <asp:TextBox ID="searchBox" runat="server"></asp:TextBox>

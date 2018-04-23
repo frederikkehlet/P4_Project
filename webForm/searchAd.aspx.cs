@@ -18,7 +18,14 @@ namespace webForm
         {
             Search search = new Search(searchBox.Text);
 
-            search.Percentage();
+            Dictionary<float, Ad> sortedAd = search.Percentage();
+
+            foreach (KeyValuePair<float, Ad> p in sortedAd)
+            {
+                Console.WriteLine("{0} = {1}",
+                    p.Key,
+                    p.Value);
+            }
 
         }
     }
