@@ -9,6 +9,7 @@ namespace webForm
 {
     public partial class Userpage : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["user"] == null)
@@ -18,10 +19,14 @@ namespace webForm
             else
             {
                 DBConnect connection = new DBConnect();
-                string query = "Select * FROM users WHERE user_id = " + Session["user_id"] + ";";
+                string query = "Select * FROM users WHERE id = " + Student.ID + ";";
                 List<string> users = connection.SelectUser(query);
 
-                foreach ()
+                Firstname.Text = users[1];
+                Lastname.Text = users[2];
+                Email.Text = users[3];
+                Password.Text = users[5];
+                Phonenumber.Text = users[4];
             }
         }
 
