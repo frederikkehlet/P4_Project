@@ -19,10 +19,9 @@ namespace webForm
 
         protected void searchButton_Click(object sender, EventArgs e)
         {
-            Search search = new Search();
+            DBConnect db = new DBConnect();
             DataTable dt = new DataTable();
-            search.SearchFunction(searchBox.Text).Fill(dt);
-
+            db.searchAdapter(searchBox.Text).Fill(dt);
             DataListSearch.DataSource = dt;
             DataListSearch.DataBind();
 

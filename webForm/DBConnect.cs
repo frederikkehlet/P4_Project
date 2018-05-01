@@ -244,6 +244,17 @@ namespace webForm
             return strBase64;
         }
 
+        public MySqlDataAdapter searchAdapter(string input)
+        {
+            connection.Open();
+            MySqlCommand cmd = connection.CreateCommand();
+            cmd.CommandText = "SELECT * FROM ad WHERE title LIKE '%" + input + "%';";
+            cmd.ExecuteNonQuery();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            connection.Close();
+            return da;
+        }
+
         public MySqlDataAdapter imageConn()
         {
             connection.Open();
