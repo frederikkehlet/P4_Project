@@ -9,7 +9,7 @@ namespace webForm
 {
     public class DBConnect
     {
-        private MySqlConnection connection;
+        public MySqlConnection Connection { get; set; }
         private string server;
         private string database;
         private string uid;
@@ -29,7 +29,8 @@ namespace webForm
             password = "1234";
             string connectionString = String.Format("server={0};database={1};uid={2};password={3};",
                 server, database, uid, password);
-            connection = new MySqlConnection(connectionString);
+
+            Connection = new MySqlConnection(connectionString);
         }
 
         // open connection to database
@@ -37,7 +38,7 @@ namespace webForm
         {
             try
             {
-                connection.Open();
+                Connection.Open();
                 return true;
             }
             catch (MySqlException)
@@ -58,7 +59,7 @@ namespace webForm
                     string query = "INSERT INTO users(first_name, last_name, email, phone, password) " +
                    "VALUES(@first_name,@last_name,@email,@phone,@password);";
 
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    MySqlCommand cmd = new MySqlCommand(query, Connection);
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@first_name", first_name);
                     cmd.Parameters.AddWithValue("@last_name", last_name);
@@ -73,7 +74,7 @@ namespace webForm
                 }
                 finally
                 {
-                    connection.Close();
+                    Connection.Close();
                 }
             }
         }
@@ -91,11 +92,11 @@ namespace webForm
                 // assign query
                 cmd.CommandText = query;
                 // assign the connection using Connection
-                cmd.Connection = connection;
+                cmd.Connection = Connection;
                 //execute query
                 cmd.ExecuteNonQuery();
                 // close connection
-                connection.Close();
+                Connection.Close();
             }
         }
 
@@ -106,9 +107,9 @@ namespace webForm
 
             if (this.OpenConnection() == true)
             {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
                 cmd.ExecuteNonQuery();
-                connection.Close();
+                Connection.Close();
             }
         }
 
@@ -122,7 +123,7 @@ namespace webForm
             if (this.OpenConnection() == true)
             {
                 //Create Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
 
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
@@ -142,7 +143,7 @@ namespace webForm
                 dataReader.Close();
 
                 //close Connection
-                connection.Close();
+                Connection.Close();
 
                 //return list to be displayed
                 return list;
@@ -162,7 +163,7 @@ namespace webForm
             if (this.OpenConnection() == true)
             {
                 //Create Command
-                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
 
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
@@ -182,20 +183,20 @@ namespace webForm
 
                     Ad ad = new Ad(title, year, category, price, description, image, user_id);
                     adList.Add(ad);
-                }              
+                }
 
                 //close Data Reader
                 dataReader.Close();
 
                 //close Connection
-                connection.Close();
+                Connection.Close();
 
                 //return list to be displayed
                 return adList;
             }
             else
             {
-                connection.Close();
+                Connection.Close();
                 return adList;
             }
         }
@@ -210,7 +211,7 @@ namespace webForm
                     string query = "INSERT INTO ad (title, year, category, price, description, date, image, user_id) VALUES (@title, @year, @category, @price, " +
                         " @description, @date, @image, @user_id);";
 
-                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    MySqlCommand cmd = new MySqlCommand(query, Connection);
                     cmd.Prepare();
                     cmd.Parameters.AddWithValue("@title", title);
                     cmd.Parameters.AddWithValue("@year", year);
@@ -228,59 +229,59 @@ namespace webForm
                 }
                 finally
                 {
-                    connection.Close();
+                    Connection.Close();
                 }
             }
         }
 
         public string getPic(int user_id)
         {
-            MySqlCommand command = connection.CreateCommand();
+            MySqlCommand command = Connection.CreateCommand();
             command.CommandText = "SELECT image FROM ad WHERE ad_id = (SELECT max(ad_id) FROM ad WHERE user_id =" + user_id + ")";
             byte[] buf = (byte[])command.ExecuteScalar();
             string strBase64 = Convert.ToBase64String(buf);
             return strBase64;
         }
 
-        public MySqlDataAdapter searchAdapter(string input)
+        public MySqlDataAdapter searchAdapter(string input, int min, int max)
         {
-            connection.Open();
-            MySqlCommand cmd = connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM ad WHERE title LIKE '%" + input + "%';";
+            Connection.Open();
+            MySqlCommand cmd = Connection.CreateCommand();
+            cmd.CommandText = "SELECT * FROM ad WHERE title LIKE '%" + input + "%' AND price BETWEEN " + min + " AND " + max + ";";
             cmd.ExecuteNonQuery();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            connection.Close();
+            Connection.Close();
             return da;
         }
 
         public MySqlDataAdapter imageConn()
         {
-            connection.Open();
-            MySqlCommand cmd =  connection.CreateCommand();
+            Connection.Open();
+            MySqlCommand cmd = Connection.CreateCommand();
             cmd.CommandText = "SELECT * FROM ad WHERE user_id != " + Student.ID + ";";
             cmd.ExecuteNonQuery();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            connection.Close();
+            Connection.Close();
             return da;
         }
         public MySqlDataAdapter adConn(string ad_id)
         {
-            connection.Open();
-            MySqlCommand cmd = connection.CreateCommand();
+            Connection.Open();
+            MySqlCommand cmd = Connection.CreateCommand();
             cmd.CommandText = "SELECT * FROM ad WHERE ad_id = " + ad_id + ";";
             cmd.ExecuteNonQuery();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            connection.Close();
+            Connection.Close();
             return da;
         }
         public MySqlDataAdapter userConn(string ad_id)
         {
-            connection.Open();
-            MySqlCommand cmd = connection.CreateCommand();
+            Connection.Open();
+            MySqlCommand cmd = Connection.CreateCommand();
             cmd.CommandText = "select distinct users.first_name,users.last_name,users.email,users.phone from users join ad on ad.user_id = users.id where ad.ad_id =" + ad_id + ";";
             cmd.ExecuteNonQuery();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            connection.Close();
+            Connection.Close();
             return da;
         }
     }
