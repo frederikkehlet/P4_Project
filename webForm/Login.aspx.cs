@@ -34,8 +34,8 @@ namespace webForm
             {
                 if (hashpwd == result[5])
                 {
-                    Session["user"] = result[0];
                     /* If login is succesful, we create a static user and redirects the user to the main page */
+                    Session["user"] = result[0];                   
                     Student.ID = int.Parse(result[0]);
                     Student.FirstName = result[1];
                     Student.LastName = result[2];
@@ -53,7 +53,6 @@ namespace webForm
             {
                 queryResult.Text = "Email incorrect";
             }
-
         }
     }
 }

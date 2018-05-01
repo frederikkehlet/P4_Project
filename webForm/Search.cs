@@ -31,7 +31,7 @@ namespace webForm
 
             DBConnect connection = new DBConnect();
 
-            string query = "SELECT * FROM ad WHERE user_id != " + Student.ID + ";";
+            string query = "SELECT * FROM ad;";
             List<Ad> ads = connection.SelectAd(query);
             // Lookup<float, Ad> sortedAd = new Lookup<float, Ad>();
             List<KeyValuePair<int, Ad>> sortedAd = new List<KeyValuePair<int, Ad>>();

@@ -23,7 +23,7 @@ namespace webForm
 
             List<KeyValuePair<int, Ad>> sortedAd = search.Percentage();
 
-            sortedAd = sortedAd.OrderByDescending(k => k.Key).ToList();
+            sortedAd = sortedAd.OrderBy(k => k.Key).ToList();
 
             DataTable dt = new DataTable();
             dt.Columns.Add("image", typeof(byte[]));
