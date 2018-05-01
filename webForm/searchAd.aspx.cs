@@ -19,20 +19,21 @@ namespace webForm
 
         protected void searchButton_Click(object sender, EventArgs e)
         {
-            Search search = new Search(searchBox.Text);
-
-            List<KeyValuePair<int, Ad>> sortedAd = search.Percentage();
-
-            sortedAd = sortedAd.OrderByDescending(k => k.Key).ToList();
-
+            Search search = new Search();
             DataTable dt = new DataTable();
+            search.SearchFunction(searchBox.Text).Fill(dt);
+
+            DataListSearch.DataSource = dt;
+            DataListSearch.DataBind();
+
+            /*
             dt.Columns.Add("image", typeof(byte[]));
             dt.Columns.Add("title", typeof(string));
             dt.Columns.Add("price", typeof(float));
             dt.Columns.Add("year", typeof(int));
             dt.Columns.Add("category", typeof(string));
             dt.Columns.Add("description", typeof(string));
-
+            
             foreach (var ad in sortedAd)
             {                
                 DataRow dr = dt.NewRow();
@@ -45,9 +46,8 @@ namespace webForm
 
                 dt.Rows.Add(dr);      
             }
-
-            DataListSearch.DataSource = dt;
-            DataListSearch.DataBind();
+            */
+            
         }
     }
 }

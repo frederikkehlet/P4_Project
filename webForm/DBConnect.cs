@@ -21,7 +21,7 @@ namespace webForm
             Initialize();
         }
 
-        private void Initialize()
+        public MySqlConnection Initialize()
         {
             server = "localhost";
             database = "student_market";
@@ -31,10 +31,11 @@ namespace webForm
                 server, database, uid, password);
 
             connection = new MySqlConnection(connectionString);
+            return connection;
         }
 
         // open connection to database
-        private bool OpenConnection()
+        public bool OpenConnection()
         {
             try
             {

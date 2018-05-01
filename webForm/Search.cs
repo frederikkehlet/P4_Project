@@ -10,54 +10,25 @@ namespace webForm
     {
         public string Input { get; set; }
 
-        public Search(string input)
-        {
-            Input = input;
-        }
+        public Search() { }
 
-        private string[] Split(string input)
+        public MySqlDataAdapter SearchFunction(string input)
         {
-            // Split Input (string) into substrings. Split occurs each time a space is found.
-            char[] space = { ' ' };
-            string[] Words = input.Split(space);
-            return Words;
-        }
-       
-        public List<KeyValuePair<int, Ad>> Percentage()
-        {
-            int wordsSimilar = 0;
-
-            string[] inputWords = Split(Input);
-
             DBConnect connection = new DBConnect();
 
-            string query = "SELECT * FROM ad WHERE user_id != " + Student.ID + ";";
-            List<Ad> ads = connection.SelectAd(query);
-            // Lookup<float, Ad> sortedAd = new Lookup<float, Ad>();
-            List<KeyValuePair<int, Ad>> sortedAd = new List<KeyValuePair<int, Ad>>();
+            string query = "SELECT * FROM ad WHERE title LIKE '%" + input + "%';";
+            MySqlConnection conn = connection.Initialize();
 
-            foreach (var ad in ads)
-            {
-                string title = ad.Title;
-                string[] dbwords = Split(title);
+            MySqlCommand cmd = conn.CreateCommand();
 
-                // count how many words are similar
-                for (int i = 0; i < inputWords.Length; i++)
-                {
-                    for (int j = 0; j < dbwords.Length; j++)
-                    {
-                        if (inputWords[i] == dbwords[j])
-                        {
-                            wordsSimilar++;
-                        }
-                    }
-                }
+            cmd.CommandText = query;
+            cmd.ExecuteNonQuery();
 
-                // udregn procent
-                KeyValuePair<int, Ad> item = new KeyValuePair<int, Ad>(wordsSimilar, ad);
-                if (wordsSimilar != 0) sortedAd.Add(item);              
-            }
-            return sortedAd;
-        } 
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            conn.Close();
+            return da;
+        }  
+
+
     }
 }
