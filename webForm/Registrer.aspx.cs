@@ -67,9 +67,7 @@ namespace webForm
                 string messagePassword = "<span style='color:red;'>Password already exists</span>";
                 PasswordStatus.Text = messagePassword;
             }
-
-
-            
+    
         }
 
         private bool checkEmail()
