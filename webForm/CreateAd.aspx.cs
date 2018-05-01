@@ -47,10 +47,6 @@ namespace webForm
 
                     ImageFeedback.Visible = true;
                     ImageFeedback.Text = "<span style='color:green;'>Image Uploaded Sucessfully</span>";  //after Sucessfully uploaded image
-
-                    DBConnect connection = new DBConnect();
-                    string str = connection.getPic(user_id);
-                    Image1.ImageUrl = "data:Image/png;base64," + str;
                 }
                 catch (Exception em)
                 {
