@@ -6,11 +6,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
             <form id="form" runat="server" class="col-md-12">
+            <asp:Button ID="Edit1" runat="server" Text="Edit user information"/>
             <div class="form-group">
                 <asp:Label ID="Firstn" runat="server" Text="Label">Firstname</asp:Label>
                 <asp:TextBox ID="Firstname" runat="server" class="form-control"></asp:TextBox>
             </div>
-
             <div class="form-group">
                 <asp:Label ID="Lastn" runat="server" Text="Label">Lastname</asp:Label>
                 <asp:TextBox ID="Lastname" runat="server" class="form-control"></asp:TextBox>
@@ -21,7 +21,7 @@
             </div>
             <div class="form-group">
                 <asp:Label ID="Pword" runat="server" Text="Label">password</asp:Label>
-                <asp:TextBox ID="Password" runat="server" class="form-control"></asp:TextBox>
+                <asp:TextBox ID="Password" input type="password"  runat="server" class="form-control"></asp:TextBox>
             </div>
             <div class="form-group">
                 <asp:Label ID="Phon" runat="server" Text="Label">Phonenumber</asp:Label>

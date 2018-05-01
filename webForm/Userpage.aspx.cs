@@ -29,8 +29,13 @@ namespace webForm
                 Phonenumber.Text = users[4];
             }
         }
+        /*
+        protected void Onclick(object sender, EventArgs e)
+        {
+            DBConnect connection = new DBConnect();
+            string query = "UPDATE users SET first_name = 'Firstname.Text', last_name = 'Lastname.Text', email = 'Email.txt', phone = 'Phonenumber.text', password = 'Password.text' WHERE id = " + Student.ID + ";";
 
-
-
+        }
+        */
     }
 }

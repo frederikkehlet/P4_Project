@@ -19,35 +19,33 @@ namespace webForm
 
         protected void searchButton_Click(object sender, EventArgs e)
         {
-            Search search = new Search(searchBox.Text);
+            int min;
+            int max;
 
-            List<KeyValuePair<int, Ad>> sortedAd = search.Percentage();
+            if (searchBox.Text == null) searchBox.Text = "";
+            if (Int32.TryParse(minPrice.Text, out min) == false) min = 0;
+            if (Int32.TryParse(maxPrice.Text, out max) == false) max = MaxPrice();
 
-            sortedAd = sortedAd.OrderBy(k => k.Key).ToList();
-
+            DBConnect db = new DBConnect();
             DataTable dt = new DataTable();
-            dt.Columns.Add("image", typeof(byte[]));
-            dt.Columns.Add("title", typeof(string));
-            dt.Columns.Add("price", typeof(float));
-            dt.Columns.Add("year", typeof(int));
-            dt.Columns.Add("category", typeof(string));
-            dt.Columns.Add("description", typeof(string));
 
-            foreach (var ad in sortedAd)
-            {                
-                DataRow dr = dt.NewRow();
-                dr["image"] = ad.Value.Image;
-                dr["title"] = ad.Value.Title;
-                dr["price"] = ad.Value.Price;
-                dr["year"] = ad.Value.Year;
-                dr["category"] = ad.Value.Category;
-                dr["description"] = ad.Value.Description;
 
-                dt.Rows.Add(dr);      
-            }
-
+            db.searchAdapter(searchBox.Text, min, max).Fill(dt);
             DataListSearch.DataSource = dt;
             DataListSearch.DataBind();
+        }
+
+        private int MaxPrice()
+        {
+            DBConnect connection = new DBConnect();
+            connection.Connection.Open();
+            string query = "SELECT MAX(price) FROM ad";
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = query;
+            cmd.Connection = connection.Connection;
+            var max = cmd.ExecuteScalar();
+            connection.Connection.Close();
+            return Convert.ToInt32(max);
         }
     }
 }
