@@ -79,8 +79,8 @@ namespace webForm
             }
         }
 
-        // update statement
-        public void Update(string tableName, string values, int id)
+        // update statement for ad
+        public void UpdateAd(string tableName, string values, int id)
         {
             string query = "UPDATE " + tableName + " SET " + values + " WHERE id=" + id + ";";
 
@@ -100,10 +100,16 @@ namespace webForm
             }
         }
 
-        // delete statement
-        public void Delete(string tableName, int id)
+        // update statement for user
+        public void UpdateUser()
         {
-            string query = "DELETE FROM " + tableName + " WHERE id=" + id + ";";
+
+        }
+
+        // delete statement for ad
+        public void DeleteAd(int ad_id)
+        {
+            string query = "DELETE FROM ad WHERE ad_id = " + ad_id + ";";
 
             if (this.OpenConnection() == true)
             {
@@ -113,7 +119,13 @@ namespace webForm
             }
         }
 
-        // select statement
+        // delete statement for user
+        public void DeleteUser()
+        {
+
+        }
+
+        // select statement for user
         public List<string> SelectUser(string query)
         {
             //Create a list to store the result
@@ -154,6 +166,7 @@ namespace webForm
             }
         }
 
+        // select statement for ad
         public List<Ad> SelectAd(string query)
         {
             //Create a list to store the ads
@@ -255,6 +268,18 @@ namespace webForm
             Connection.Close();
             return da;
         }
+
+        public MySqlDataAdapter userAdConn()
+        {
+            Connection.Open();
+            MySqlCommand cmd = Connection.CreateCommand();
+            cmd.CommandText = "SELECT * FROM ad WHERE user_id = " + Student.ID + ";";
+            cmd.ExecuteNonQuery();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            Connection.Close();
+            return da;
+        }
+
         public MySqlDataAdapter adConn(string ad_id)
         {
             Connection.Open();

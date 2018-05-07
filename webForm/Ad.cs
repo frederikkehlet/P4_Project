@@ -17,6 +17,8 @@ namespace webForm
         public byte[] Image { get; set; }
         public int User_id { get; }
 
+        public Ad() { }
+
         // constructor
         public Ad(string title, int year, string category, float price, string description, byte[] image, int user_id)
         {
@@ -38,8 +40,18 @@ namespace webForm
         }      
 
         // AdEdited
+        public void AdEdited()
+        {
+            DBConnect connection = new DBConnect();
+            //connection.UpdateAd()
+        }
 
         // AdDeleted
+        public void AdDeleted(int ad_id)
+        {
+            DBConnect connection = new DBConnect();
+            connection.DeleteAd(ad_id);
+        }
     }
 }
        

@@ -19,8 +19,7 @@
                                         <span><b>Title: </b><%#Eval("title")%></span>
                                     </td>
                                     <td>
-                                        <span><b>Price: </b><%#Eval("price")%> Kr.</span>
-                                        
+                                        <span><b>Price: </b><%#Eval("price")%> Kr.</span>                                       
                                     </td>
                                     <td>
                                         <a href="AdInfo.aspx?AD_ID=<%#Eval("ad_id")%>">Show more</a>

@@ -16,9 +16,7 @@
     <div class="container">
         <div class="row vertical-offset-100">
             <div class="col-md-4 col-md-offset-4">
-
                 <h3>Please sign in</h3>
-
                 <form runat="server">
                     <span id="reauth-email" class="reauth-email"></span>
                     <div class="form-group">
