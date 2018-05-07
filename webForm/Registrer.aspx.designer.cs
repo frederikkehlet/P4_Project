@@ -22,15 +22,6 @@ namespace webForm {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// emailLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label emailLabel;
-        
-        /// <summary>
         /// emailTextBox control.
         /// </summary>
         /// <remarks>
@@ -47,15 +38,6 @@ namespace webForm {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal EmailStatus;
-        
-        /// <summary>
-        /// passwordLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label passwordLabel;
         
         /// <summary>
         /// passwordTextBox control.
@@ -76,15 +58,6 @@ namespace webForm {
         protected global::System.Web.UI.WebControls.Literal PasswordStatus;
         
         /// <summary>
-        /// firstNameLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label firstNameLabel;
-        
-        /// <summary>
         /// firstNameTextBox control.
         /// </summary>
         /// <remarks>
@@ -94,15 +67,6 @@ namespace webForm {
         protected global::System.Web.UI.WebControls.TextBox firstNameTextBox;
         
         /// <summary>
-        /// lastNameLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lastNameLabel;
-        
-        /// <summary>
         /// lastNameTextBox control.
         /// </summary>
         /// <remarks>
@@ -110,15 +74,6 @@ namespace webForm {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lastNameTextBox;
-        
-        /// <summary>
-        /// phoneLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label phoneLabel;
         
         /// <summary>
         /// phoneTextBox control.

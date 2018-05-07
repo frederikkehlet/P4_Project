@@ -25,47 +25,46 @@
     </script>
 
     <div class="container">
-        <form id="form1" class="col-md-6" runat="server">
-            <div>
-                <h1>Register</h1>
-                <!-- This is a server controller.
+        <div class="row vertical-offset-100">
+            <div class="col-md-8 col-md-offset-4">
+                <form id="form1" class="col-md-6" runat="server">
+                    <div>
+                        <h3>Register</h3>
+                        <!-- This is a server controller.
                 The ID is used to access properties from server-side code -->
-                <div class="form-group">
-                    <asp:Label ID="emailLabel" runat="server" Text="Label">Email: </asp:Label>
-                    <asp:TextBox ID="emailTextBox" runat="server" type="email" required="required" placeholder="Email" class="form-control"></asp:TextBox>
-                    <asp:Literal ID="EmailStatus" runat="server"></asp:Literal>
-                </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="emailTextBox" runat="server" type="email" required="required" placeholder="Email" class="form-control"></asp:TextBox>
+                            <asp:Literal ID="EmailStatus" runat="server"></asp:Literal>
+                        </div>
 
-                <div class="form-group">
-                    <asp:Label ID="passwordLabel" runat="server" Text="Label">Password: </asp:Label>
-                    <asp:TextBox ID="passwordTextBox" runat="server" type="password" required="required" placeholder="Password" class="form-control"></asp:TextBox>
-                    <asp:Literal ID="PasswordStatus" runat="server"></asp:Literal>
-                </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="passwordTextBox" runat="server" type="password" required="required" placeholder="Password" class="form-control"></asp:TextBox>
+                            <asp:Literal ID="PasswordStatus" runat="server"></asp:Literal>
+                        </div>
 
-                <div class="form-group">
-                    <asp:Label ID="firstNameLabel" runat="server" Text="Label">First name: </asp:Label>
-                    <asp:TextBox ID="firstNameTextBox" runat="server" required="required" placeholder="First name" class="form-control" onkeypress='validate(event)'></asp:TextBox>
-                </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="firstNameTextBox" runat="server" required="required" placeholder="First name" class="form-control" onkeypress='validate(event)'></asp:TextBox>
+                        </div>
 
-                <div class="form-group">
-                    <asp:Label ID="lastNameLabel" runat="server" Text="Label">Last name: </asp:Label>
-                    <asp:TextBox ID="lastNameTextBox" runat="server" required="required" placeholder="Last name" class="form-control" onkeypress='validate(event)'></asp:TextBox>
-                </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="lastNameTextBox" runat="server" required="required" placeholder="Last name" class="form-control" onkeypress='validate(event)'></asp:TextBox>
+                        </div>
 
-                <div class="form-group">
-                    <asp:Label ID="phoneLabel" runat="server" Text="Label">Phone number: </asp:Label>
-                    <asp:TextBox ID="phoneTextBox" runat="server" type="tel" required="required" placeholder="Phone" class="form-control"></asp:TextBox>
-                    <asp:Literal ID="PhoneStatus" runat="server"></asp:Literal>
-                </div>
+                        <div class="form-group">
+                            <asp:TextBox ID="phoneTextBox" runat="server" type="tel" required="required" placeholder="Phone" class="form-control"></asp:TextBox>
+                            <asp:Literal ID="PhoneStatus" runat="server"></asp:Literal>
+                        </div>
 
-                <div class="form-group">
-                    <!-- UserCreated method to be used here instead, hej frederik, kan du se det her, jo det kan ske -->
-                    <asp:Button ID="submitButton" runat="server" Text="Submit" OnClick="submitButton_Click" class="btn btn-primary" />
-                </div>
-
-                <asp:Literal ID="feedback" runat="server"></asp:Literal>
+                        <div class="form-group">
+                            <!-- UserCreated method to be used here instead, hej frederik, kan du se det her, jo det kan ske -->
+                            <asp:Button ID="submitButton" runat="server" Text="Register" OnClick="submitButton_Click" class="btn btn-lg btn-primary btn-block btn-signin" />
+                        </div>   
+                    </div>            
+                    <span>Already have a user? <a href="Login.aspx">Log in</a> here.</span><br />
+                    <asp:Literal ID="feedback" runat="server"></asp:Literal>
+                </form>
             </div>
-        </form>
+        </div>
     </div>
 </body>
 </html>

@@ -16,26 +16,25 @@
     <div class="container">
         <div class="row vertical-offset-100">
             <div class="col-md-4 col-md-offset-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Please sign in</h3>
+
+                <h3>Please sign in</h3>
+
+                <form runat="server">
+                    <span id="reauth-email" class="reauth-email"></span>
+                    <div class="form-group">
+                        <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address" required="required"></asp:TextBox>
                     </div>
-                    <div class="card card-container">
-                        <form runat="server">
-                            <span id="reauth-email" class="reauth-email"></span>
-                            <div class="form-group">
-                                <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address" required="required"></asp:TextBox>
-                            </div>
-                            <div class="form-group">
-                                <asp:TextBox runat="server" type="password" ID="inputPassword" class="form-control" placeholder="Password" required="required"></asp:TextBox>
-                            </div>
-                            <asp:Button ID="loginButton" runat="server" class="btn btn-lg btn-primary btn-block btn-signin" type="submit" OnClick="loginClick" Text="Log in" />
-                        </form>
+                    <div class="form-group">
+                        <asp:TextBox runat="server" type="password" ID="inputPassword" class="form-control" placeholder="Password" required="required"></asp:TextBox>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <asp:Button ID="loginButton" runat="server" class="btn btn-lg btn-primary btn-block btn-signin" type="submit" OnClick="loginClick" Text="Log in" />
+                    </div>   
+                </form>
+                <span>Don't have a user? <a href="Registrer.aspx">Register </a>here.</span><br />
+                <asp:Literal ID="queryResult" runat="server"></asp:Literal>
             </div>
         </div>
-        <asp:Literal ID="queryResult" runat="server"></asp:Literal>
     </div>
 </body>
 </html>
