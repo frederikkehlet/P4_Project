@@ -9,11 +9,8 @@
             <ul class="nav navbar-nav">
                 <li>
                     <asp:TextBox ID="searchBox" runat="server" placeholder="Title"></asp:TextBox>
-              
                     <asp:TextBox ID="minPrice" runat="server" placeholder="Minimum price"></asp:TextBox>
-               
                     <asp:TextBox ID="maxPrice" runat="server" placeholder="Maximum price"></asp:TextBox>
-
                     <asp:Button ID="searchButton" runat="server" Text="Search" OnClick="searchButton_Click" />
                 </li>
             </ul>
