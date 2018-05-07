@@ -17,7 +17,6 @@
                                     </td>
                                     <td>
                                         <span><b>Title: </b><%#Eval("title")%></span>
-                                        
                                     </td>
                                     <td>
                                         <span><b>Price: </b><%#Eval("price")%> Kr.</span>

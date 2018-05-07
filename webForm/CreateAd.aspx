@@ -7,34 +7,34 @@
             <h1>Create an ad</h1>
             <div class="form-group">
                 <asp:Label ID="Titleofbook" runat="server" Text="Label">Title of book:</asp:Label>
-                <asp:TextBox ID="Title" runat="server" class="form-control"></asp:TextBox>
+                <asp:TextBox ID="Title" runat="server" class="form-control" required="required"></asp:TextBox>
             </div>
-            <div class ="form-group">
-                <asp:Label ID="Year1" runat="server" Text="Label">Year published</asp:Label>
-                <asp:TextBox ID="Year" runat="server" class="form-control" onkeypress='validateint(event)'></asp:TextBox>
+            <div class="form-group">
+                <asp:Label ID="Year1" runat="server" Text="Label">Year published:</asp:Label>
+                <asp:TextBox ID="Year" runat="server" class="form-control" onkeypress='validateint(event)' required="required"></asp:TextBox>
             </div>
-            <div>
-            <asp:DropDownList CssClass="form-control" ID="BookType" runat="server">
-                <asp:ListItem Value="Chose a category"></asp:ListItem>
-                <asp:ListItem Value="fiction">Fiction</asp:ListItem>
-                <asp:ListItem Value="non-fiction">Non-Fiction</asp:ListItem>
-            </asp:DropDownList>
+            <div class="form-group">
+                <asp:Label ID="Category" runat="server" Text="Label">Category:</asp:Label>
+                <asp:DropDownList CssClass="form-control" ID="BookType" runat="server" required="required">
+                    <asp:ListItem Value="Chose a category"></asp:ListItem>
+                    <asp:ListItem Value="fiction">Fiction</asp:ListItem>
+                    <asp:ListItem Value="non-fiction">Non-Fiction</asp:ListItem>
+                </asp:DropDownList>
             </div>
             <div class="form-group">
                 <asp:Label ID="Price1" runat="server" Text="Label">Price:</asp:Label>
-                <asp:TextBox ID="Price" runat="server" maxlength="7" class="form-control" onkeypress='validateint(event)'></asp:TextBox>
+                <asp:TextBox ID="Price" runat="server" MaxLength="7" class="form-control" onkeypress='validateint(event)' required="required"></asp:TextBox>
             </div>
 
             <div class="form-group">
                 <asp:Label ID="Description1" runat="server" Text="Label">Description:</asp:Label>
                 <asp:TextBox ID="Description" runat="server" class="form-control"></asp:TextBox>
             </div>
-            
+
             <div class="form-group">
                 <div class="custom-file">
                     <asp:Label ID="customFile" runat="server" class="custom-file-label">Upload image</asp:Label>
                     <asp:FileUpload ID="FileUpload" runat="server" class="custom-file" for="customFile" />
-                    <asp:Image ID="Image1" runat="server" Width="250px" Height="250"  />
                     <asp:Literal ID="ImageFeedback" runat="server"></asp:Literal>
                 </div>
             </div>

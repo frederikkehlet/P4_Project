@@ -63,6 +63,6 @@
     <br>
 
     <footer class="container-fluid text-center">
-        <p>Lavet udelukkende af Andreas den smukke</p>
+        <p>Lavet udelukkende af Andreas den dumme<3</p>
     </footer>
 </asp:Content>

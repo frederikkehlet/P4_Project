@@ -24,10 +24,10 @@
                         <form runat="server">
                             <span id="reauth-email" class="reauth-email"></span>
                             <div class="form-group">
-                                <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address"></asp:TextBox>
+                                <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address" required="required"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <asp:TextBox runat="server" type="password" ID="inputPassword" class="form-control" placeholder="Password"></asp:TextBox>
+                                <asp:TextBox runat="server" type="password" ID="inputPassword" class="form-control" placeholder="Password" required="required"></asp:TextBox>
                             </div>
                             <asp:Button ID="loginButton" runat="server" class="btn btn-lg btn-primary btn-block btn-signin" type="submit" OnClick="loginClick" Text="Log in" />
                         </form>

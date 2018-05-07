@@ -234,15 +234,6 @@ namespace webForm
             }
         }
 
-        public string getPic(int user_id)
-        {
-            MySqlCommand command = Connection.CreateCommand();
-            command.CommandText = "SELECT image FROM ad WHERE ad_id = (SELECT max(ad_id) FROM ad WHERE user_id =" + user_id + ")";
-            byte[] buf = (byte[])command.ExecuteScalar();
-            string strBase64 = Convert.ToBase64String(buf);
-            return strBase64;
-        }
-
         public MySqlDataAdapter searchAdapter(string input, int min, int max)
         {
             Connection.Open();
