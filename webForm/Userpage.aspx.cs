@@ -35,14 +35,15 @@ namespace webForm
                 DataList1.DataBind();
             }
         }
-
-        protected void LinkButton1_Click(object sender, EventArgs e)
-        {
-            LinkButton btn = (LinkButton)sender;
-            Literal1.Text = btn.Text;
-           
-        }
         
+        
+        protected void Delete_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            int ad_id = Convert.ToInt32(btn.ID);
+
+            Ad ad = new Ad();
+            ad.AdDeleted(ad_id);
+        }   
     }
-   
 }

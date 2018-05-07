@@ -55,20 +55,18 @@
                                         <a href="AdInfo.aspx?AD_ID=<%#Eval("ad_id")%>">Show more</a>
                                     </td>
                                     <td>
-
+                                        <a href="AdDelete.aspx?AD_ID=<%#Eval("ad_id")%>" class="btn btn-xs btn-danger">Delete ad</a>
                                     </td>
                                     <td>
-
+                                        <asp:Button ID="updateButton" runat="server" Text="Update ad" class="btn btn-xs btn-primary btn-block btn-signin" />
                                     </td>
                                 </tr>
                             </table>
                         </div>
                     </ItemTemplate>
-                </asp:DataList> 
-                <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+                </asp:DataList>   
             </div>
             </form>
-            
         </div>
     </div>
 </asp:Content>
