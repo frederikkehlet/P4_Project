@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace webForm
 {
@@ -27,15 +28,19 @@ namespace webForm
                 Email.Text = users[3];
                 Password.Text = users[5];
                 Phonenumber.Text = users[4];
+
+                DataTable dt = new DataTable();
+                connection.userAdConn().Fill(dt);
+                DataList1.DataSource = dt;
+                DataList1.DataBind();
             }
         }
-        /*
-        protected void Onclick(object sender, EventArgs e)
+        
+        protected void Delete_Click(object sender, CommandEventArgs e)
         {
-            DBConnect connection = new DBConnect();
-            string query = "UPDATE users SET first_name = 'Firstname.Text', last_name = 'Lastname.Text', email = 'Email.txt', phone = 'Phonenumber.text', password = 'Password.text' WHERE id = " + Student.ID + ";";
-
-        }
-        */
+            int ad_id = Convert.ToInt32(e.CommandArgument.ToString());
+            Ad ad = new Ad();
+            ad.AdDeleted(ad_id); 
+        }   
     }
 }

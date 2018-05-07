@@ -9,8 +9,8 @@
                 <asp:DataList ID="DataList2" runat="server">
                     <ItemTemplate>
                         <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <tr class="success">
+                            <table class="table">
+                                <tr class="info">
                                     <td>
                                         <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" height="500" width="300" class="img-thumbnail" alt="Cinque Terre" />
                                     </td>
@@ -28,12 +28,9 @@
                                         <span><b>category: </b><%#Eval("category")%></span>
                                     </td>
                                     <td>
-                                        
-                                            <span><b>Description: </b><%#Eval("description")%></span>
-                                       
+                                        <span><b>Description: </b><%#Eval("description")%></span>
                                     </td>
                                 </tr>
-
                             </table>
                         </div>
                     </ItemTemplate>
@@ -50,7 +47,6 @@
                                 </td>
                                 <td>
                                     <span><b>Email: </b><%#Eval("email")%></span>
-
                                 </td>
                                 <td>
                                     <span><b>Phone: </b><%#Eval("phone")%></span>
@@ -60,7 +56,6 @@
                     </div>
                 </ItemTemplate>
             </asp:DataList>
-
         </form>
     </div>
 </asp:Content>
