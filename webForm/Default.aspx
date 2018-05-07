@@ -14,16 +14,16 @@
             <div class="item active">
                 <img src="http://www.girltalktv.com/wp-content/uploads/2016/11/o-BOOK-CLUB-BOOKS-facebook-600x200.jpg" alt="Image">
                 <div class="carousel-caption">
-                    <h3>Student market</h3>
-                    <p>Tekst af hvad siden er eller gør</p>
+                    <h3>Student Market</h3>
+                    <p>Login in or registrer to buy or sell books</p>
                 </div>
             </div>
 
             <div class="item">
                 <img src="https://placehold.it/1200x400?text=Another Image Maybe" alt="Image">
                 <div class="carousel-caption">
-                    <h3>En AD</h3>
-                    <p>Måske idk</p>
+                    <h3>What is </h3>
+                    <p>What is this?!</p>
                 </div>
             </div>
         </div>
@@ -39,12 +39,12 @@
     </div>
 
     <div class="container text-center">
-        <h3>Hvem er vi?</h3>
+        <h3>About this page</h3>
         <br>
         <div class="row">
             <div class="col-sm-4">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
-                <p>Jeg ved det ikke nr.1</p>
+                 <img src="https://fingertipstyping.co.uk/wp-content/uploads/2016/11/focus-group-sillhouette-700x313.jpg" class="img-responsive" style="width: 100%" alt="Image">
+                <p>We are a group of 5 students who had trouble finding study related books cheap. Therfore we thought making a marketplace for selling and buying books would be a perfect soulotion. Now everbody can benefit and help other students</p>
             </div>
             <div class="col-sm-4">
                 <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">

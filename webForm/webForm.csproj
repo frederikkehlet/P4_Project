@@ -84,6 +84,7 @@
     <Content Include="CreateAd.aspx" />
     <Content Include="Registrer.aspx" />
     <Content Include="CSS\style.css" />
+    <None Include="Resources\Group.png" />
     <Content Include="searchAd.aspx" />
     <Content Include="Userpage.aspx" />
     <Content Include="Web.config" />
@@ -128,6 +129,11 @@
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
     <Compile Include="Hash.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Registrer.aspx.cs">
       <DependentUpon>Registrer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -158,6 +164,12 @@
     <Compile Include="Userpage.aspx.designer.cs">
       <DependentUpon>Userpage.aspx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
