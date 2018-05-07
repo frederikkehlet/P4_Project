@@ -55,7 +55,7 @@
                                         <a href="AdInfo.aspx?AD_ID=<%#Eval("ad_id")%>">Show more</a>
                                     </td>
                                     <td>
-                                        <asp:Button runat="server" Text="Delete ad" OnClick="Delete_Click" class="btn btn-xs btn-danger btn-block btn-signin" />
+                                        <a href="AdDelete.aspx?AD_ID=<%#Eval("ad_id")%>" class="btn btn-xs btn-danger">Delete ad</a>
                                     </td>
                                     <td>
                                         <asp:Button ID="updateButton" runat="server" Text="Update ad" class="btn btn-xs btn-primary btn-block btn-signin" />

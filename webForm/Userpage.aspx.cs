@@ -36,11 +36,14 @@ namespace webForm
             }
         }
         
-        protected void Delete_Click(object sender, CommandEventArgs e)
+        
+        protected void Delete_Click(object sender, EventArgs e)
         {
-            int ad_id = Convert.ToInt32(e.CommandArgument.ToString());
+            Button btn = (Button)sender;
+            int ad_id = Convert.ToInt32(btn.ID);
+
             Ad ad = new Ad();
-            ad.AdDeleted(ad_id); 
+            ad.AdDeleted(ad_id);
         }   
     }
 }
