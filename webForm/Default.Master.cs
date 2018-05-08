@@ -14,5 +14,11 @@ namespace webForm
             User_Name.Text = Student.FirstName;
         
         }
+
+        protected void logOut_Click(object sender, EventArgs e)
+        {
+            Session["user"] = null;
+            Response.Redirect("~/Login.aspx");
+        }
     }
 }

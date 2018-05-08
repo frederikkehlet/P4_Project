@@ -101,9 +101,25 @@ namespace webForm
         }
 
         // update statement for user
-        public void UpdateUser()
+        public void UpdateUser(string firstname, string lastname, string email, int phone)
         {
+            string query = "UPDATE users SET first_name = '" + firstname + "', last_name = '" + lastname + "', email = '" + email + "', phone = "
+                + phone + " WHERE id = " + Student.ID + ";";
 
+            // open connection
+            if (this.OpenConnection() == true)
+            {
+                // create command 
+                MySqlCommand cmd = new MySqlCommand();
+                // assign query
+                cmd.CommandText = query;
+                // assign the connection using Connection
+                cmd.Connection = Connection;
+                //execute query
+                cmd.ExecuteNonQuery();
+                // close connection
+                Connection.Close();
+            }
         }
 
         // delete statement for ad
@@ -120,9 +136,16 @@ namespace webForm
         }
 
         // delete statement for user
-        public void DeleteUser()
+        public void DeleteUser(int id)
         {
+            string query = "DELETE FROM users WHERE id = " + id + ";";
 
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+                cmd.ExecuteNonQuery();
+                Connection.Close();
+            }
         }
 
         // select statement for user

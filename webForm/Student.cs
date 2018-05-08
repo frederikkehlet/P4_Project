@@ -18,6 +18,8 @@ namespace webForm
         public static int ID { get; set; }
 
         // add constructor(s)
+        public Student() { }
+
         // this constructor is used for creating a user object and storing it in the db
         public Student(string firstName, string lastName, string email, int phone, string password)
         {        
@@ -50,18 +52,40 @@ namespace webForm
             }
             catch (Exception)
             {
-                // Missing error message if user cannot be created
+                throw;
             }
         }
 
-        public void UserEdited() // this method needs to change the STATIC properties of the student
+        // this method calls update user with the static properties
+        public void UserEdited(string firstname, string lastname, string email, int phone) 
         {
-            /* WIP */
+            try
+            {
+                FirstName = firstname;
+                LastName = lastname;
+                Email = email;
+                Phone = phone;
+                DBConnect connection = new DBConnect();
+                connection.UpdateUser(FirstName,LastName,Email,Phone);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
 
         public void UserDeleted()
         {
-            /* WIP */
+            try
+            {
+                DBConnect connection = new DBConnect();
+                connection.DeleteUser(Student.ID);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

@@ -12,11 +12,22 @@
 </head>
 <body>
     <script>
-        function validate(evt) {
+        function validateNum(evt) {
             var theEvent = evt || window.event;
             var key = theEvent.keyCode || theEvent.which;
             key = String.fromCharCode(key);
             var regex = /[a-å,A-Å]|\./;
+            if (!regex.test(key)) {
+                theEvent.returnValue = false;
+                if (theEvent.preventDefault) theEvent.preventDefault();
+            }
+        }
+
+        function validateLetter(evt) {
+            var theEvent = evt || window.event;
+            var key = theEvent.keyCode || theEvent.which;
+            key = String.fromCharCode(key);
+            var regex = /[0-9]|\./;
             if (!regex.test(key)) {
                 theEvent.returnValue = false;
                 if (theEvent.preventDefault) theEvent.preventDefault();
@@ -43,15 +54,15 @@
                         </div>
 
                         <div class="form-group">
-                            <asp:TextBox ID="firstNameTextBox" runat="server" required="required" placeholder="First name" class="form-control" onkeypress='validate(event)'></asp:TextBox>
+                            <asp:TextBox ID="firstNameTextBox" runat="server" required="required" placeholder="First name" class="form-control" onkeypress='validateNum(event)'></asp:TextBox>
                         </div>
 
                         <div class="form-group">
-                            <asp:TextBox ID="lastNameTextBox" runat="server" required="required" placeholder="Last name" class="form-control" onkeypress='validate(event)'></asp:TextBox>
+                            <asp:TextBox ID="lastNameTextBox" runat="server" required="required" placeholder="Last name" class="form-control" onkeypress='validateNum(event)'></asp:TextBox>
                         </div>
 
                         <div class="form-group">
-                            <asp:TextBox ID="phoneTextBox" runat="server" type="tel" required="required" placeholder="Phone" class="form-control"></asp:TextBox>
+                            <asp:TextBox ID="phoneTextBox" runat="server" type="tel" required="required" placeholder="Phone" class="form-control" onkeypress='validateLetter(event)'></asp:TextBox>
                             <asp:Literal ID="PhoneStatus" runat="server"></asp:Literal>
                         </div>
 
