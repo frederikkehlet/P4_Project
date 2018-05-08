@@ -2,17 +2,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-        </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img src="http://www.girltalktv.com/wp-content/uploads/2016/11/o-BOOK-CLUB-BOOKS-facebook-600x200.jpg" alt="Image">
+                <img src="http://www.brianwalkerlawfirm.com/wp-content/uploads/sites/189/2015/08/Books-on-table.jpg" alt="Image">
                 <div class="carousel-caption">
                     <h3>Student Market</h3>
                     <p>Login in or registrer to buy or sell books</p>
@@ -27,16 +21,6 @@
                 </div>
             </div>
         </div>
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Tilbage</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Frem</span>
-        </a>
-    </div>
 
     <div class="container text-center">
         <h3>About this page</h3>
@@ -47,15 +31,16 @@
                 <p>We are a group of 5 students who had trouble finding study related books cheap. Therfore we thought making a marketplace for selling and buying books would be a perfect soulotion. Now everbody can benefit and help other students</p>
             </div>
             <div class="col-sm-4">
-                <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
-                <p>Jeg ved det ikke nr.2</p>
+                <img src="https://veganstrategist.org/wp-content/uploads/2018/02/money-heart.jpg" class="img-responsive" style="width: 100%" alt="Image">
+                <p>Make money of your old books and help out other students! Money dont grow on trees for students, but the book list for each semester certainly does. Sell the books you dont need enymore, so you can get some pocket change and help your fellow students.</p>
             </div>
             <div class="col-sm-4">
                 <div class="well">
-                    <p>Hmmm</p>
+                    <p>"How to use this page"</p>
+                    <p> Registrer as a user to see or create ads for the books you need or want to sell</p>
                 </div>
                 <div class="well">
-                    <p>Lol noob</p>
+                    <p>Lo</p>
                 </div>
             </div>
         </div>
