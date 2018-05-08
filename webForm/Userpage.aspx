@@ -28,12 +28,31 @@
                 if (theEvent.preventDefault) theEvent.preventDefault();
             }
         }
-        </script>
-    <div class="container">
+
+
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <div class="container" style="margin-top:2%;">
         <div class="row vertical-offset-0">
             <form id="formInfo" runat="server" class="col-md-12">
             <div class="col-md-4" style="border:1px solid white; border-right-color: black;">  
-                    <h3>Update your information</h3>
+                    <h3>Your account</h3>
+                <div>
+                    <b>First Name:</b>
+                <asp:Literal ID="FirstNameLiteral" runat="server"></asp:Literal> <br />
+                    <b> Last Name: </b>
+                <asp:Literal ID="LastNameLiteral" runat="server"></asp:Literal> <br />
+                    <b> Email: </b>
+                <asp:Literal ID="EmailLiteral" runat="server"></asp:Literal> <br />
+                    <b> Phone: </b>
+                <asp:Literal ID="PhoneLiteral" runat="server"></asp:Literal> <br /> <br />
+
+                </div>
+
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Update your information</button>
+                <div id="demo" class="collapse">
                     <div class="form-group">
                         <asp:Label ID="Firstn" runat="server" Text="Label">Firstname</asp:Label>
                         <asp:TextBox ID="Firstname" runat="server" class="form-control" onkeypress="validateNum(event)">
@@ -66,11 +85,9 @@
                                 </td>
                             </tr>
                         </table>                  
-                    </div>   
-                <asp:Literal ID="FirstNameLiteral" runat="server"></asp:Literal>
-                <asp:Literal ID="LastNameLiteral" runat="server"></asp:Literal>
-                <asp:Literal ID="EmailLiteral" runat="server"></asp:Literal>
-                <asp:Literal ID="PhoneLiteral" runat="server"></asp:Literal>
+                    </div>
+                    </div>
+                
             </div>
             <div class="col-md-8"">   
                 <h3>Your ads</h3>
@@ -104,7 +121,7 @@
                 </asp:DataList>   
             </div>
             </form>
-            <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+
         </div>
     </div>
 </asp:Content>
