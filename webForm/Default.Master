@@ -14,6 +14,10 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <style>
+        div.card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+        }
         /* Remove the navbar's default margin-bottom and rounded borders */
         .navbar {
             margin-bottom: 0;
@@ -54,50 +58,52 @@
         }
 
         .dropbtn {
-    background-color: lightblue;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
+            background-color: lightblue;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+                /* Change color of dropdown links on hover */
+                .dropdown-content a:hover {
+                    background-color: #f1f1f1
+                }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: cornflowerblue;
-}
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: cornflowerblue;
+        }
     </style>
 </head>
 
@@ -145,16 +151,18 @@
                         <li><a href="BrowseAds.aspx">Browse Ads</a></li>
                     </ul>
                 </div>
-            
+
 
                 <div class="nav navbar-nav navbar-right">
-                <div class="dropdown">
-                    <button class="dropbtn"><span class="glyphicon glyphicon-user"> </span> <asp:Literal ID="User_Name" runat="server"></asp:Literal> </button>
-                    <div class="dropdown-content">
-                        <a href="Userpage.aspx">My Page</a>
-                        <a href="#">Log out</a>
+                    <div class="dropdown">
+                        <button class="dropbtn"><span class="glyphicon glyphicon-user"></span>
+                            <asp:Literal ID="User_Name" runat="server"></asp:Literal>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="Userpage.aspx">My Page</a>
+                            <a href="#">Log out</a>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
         </nav>
@@ -170,5 +178,11 @@
         </asp:ContentPlaceHolder>
     </div>
 
-</body>
+
+    <div class="footer-copyright py-3 text-center">
+        © 2018 Copyright:
+        <p> Frederik Kehlet, Andreas Hansen, Martin Jensen, Mike Pedersen, Frederik Aarup</p>
+    </div>
+
+    </body>
 </html>
