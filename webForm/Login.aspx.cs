@@ -13,7 +13,7 @@ namespace webForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // set the session to null when the users is on the login page
+            // set the session to null when the user is on the login page
             Session["user"] = null;
         }
 

@@ -123,6 +123,7 @@
     <%if (Session["user"] == null)
         {
     %>
+    <div class="card">
     <div class="container-fluid">
         <nav class="navbar navbar">
             <div class="container">
@@ -131,16 +132,18 @@
                 </div>
                 <div>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Registrer.aspx"><span class="glyphicon glyphicon-user"></span>Registrer</a></li>
-                        <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        <li><a href="Registrer.aspx"><span class="glyphicon glyphicon-user"></span> Registrer</a></li>
+                        <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </div>
+        </div>
     <% }
         else
         { %>
+    <div class="card">
     <div class="container-fluid">
         <nav class="navbar navbar">
             <div class="container">
@@ -160,13 +163,14 @@
                         </button>
                         <div class="dropdown-content">
                             <a href="Userpage.aspx">My Page</a>
-                            <a href="#">Log out</a>
+                            <a href="Login.aspx">Log out</a>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
+        </div>
     <%   }
 
     %>

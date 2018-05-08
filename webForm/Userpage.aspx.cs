@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.IO;
 
 namespace webForm
 {
@@ -19,15 +20,6 @@ namespace webForm
             }
             else
             {
-                FirstNameLiteral.Text = Student.FirstName;
-                LastNameLiteral.Text = Student.LastName;
-                EmailLiteral.Text = Student.Email;
-                PhoneLiteral.Text = Convert.ToString(Student.Phone);
-
-                Firstname.Text = FirstNameLiteral.Text;
-                Lastname.Text = LastNameLiteral.Text;
-                Email.Text = EmailLiteral.Text;
-                Phonenumber.Text = PhoneLiteral.Text;
 
                 DBConnect connection = new DBConnect();
                 DataTable dt = new DataTable();
@@ -35,6 +27,12 @@ namespace webForm
                 DataList1.DataSource = dt;
                 DataList1.DataBind();
             }
+
+            FirstNameLiteral.Text = Student.FirstName;
+            LastNameLiteral.Text = Student.LastName;
+            EmailLiteral.Text = Student.Email;
+            PhoneLiteral.Text = Convert.ToString(Student.Phone);
+
         }
         
         
@@ -56,18 +54,16 @@ namespace webForm
 
         protected void editButton_Click(object sender, EventArgs e)
         {
-            /*
             Student.FirstName = Firstname.Text;
             Student.LastName = Lastname.Text;
             Student.Email = Email.Text;
             Student.Phone = Convert.ToInt32(Phonenumber.Text);
-            */
+
             DBConnect connection = new DBConnect();
             connection.UpdateUser(Student.FirstName,Student.LastName,Student.Email,Student.Phone);
 
             // refresh page
-            Literal1.Text = Firstname.Text;
-            // Response.Redirect("~/Userpage.aspx");
+            Response.Redirect("~/Userpage.aspx");
         }
     }
 }

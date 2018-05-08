@@ -4,14 +4,14 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-    <div class="container col-md-12">
+    <div class="container col-md-12" style="margin-top:2%;">
         <form id="form1" runat="server">
             <div>
                 <asp:DataList ID="DataList1" runat="server">
                     <ItemTemplate>
                         <div class="table-responsive">
-                            <table class="table info">
-                                <tr class="info">
+                            <table class="table basic">
+                                <tr class="basic">
                                     <td>
                                         <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" class="img-thumbnail" width="100" height="200" alt="Cinque Terre" />
                                     </td>
