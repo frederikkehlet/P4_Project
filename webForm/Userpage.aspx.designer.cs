@@ -76,24 +76,6 @@ namespace webForm {
         protected global::System.Web.UI.WebControls.TextBox Email;
         
         /// <summary>
-        /// Pword control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Pword;
-        
-        /// <summary>
-        /// Password control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Password;
-        
-        /// <summary>
         /// Phon control.
         /// </summary>
         /// <remarks>
@@ -112,13 +94,58 @@ namespace webForm {
         protected global::System.Web.UI.WebControls.TextBox Phonenumber;
         
         /// <summary>
-        /// Edit1 control.
+        /// deleteButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Edit1;
+        protected global::System.Web.UI.WebControls.Button deleteButton;
+        
+        /// <summary>
+        /// editButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button editButton;
+        
+        /// <summary>
+        /// FirstNameLiteral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal FirstNameLiteral;
+        
+        /// <summary>
+        /// LastNameLiteral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LastNameLiteral;
+        
+        /// <summary>
+        /// EmailLiteral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal EmailLiteral;
+        
+        /// <summary>
+        /// PhoneLiteral control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal PhoneLiteral;
         
         /// <summary>
         /// DataList1 control.

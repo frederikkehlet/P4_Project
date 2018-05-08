@@ -19,16 +19,17 @@ namespace webForm
             }
             else
             {
+                FirstNameLiteral.Text = Student.FirstName;
+                LastNameLiteral.Text = Student.LastName;
+                EmailLiteral.Text = Student.Email;
+                PhoneLiteral.Text = Convert.ToString(Student.Phone);
+
+                Firstname.Text = FirstNameLiteral.Text;
+                Lastname.Text = LastNameLiteral.Text;
+                Email.Text = EmailLiteral.Text;
+                Phonenumber.Text = PhoneLiteral.Text;
+
                 DBConnect connection = new DBConnect();
-                string query = "Select * FROM users WHERE id = " + Student.ID + ";";
-                List<string> users = connection.SelectUser(query);
-
-                Firstname.Text = users[1];
-                Lastname.Text = users[2];
-                Email.Text = users[3];
-                Password.Text = users[5];
-                Phonenumber.Text = users[4];
-
                 DataTable dt = new DataTable();
                 connection.userAdConn().Fill(dt);
                 DataList1.DataSource = dt;
@@ -44,6 +45,29 @@ namespace webForm
 
             Ad ad = new Ad();
             ad.AdDeleted(ad_id);
-        }   
+        }
+
+        protected void deleteButton_Click(object sender, EventArgs e)
+        {
+            Student std = new Student();
+            std.UserDeleted();
+            Response.Redirect("~/Login.aspx");
+        }
+
+        protected void editButton_Click(object sender, EventArgs e)
+        {
+            /*
+            Student.FirstName = Firstname.Text;
+            Student.LastName = Lastname.Text;
+            Student.Email = Email.Text;
+            Student.Phone = Convert.ToInt32(Phonenumber.Text);
+            */
+            DBConnect connection = new DBConnect();
+            connection.UpdateUser(Student.FirstName,Student.LastName,Student.Email,Student.Phone);
+
+            // refresh page
+            Literal1.Text = Firstname.Text;
+            // Response.Redirect("~/Userpage.aspx");
+        }
     }
 }
