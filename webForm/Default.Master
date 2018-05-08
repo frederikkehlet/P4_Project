@@ -160,7 +160,7 @@
                         </button>
                         <div class="dropdown-content">
                             <a href="Userpage.aspx">My Page</a>
-                            <a href="#">Log out</a>
+                            <a href="Login.aspx">Log out</a>
                         </div>
                     </div>
                 </div>

@@ -77,8 +77,8 @@
                     <asp:DataList ID="DataList1" runat="server">
                     <ItemTemplate>
                         <div class="table-responsive">
-                            <table class="table" style="border:1px solid white; border-radius:5px;">
-                                <tr class="info">
+                            <table class="table basic" style="border:1px solid white; border-radius:5px;">
+                                <tr class="basic">
                                     <td>
                                         <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" height="100" width="200" class="img-thumbnail" alt="Cinque Terre" />
                                     </td>

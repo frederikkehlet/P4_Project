@@ -9,26 +9,28 @@
                 <asp:DataList ID="DataList2" runat="server">
                     <ItemTemplate>
                         <div class="table-responsive">
-                            <table class="table info">
-                                <tr class="info">
+                            <table class="table basic">
+                                <tr class="basic">
                                     <td>
                                         <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" height="500" width="300" class="img-thumbnail" alt="Cinque Terre" />
                                     </td>
                                     <td>
-                                        <span><b>Title: </b><%#Eval("title")%></span>
+                                        <span><b>Title: </b><%#Eval("title")%></span><br />
                                     </td>
                                     <td>
                                         <span><b>Price: </b><%#Eval("price")%></span>
                                     </td>
                                     <td>
-                                        <span><b>year</b></span>
-                                        <%#Eval("year")%>
+                                        <span><b>Year: </b><%#Eval("year")%></span> 
                                     </td>
                                     <td>
-                                        <span><b>category: </b><%#Eval("category")%></span>
+                                        <span><b>Category: </b><%#Eval("category")%></span>
                                     </td>
                                     <td>
                                         <span><b>Description: </b><%#Eval("description")%></span>
+                                    </td>
+                                    <td>
+                                        <span><b>Date added: </b><%#Eval("date") %></span>
                                     </td>
                                 </tr>
                             </table>
@@ -40,8 +42,8 @@
             <asp:DataList ID="DataList3" runat="server">
                 <ItemTemplate>
                     <div class="table-responsive">
-                        <table class="table">
-                            <tr class="info">
+                        <table class="table basic">
+                            <tr class="basic">
                                 <td>
                                     <span><b>Creator of the AD: </b><%#Eval("first_name")%> <%#Eval("last_name")%></span>
                                 </td>
