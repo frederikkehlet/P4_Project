@@ -38,7 +38,7 @@
         <div class="row vertical-offset-0">
             <form id="formInfo" runat="server" class="col-md-12">
             <div class="col-md-4" style="border:1px solid white; border-right-color: black;">  
-                    <h3>Your account</h3>
+                    <h3>My account</h3>
                 <div style="line-height:200%;">
                     <b>First Name:</b>
                 <asp:Literal ID="FirstNameLiteral" runat="server"></asp:Literal> <br />
@@ -50,7 +50,7 @@
                 <asp:Literal ID="PhoneLiteral" runat="server"></asp:Literal> <br /> <br />
                 </div>
 
-                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Update your information</button>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Update information</button>
                 <div id="demo" class="collapse" style="margin-top:3%;">
                     <div class="form-group">
                         <asp:Label ID="Firstn" runat="server" Text="Label">Firstname</asp:Label>
@@ -89,7 +89,7 @@
                 
             </div>
             <div class="col-md-8"">   
-                <h3>Your ads</h3>
+                <h3>My ads</h3>
                     <asp:DataList ID="DataList1" runat="server">
                     <ItemTemplate>
                         <div class="table-responsive">
