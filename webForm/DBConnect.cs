@@ -80,20 +80,24 @@ namespace webForm
         }
 
         // update statement for ad
-        public void UpdateAd(string title, int year, string category, float price, string description, byte[] image)
+        public void UpdateAd(string title, int year, string category, float price, string description, Byte[] image, int ad_id)
         {
-            string query = "UPDATE ad SET title = '" + title + "', year = " + year + ", category = '" + category +
-                "', price = " + price + ", description = '" + description + "', image = " + image + ";";
-
+            string query = "UPDATE ad SET title = @title, year = @year, category = @category, price = @price, description = @description, " +
+                "image = COALESCE(@image,image) WHERE ad_id = " + ad_id + ";";
+            
             // open connection
             if (this.OpenConnection() == true)
             {
                 // create command 
-                MySqlCommand cmd = new MySqlCommand();
-                // assign query
-                cmd.CommandText = query;
-                // assign the connection using Connection
-                cmd.Connection = Connection;
+                MySqlCommand cmd = new MySqlCommand(query,Connection);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@title", title);
+                cmd.Parameters.AddWithValue("@year", year);
+                cmd.Parameters.AddWithValue("@category", category);
+                cmd.Parameters.AddWithValue("@price", price);
+                cmd.Parameters.AddWithValue("@description", description);
+                cmd.Parameters.AddWithValue("@image", image);
+                
                 //execute query
                 cmd.ExecuteNonQuery();
                 // close connection

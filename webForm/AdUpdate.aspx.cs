@@ -11,7 +11,14 @@ namespace webForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ShowSelectedAd();
+            if (Session["user"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
+            else
+            {
+                ShowSelectedAd();
+            }
         }
 
         private void ShowSelectedAd()
@@ -32,29 +39,36 @@ namespace webForm
 
         protected void AdUpdated_Click(object sender, EventArgs e)
         {
+            string s = Request.QueryString["AD_ID"];
+            string query = "SELECT * FROM ad WHERE ad_id = " + s + ";";
+            DBConnect connection = new DBConnect();
+            List<Ad> adImage = connection.SelectAd(query);
+
             string title = Title.Text;
             int year = Convert.ToInt32(Year.Text);
             string category = BookType.SelectedValue;
             float price = float.Parse(Price.Text);
             string description = Description.Text;
-            int length = FileUpload.PostedFile.ContentLength;
-            byte[] pic = new byte[length];
 
-            if (length == 0)
+            byte[] pic;
+            if (!FileUpload.HasFile)
             {
-                string s = Request.QueryString["AD_ID"];
-                string query = "SELECT * FROM ad WHERE ad_id = " + s + ";";
-
-                DBConnect connection = new DBConnect();
-                List<Ad> adImage = connection.SelectAd(query);
                 pic = adImage[0].Image;
             }
-            FileUpload.PostedFile.InputStream.Read(pic, 0, length);
+            else
+            {
+                int length = FileUpload.PostedFile.ContentLength;
+                pic = new byte[length];
+            }
+           
+            FileUpload.PostedFile.InputStream.Read(pic, 0, pic.Length);
 
             Ad ad = new Ad(title, year, category, price, description, pic, Student.ID);
+            ad.Ad_id = Convert.ToInt32(s);
             ad.AdEdited();
+
             // refresh after update
-            Response.Redirect("~/Userpage.aspx");
+            Response.Redirect("~/AdUpdate.aspx?AD_ID="+ ad.Ad_id);
         }
     }
 }

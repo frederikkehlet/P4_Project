@@ -16,6 +16,7 @@ namespace webForm
         public string Description { get; set; }
         public byte[] Image { get; set; }
         public int User_id { get; }
+        public int Ad_id { get; set; }
 
         public Ad() { }
 
@@ -45,7 +46,7 @@ namespace webForm
             try
             {
                 DBConnect connection = new DBConnect();
-                connection.UpdateAd(Title, Year, Category, Price, Description, Image);
+                connection.UpdateAd(Title, Year, Category, Price, Description, Image,Ad_id);
             }
             catch (Exception)
             {
