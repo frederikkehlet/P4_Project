@@ -1,11 +1,12 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="CreateAd.aspx.cs" Inherits="webForm.CreateAd" %>
-
+﻿<%@  Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="AdUpdate.aspx.cs" Inherits="webForm.AdUpdate" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div class="container">
         <div class="row vertical-offset-100">
             <div class="col-md-4">
                 <form id="form1" runat="server">
-                    <h3>Create an ad</h3>
+                    <h3>Update ad</h3>
                     <div class="form-group">
                         <asp:Label ID="Titleofbook" runat="server" Text="Label">Title of book:</asp:Label>
                         <asp:TextBox ID="Title" runat="server" class="form-control" required="required"></asp:TextBox>
@@ -33,17 +34,18 @@
                     </div>
 
                     <div class="form-group">
+                        <b>Current image: </b><br />
+                        <asp:Image ID="Image" runat="server" width="100" Height="100"/>
                         <div class="custom-file">
-                            <asp:Label ID="customFile" runat="server" class="custom-file-label">Upload image</asp:Label>
+                            <asp:Label ID="customFile" runat="server" class="custom-file-label">Upload new image</asp:Label>
                             <asp:FileUpload ID="FileUpload" runat="server" class="custom-file" for="customFile" />
                             <asp:Literal ID="ImageFeedback" runat="server"></asp:Literal>
                         </div>
                     </div>
-                    <asp:Button ID="Created" runat="server" Text="Create ad" OnClick="Created_Click" class="btn btn-inline btn-primary btn-md" />
+                    <asp:Button ID="AdUpdated" runat="server" Text="Update ad" OnClick="AdUpdated_Click" class="btn btn-inline btn-primary btn-md" />
                     <asp:Literal ID="Feedback" runat="server"></asp:Literal>
                 </form>
             </div>
         </div>
     </div>
 </asp:Content>
-

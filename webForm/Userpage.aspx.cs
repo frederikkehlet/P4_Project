@@ -74,11 +74,12 @@ namespace webForm
             else
                 Student.Phone = Convert.ToInt32(Phonenumber.Text);
 
-            DBConnect connection = new DBConnect();
-            connection.UpdateUser(Student.FirstName,Student.LastName,Student.Email,Student.Phone);
+            Student std = new Student();
+            std.UserEdited(Student.FirstName,Student.LastName,Student.Email,Student.Phone);
 
             // refresh page
             Response.Redirect("~/Userpage.aspx");
         }
+
     }
 }

@@ -39,7 +39,7 @@
             <form id="formInfo" runat="server" class="col-md-12">
             <div class="col-md-4" style="border:1px solid white; border-right-color: black;">  
                     <h3>Your account</h3>
-                <div>
+                <div style="line-height:200%;">
                     <b>First Name:</b>
                 <asp:Literal ID="FirstNameLiteral" runat="server"></asp:Literal> <br />
                     <b> Last Name: </b>
@@ -48,11 +48,10 @@
                 <asp:Literal ID="EmailLiteral" runat="server"></asp:Literal> <br />
                     <b> Phone: </b>
                 <asp:Literal ID="PhoneLiteral" runat="server"></asp:Literal> <br /> <br />
-
                 </div>
 
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Update your information</button>
-                <div id="demo" class="collapse">
+                <div id="demo" class="collapse" style="margin-top:3%;">
                     <div class="form-group">
                         <asp:Label ID="Firstn" runat="server" Text="Label">Firstname</asp:Label>
                         <asp:TextBox ID="Firstname" runat="server" class="form-control" onkeypress="validateNum(event)">
@@ -112,7 +111,7 @@
                                         <a href="AdDelete.aspx?AD_ID=<%#Eval("ad_id")%>" class="btn btn-sm btn-danger">Delete ad</a>
                                     </td>
                                     <td>
-                                        <asp:Button ID="updateButton" runat="server" Text="Update ad" class="btn btn-sm btn-primary btn-block btn-signin" />
+                                        <a href="AdUpdate.aspx?AD_ID=<%#Eval("ad_id")%>" class="btn btn-sm btn-primary">Update ad</a>
                                     </td>
                                 </tr>
                             </table>

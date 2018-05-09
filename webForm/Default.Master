@@ -31,6 +31,11 @@
             display: inline-block;
         }
 
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
 
         .carousel-inner img {
             width: 100%; /* Set width to 100% */
@@ -100,11 +105,12 @@
             background-color: cornflowerblue;
         }
 
-     .body
-     {
-     height: 100%
-     }
-
+        footer {
+    position: fixed;
+    height: 70px;
+    bottom: 0;
+    width: 100%;
+}
     </style>
 </head>
 
@@ -184,16 +190,12 @@
         </asp:ContentPlaceHolder>
     </div>
 
-    <!-- (On hold)
-    <footer>
-        <div class="container">
-            <div class="footer-copyright py-3 text-center">
-                © 2018 Copyright:
-                <p>Frederik Kehlet, Andreas Hansen, Martin Jensen, Mike Pedersen, Frederik Aarup </p>
-            </div>
+    <%--<footer class="fixed-bottom">
+        <div class="footer-copyright py-3 text-center">
+            © 2018 Copyright:
+        <p>Frederik Kehlet, Andreas Hansen, Martin Jensen, Mike Pedersen, Frederik Aarup </p>
         </div>
-    </footer> -->
-
+    </footer>--%>
 
 </body>
 </html>

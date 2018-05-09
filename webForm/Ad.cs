@@ -16,6 +16,7 @@ namespace webForm
         public string Description { get; set; }
         public byte[] Image { get; set; }
         public int User_id { get; }
+        public int Ad_id { get; set; }
 
         public Ad() { }
 
@@ -42,8 +43,15 @@ namespace webForm
         // AdEdited
         public void AdEdited()
         {
-            DBConnect connection = new DBConnect();
-            //connection.UpdateAd()
+            try
+            {
+                DBConnect connection = new DBConnect();
+                connection.UpdateAd(Title, Year, Category, Price, Description, Image,Ad_id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         // AdDeleted
