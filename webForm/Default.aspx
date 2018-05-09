@@ -2,7 +2,6 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
 
-
     <!-- Wrapper for slides -->
     <div class="card">
         <div class="carousel-inner" role="listbox">
@@ -16,7 +15,7 @@
         </div>
     </div>
 
-    <div class="card">
+
         <div class="container text-center">
             <h3>About this page</h3>
             <br>
@@ -28,22 +27,23 @@
                     </div>
                 </div>
 
-
+                <div class="card">
                 <div class="col-sm-4">
                     <img src="https://veganstrategist.org/wp-content/uploads/2018/02/money-heart.jpg" class="img-responsive" style="width: 100%" alt="Image">
                     <p>Make money of your old books and help out other students! Money dont grow on trees for students, but the book list for each semester certainly does. Sell the books you dont need enymore, so you can get some pocket change and help your fellow students.</p>
                 </div>
+                    </div>
 
                 <div class="col-sm-4">
                     <div class="well">
-                        <p>"How to use this page"</p>
+                        <p><b>How to use this page</b></p>
                         <p>Registrer as a user to see or create ads for the books you need or want to sell</p>
                     </div>
 
                     <%if (Session["user"] == null)
                         { %>
                     <div class="well">
-                        <p>Allready a user?</p>
+                        <p><b>Allready a user?</b></p>
                         <p>Click here to <a href="Login.aspx">Login</a></p>
                     </div>
                     <%}
@@ -58,7 +58,6 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <br>
+
 </asp:Content>
