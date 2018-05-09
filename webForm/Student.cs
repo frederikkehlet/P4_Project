@@ -56,17 +56,13 @@ namespace webForm
             }
         }
 
-        // this method calls update user with the static properties
+        // this method calls update user with the static properties as actual parameters
         public void UserEdited(string firstname, string lastname, string email, int phone) 
         {
             try
             {
-                FirstName = firstname;
-                LastName = lastname;
-                Email = email;
-                Phone = phone;
                 DBConnect connection = new DBConnect();
-                connection.UpdateUser(FirstName,LastName,Email,Phone);
+                connection.UpdateUser(firstname,lastname,email,phone);
             }
             catch (Exception)
             {

@@ -80,9 +80,10 @@ namespace webForm
         }
 
         // update statement for ad
-        public void UpdateAd(string tableName, string values, int id)
+        public void UpdateAd(string title, int year, string category, float price, string description, byte[] image)
         {
-            string query = "UPDATE " + tableName + " SET " + values + " WHERE id=" + id + ";";
+            string query = "UPDATE ad SET title = '" + title + "', year = " + year + ", category = '" + category +
+                "', price = " + price + ", description = '" + description + "', image = " + image + ";";
 
             // open connection
             if (this.OpenConnection() == true)

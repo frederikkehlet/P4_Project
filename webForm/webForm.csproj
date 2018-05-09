@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="AdDelete.aspx" />
     <Content Include="AdInfo.aspx" />
+    <Content Include="AdUpdate.aspx" />
     <Content Include="BrowseAds.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Default.Master" />
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="AdInfo.aspx.designer.cs">
       <DependentUpon>AdInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdUpdate.aspx.cs">
+      <DependentUpon>AdUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdUpdate.aspx.designer.cs">
+      <DependentUpon>AdUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="BrowseAds.aspx.cs">
       <DependentUpon>BrowseAds.aspx</DependentUpon>

@@ -42,8 +42,15 @@ namespace webForm
         // AdEdited
         public void AdEdited()
         {
-            DBConnect connection = new DBConnect();
-            //connection.UpdateAd()
+            try
+            {
+                DBConnect connection = new DBConnect();
+                connection.UpdateAd(Title, Year, Category, Price, Description, Image);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         // AdDeleted
