@@ -4,10 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
 
-    <asp:DataList ID="DataList2" runat="server">
-        <ItemTemplate>
+    <div class="container">
+        <asp:DataList ID="DataList2" runat="server">
+            <ItemTemplate>
 
-            <div class="container">
+
                 <span>
                     <h1>Title - <small><%#Eval("title")%></small></h1>
                 </span>
@@ -39,40 +40,32 @@
 
                             </ul>
                         </div>
+                    </div>
                 </div>
-                </div>
-            </div>
-            </div>
-        </ItemTemplate>
-    </asp:DataList>
+
+            </ItemTemplate>
+        </asp:DataList>
 
 
-    <!--
+        <div class="row">
+            <br />
 
+            <asp:DataList ID="DataList3" runat="server">
+                <ItemTemplate>
+                    <div class="row">
+                        <div class="well">
+                            <h3 class="my-3">Information of seller</h3>
+                            <ul>
+                                <li><span><b>Creator of the AD: </b><%#Eval("first_name")%> <%#Eval("last_name")%></span></li>
+                                <li><span><b>Email: </b><%#Eval("email")%></span></li>
+                                <li><span><b>Phone: </b><%#Eval("phone")%></span></li>
+                            </ul>
+                        </div>
+                    </div>
 
+                </ItemTemplate>
+            </asp:DataList>
+        </div>
 
-                <div>
-                    <asp:DataList ID="DataList3" runat="server">
-                        <ItemTemplate>
-                            <div class="table-responsive">
-                                <table class="table basic">
-                                    <tr class="basic">
-                                        <td>
-                                            <span><b>Creator of the AD: </b><%#Eval("first_name")%> <%#Eval("last_name")%></span>
-                                        </td>
-                                        <td>
-                                            <span><b>Email: </b><%#Eval("email")%></span>
-                                        </td>
-                                        <td>
-                                            <span><b>Phone: </b><%#Eval("phone")%></span>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
-
-                        </ItemTemplate>
-                    </asp:DataList>
-                </div> -->
-
-
+    </div>
 </asp:Content>
