@@ -60,11 +60,11 @@
                     </div>
                     <div class="form-group">
                         <asp:Label ID="Lastn" runat="server" Text="Label">Lastname</asp:Label>
-                        <asp:TextBox ID="Lastname" runat="server" class="form-control" required="required" onkeypress='validateNum(event)'></asp:TextBox>
+                        <asp:TextBox ID="Lastname" runat="server" class="form-control" onkeypress='validateNum(event)'></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <asp:Label ID="EM" runat="server" Text="Label">Email</asp:Label>
-                        <asp:TextBox ID="Email" runat="server" class="form-control" required="required"></asp:TextBox>
+                        <asp:TextBox ID="Email" runat="server" class="form-control"></asp:TextBox>
                     </div>
 <%--                    <div class="form-group">
                         <asp:Label ID="Pword" runat="server" Text="Label">Password</asp:Label>
@@ -72,7 +72,7 @@
                     </div>--%>
                     <div class="form-group">
                         <asp:Label ID="Phon" runat="server" Text="Label">Phonenumber</asp:Label>
-                        <asp:TextBox ID="Phonenumber" runat="server" class="form-control" required="required" onkeypress='validateLetter(event)'></asp:TextBox>
+                        <asp:TextBox ID="Phonenumber" runat="server" class="form-control" onkeypress='validateLetter(event)'></asp:TextBox>
                     </div>
                     <div class="form-group">
                         <table class="table-responsive" style="width:100%;">

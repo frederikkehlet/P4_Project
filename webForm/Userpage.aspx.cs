@@ -54,10 +54,25 @@ namespace webForm
 
         protected void editButton_Click(object sender, EventArgs e)
         {
-            Student.FirstName = Firstname.Text;
-            Student.LastName = Lastname.Text;
-            Student.Email = Email.Text;
-            Student.Phone = Convert.ToInt32(Phonenumber.Text);
+            if (Firstname.Text == "")
+                Student.FirstName = FirstNameLiteral.Text;
+            else
+                Student.FirstName = Firstname.Text;
+
+            if (Lastname.Text == "")
+                Student.LastName = LastNameLiteral.Text;
+            else
+                Student.LastName = Lastname.Text;
+
+            if (Email.Text == "")
+                Student.Email = EmailLiteral.Text;
+            else
+                Student.Email = Email.Text;
+
+            if (Phonenumber.Text == "")
+                Student.Phone = Convert.ToInt32(PhoneLiteral.Text);
+            else
+                Student.Phone = Convert.ToInt32(Phonenumber.Text);
 
             DBConnect connection = new DBConnect();
             connection.UpdateUser(Student.FirstName,Student.LastName,Student.Email,Student.Phone);

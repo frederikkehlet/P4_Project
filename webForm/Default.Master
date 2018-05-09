@@ -104,6 +104,13 @@
         .dropdown:hover .dropbtn {
             background-color: cornflowerblue;
         }
+
+        footer {
+    position: fixed;
+    height: 70px;
+    bottom: 0;
+    width: 100%;
+}
     </style>
 </head>
 
@@ -124,53 +131,54 @@
         {
     %>
     <div class="card">
-    <div class="container-fluid">
-        <nav class="navbar navbar">
-            <div class="container">
-                <div class="navbar-header pull-left">
-                    <a class="navbar-brand" href="Default.aspx">Student Market</a>
+        <div class="container-fluid">
+            <nav class="navbar navbar">
+                <div class="container">
+                    <div class="navbar-header pull-left">
+                        <a class="navbar-brand" href="Default.aspx">Student Market</a>
+                    </div>
+                    <div>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="Registrer.aspx"><span class="glyphicon glyphicon-user"></span>Registrer</a></li>
+                            <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Registrer.aspx"><span class="glyphicon glyphicon-user"></span> Registrer</a></li>
-                        <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
+            </nav>
         </div>
+    </div>
     <% }
         else
         { %>
     <div class="card">
-    <div class="container-fluid">
-        <nav class="navbar navbar">
-            <div class="container">
-                <div class="navbar-header pull-left">
-                    <a class="navbar-brand" href="Default.aspx">Student Market</a>
-                    <ul class="nav navbar-nav">
-                        <li><a href="CreateAd.aspx">Create Ad</a></li>
-                        <li><a href="BrowseAds.aspx">Browse Ads</a></li>
-                    </ul>
-                </div>
+        <div class="container-fluid">
+            <nav class="navbar navbar">
+                <div class="container">
+                    <div class="navbar-header pull-left">
+                        <a class="navbar-brand" href="Default.aspx">Student Market</a>
+                        <ul class="nav navbar-nav">
+                            <li><a href="CreateAd.aspx">Create Ad</a></li>
+                            <li><a href="BrowseAds.aspx">Browse Ads</a></li>
+                        </ul>
+                    </div>
 
 
-                <div class="nav navbar-nav navbar-right">
-                    <div class="dropdown">
-                        <button class="dropbtn"><span class="glyphicon glyphicon-user"></span>
-                            <asp:Literal ID="User_Name" runat="server"></asp:Literal>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="Userpage.aspx">My Page</a>
-                            <a href="Login.aspx">Log out</a>
+                    <div class="nav navbar-nav navbar-right">
+                        <div class="dropdown">
+                            <button class="dropbtn">
+                                <span class="glyphicon glyphicon-user"></span>
+                                <asp:Literal ID="User_Name" runat="server"></asp:Literal>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="Userpage.aspx">My Page</a>
+                                <a href="Login.aspx">Log out</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </nav>
-    </div>
+            </nav>
         </div>
+    </div>
     <%   }
 
     %>
@@ -182,11 +190,12 @@
         </asp:ContentPlaceHolder>
     </div>
 
+    <footer class="fixed-bottom">
+        <div class="footer-copyright py-3 text-center">
+            © 2018 Copyright:
+        <p>Frederik Kehlet, Andreas Hansen, Martin Jensen, Mike Pedersen, Frederik Aarup </p>
+        </div>
+    </footer>
 
-    <div class="footer-copyright py-3 text-center">
-        © 2018 Copyright:
-        <p> Frederik Kehlet, Andreas Hansen, Martin Jensen, Mike Pedersen, Frederik Aarup </p>
-    </div>
-
-    </body>
+</body>
 </html>
