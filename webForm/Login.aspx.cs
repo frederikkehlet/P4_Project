@@ -47,12 +47,12 @@ namespace webForm
                 }
                 else
                 {
-                    queryResult.Text = "Password incorrect";
+                    queryResult.Text = "<span style='color:red;'>Password incorrect</span>";
                 }
             }
             else
             {
-                queryResult.Text = "Email incorrect";
+                Emailerror.Text = "<span style='color:red;'> Email incorrect</span>";
             }
         }
     }
