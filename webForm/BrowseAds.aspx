@@ -11,7 +11,7 @@
         <asp:DataList ID="DataList1" RepeatColumns="3" runat="server">
 
             <HeaderTemplate>
-                <h1>ADS - <small>Looking for something specific? </small><a href="searchAd.aspx" class="btn btn-large btn-primary">Search</a></h1>
+                <h2><small>Looking for something specific? </small><a href="searchAd.aspx" class="btn btn-large btn-primary">Search</a></h2>
                 
             </HeaderTemplate>
 

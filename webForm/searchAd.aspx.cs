@@ -14,7 +14,10 @@ namespace webForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
         }
 
         protected void searchButton_Click(object sender, EventArgs e)
@@ -33,6 +36,12 @@ namespace webForm
             db.searchAdapter(searchBox.Text, min, max).Fill(dt);
             DataListSearch.DataSource = dt;
             DataListSearch.DataBind();
+
+            if (DataListSearch.Items.Count == 0)
+            {
+                searchResults.Text = "<h2>No results found</h2>";
+            }
+            else searchResults.Text = "<h2>Search results:</h2>";
         }
 
         private int MaxPrice()

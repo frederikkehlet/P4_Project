@@ -7,31 +7,28 @@
         <br />
     </div>
     <div class="container">
-            <div>
-                <form class="form-inline" runat="server">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <asp:TextBox ID="searchBox" runat="server" placeholder="Title" CssClass="form-control"></asp:TextBox>
-                            <asp:TextBox ID="minPrice" runat="server" placeholder="Minimum price" CssClass="form-control"></asp:TextBox>
-                            <asp:TextBox ID="maxPrice" runat="server" placeholder="Maximum price" CssClass="form-control"></asp:TextBox>
-                            <asp:Button ID="searchButton" runat="server" Text="Search" OnClick="searchButton_Click" CssClass="btn-lg btn-danger" />
-                        </li>
-                    </ul>
-                </form>
-            </div>
+        <div>
+            <form class="form-inline" runat="server">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <asp:TextBox ID="searchBox" runat="server" placeholder="Title" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="minPrice" runat="server" placeholder="Minimum price" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="maxPrice" runat="server" placeholder="Maximum price" CssClass="form-control"></asp:TextBox>
+                        <asp:Button ID="searchButton" runat="server" Text="Search" OnClick="searchButton_Click" class="btn btn-md btn-info" />
+                    </li>
+                </ul>
+            </form>
         </div>
+    </div>
 
-        <div> <br /></div>
+    <div>
+        <br />
+    </div>
 
-   <div class="container">
-                <div class="row">
+    <div class="container">
+        <div class="row">
+            <asp:Literal runat="server" ID="searchResults"></asp:Literal>
             <asp:DataList ID="DataListSearch" RepeatColumns="3" runat="server">
-
-                <HeaderTemplate>
-                <h1><small>Search results</small></h1>
-                
-            </HeaderTemplate>
-
                 <ItemTemplate>
                     <div class="col-lg-12">
                         <div>
