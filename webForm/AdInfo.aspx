@@ -20,6 +20,7 @@
                             <div class="page-header">
                                 <span >
                                     <h3><i><%#Eval("title")%></i></h3>
+                                    <h6>Created on <%#Eval("date","{0:dd-MM-yyyy}") %></h6>
                                 </span>
                             </div>
 
