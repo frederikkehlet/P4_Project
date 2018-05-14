@@ -3,50 +3,47 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
+    <div>
+        <br />
+    </div>
+    <div class="container">
+        <div>
+            <form class="form-inline" runat="server">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <asp:TextBox ID="searchBox" runat="server" placeholder="Title" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="minPrice" runat="server" placeholder="Minimum price" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="maxPrice" runat="server" placeholder="Maximum price" CssClass="form-control"></asp:TextBox>
+                        <asp:Button ID="searchButton" runat="server" Text="Search" OnClick="searchButton_Click" class="btn btn-md btn-info" />
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
 
     <div>
-        <form class="form-inline" runat="server">
-            <ul class="nav navbar-nav">
-                <li>
-                    <asp:TextBox ID="searchBox" runat="server" placeholder="Title"></asp:TextBox>
-                    <asp:TextBox ID="minPrice" runat="server" placeholder="Minimum price"></asp:TextBox>
-                    <asp:TextBox ID="maxPrice" runat="server" placeholder="Maximum price"></asp:TextBox>
-                    <asp:Button ID="searchButton" runat="server" Text="Search" OnClick="searchButton_Click" />
-                </li>
-            </ul>
-        </form>
+        <br />
     </div>
-    <asp:DataList ID="DataListSearch" runat="server">
-        <ItemTemplate>
-            <div>
-                <div>
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <tr class="success">
-                                <td>
-                                    <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" height="500" width="300" class="img-thumbnail" alt="Cinque Terre" />
-                                </td>
-                                <td>
-                                    <span><b>Title: </b><%#Eval("title")%></span>
-                                </td>
-                                <td>
-                                    <span><b>Price: </b><%#Eval("price")%></span>
-                                </td>
-                                <td>
-                                    <span><b>year</b></span>
-                                    <%#Eval("year")%>
-                                </td>
-                                <td>
-                                    <span><b>category: </b><%#Eval("category")%></span>
-                                </td>
-                                <td>
-                                    <span><b>Description: </b><%#Eval("description")%></span>
-                                </td>
-                            </tr>
-                        </table>
+
+    <div class="container">
+        <div class="row">
+            <asp:Literal runat="server" ID="searchResults"></asp:Literal>
+            <asp:DataList ID="DataListSearch" RepeatColumns="3" runat="server">
+                <ItemTemplate>
+                    <div class="col-lg-12">
+                        <div>
+                            <div class="well">
+                                <h2 class="muted"></b><%#Eval("title")%></h2>
+                                <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" class="img-thumbnail" width="100" height="200" />
+                                <hr>
+                                <h3>Price: </b><%#Eval("price")%> Kr.</h3>
+                                <hr>
+                                <p><a class="btn btn-large btn-info" href="AdInfo.aspx?AD_ID=<%#Eval("ad_id")%>"><i class="icon-ok"></i>Show more</a></p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </ItemTemplate>
-    </asp:DataList>
+                </ItemTemplate>
+            </asp:DataList>
+        </div>
+    </div>
 </asp:Content>

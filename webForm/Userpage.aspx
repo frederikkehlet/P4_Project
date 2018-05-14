@@ -105,10 +105,10 @@
                                         <span><b>Price: </b><%#Eval("price")%> Kr.</span>                                       
                                     </td>
                                     <td>
-                                        <a href="AdInfo.aspx?AD_ID=<%#Eval("ad_id")%>" class="btn btn-info">Show more</a>
+                                        <a href="AdInfo.aspx?AD_ID=<%#Eval("ad_id")%>" class="btn btn-sm btn-info">Show more</a>
                                     </td>
                                     <td>
-                                        <a href="AdDelete.aspx?AD_ID=<%#Eval("ad_id")%>" class="btn btn-sm btn-danger">Delete ad</a>
+                                        <a href="AdDelete.aspx?AD_ID=<%#Eval("ad_id")%>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this ad?');" >Delete ad</a>
                                     </td>
                                     <td>
                                         <a href="AdUpdate.aspx?AD_ID=<%#Eval("ad_id")%>" class="btn btn-sm btn-primary">Update ad</a>

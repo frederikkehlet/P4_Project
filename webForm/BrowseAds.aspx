@@ -4,34 +4,32 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-    <div class="container col-md-12" style="margin-top:2%;">
-        <form id="form1" runat="server">
-            <div>
-                <asp:DataList ID="DataList1" runat="server">
-                    <ItemTemplate>
-                        <div class="table-responsive">
-                            <table class="table basic">
-                                <tr class="basic">
-                                    <td>
-                                        <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" class="img-thumbnail" width="100" height="200" alt="Cinque Terre" />
-                                    </td>
-                                    <td>
-                                        <span><b>Title: </b><%#Eval("title")%></span>
-                                    </td>
-                                    <td>
-                                        <span><b>Price: </b><%#Eval("price")%> Kr.</span>                                       
-                                    </td>
-                                    <td>
-                                        <a href="AdInfo.aspx?AD_ID=<%#Eval("ad_id")%>">Show more</a>
-                                    </td>
-                                </tr>
-                            </table>
+    <div>
+        <br />
+    </div>
+    <div class="container">
+        <asp:DataList ID="DataList1" RepeatColumns="3" runat="server">
+
+            <HeaderTemplate>
+                <h2><small>Looking for something specific? </small><a href="searchAd.aspx" class="btn btn-large btn-primary">Search</a></h2>
+                
+            </HeaderTemplate>
+
+            <ItemTemplate>
+                <div class="row col-lg-12">
+                    <div>
+                        <div class="well">
+                            <h2 class="muted"></b><%#Eval("title")%></h2>
+                            <image src="data:Image/png;base64,<%#Convert.ToBase64String(((Byte[])Eval("image")))%>" class="img-thumbnail" width="100" height="200" />
+                            <hr>
+                            <h3>Price: </b><%#Eval("price")%> Kr.</h3>
+                            <hr>
+                            <p><a class="btn btn-large btn-info" href="AdInfo.aspx?AD_ID=<%#Eval("ad_id")%>"><i class="icon-ok"></i>Show more</a></p>
                         </div>
-                    </ItemTemplate>
-                </asp:DataList>
-            </div>
-        </form>
+                    </div>
+                </div>
+            </ItemTemplate>
 
-
+        </asp:DataList>
     </div>
 </asp:Content>
