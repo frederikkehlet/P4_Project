@@ -286,43 +286,11 @@ namespace webForm
             return da;
         }
 
-        public MySqlDataAdapter imageConn()
+        public MySqlDataAdapter DbDataConn(string query)
         {
             Connection.Open();
             MySqlCommand cmd = Connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM ad WHERE user_id != " + Student.ID + ";";
-            cmd.ExecuteNonQuery();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            Connection.Close();
-            return da;
-        }
-
-        public MySqlDataAdapter userAdConn()
-        {
-            Connection.Open();
-            MySqlCommand cmd = Connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM ad WHERE user_id = " + Student.ID + ";";
-            cmd.ExecuteNonQuery();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            Connection.Close();
-            return da;
-        }
-
-        public MySqlDataAdapter adConn(string ad_id)
-        {
-            Connection.Open();
-            MySqlCommand cmd = Connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM ad WHERE ad_id = " + ad_id + ";";
-            cmd.ExecuteNonQuery();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            Connection.Close();
-            return da;
-        }
-        public MySqlDataAdapter userConn(string ad_id)
-        {
-            Connection.Open();
-            MySqlCommand cmd = Connection.CreateCommand();
-            cmd.CommandText = "select distinct users.first_name,users.last_name,users.email,users.phone from users join ad on ad.user_id = users.id where ad.ad_id =" + ad_id + ";";
+            cmd.CommandText = query;
             cmd.ExecuteNonQuery();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             Connection.Close();

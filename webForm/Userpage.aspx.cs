@@ -20,10 +20,11 @@ namespace webForm
             }
             else
             {
+                string query = "SELECT * FROM ad WHERE user_id = " + Student.ID + ";";
 
                 DBConnect connection = new DBConnect();
                 DataTable dt = new DataTable();
-                connection.userAdConn().Fill(dt);
+                connection.DbDataConn(query).Fill(dt);
                 DataList1.DataSource = dt;
                 DataList1.DataBind();
             }

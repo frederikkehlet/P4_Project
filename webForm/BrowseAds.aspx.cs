@@ -24,9 +24,10 @@ namespace webForm
         }
         public void browseImage()
         {
+            string query = "SELECT * FROM ad WHERE user_id != " + Student.ID + ";";
             DBConnect db = new DBConnect();
             DataTable dt = new DataTable();
-            db.imageConn().Fill(dt);
+            db.DbDataConn(query).Fill(dt);
             DataList1.DataSource = dt;
             DataList1.DataBind();
         }      

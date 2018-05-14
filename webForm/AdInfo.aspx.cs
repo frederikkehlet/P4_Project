@@ -16,15 +16,16 @@ namespace webForm
         }
         public void showAdd()
         {
-            string s = Request.QueryString["AD_ID"];
+            string query = "SELECT * FROM ad WHERE ad_id = " + Request.QueryString["AD_ID"] + ";";
+            string query2 = "select distinct users.first_name,users.last_name,users.email,users.phone from users join ad on ad.user_id = users.id where ad.ad_id =" + Request.QueryString["AD_ID"] + ";";
             DBConnect db = new DBConnect();
             DataTable dt = new DataTable();
-            db.adConn(s).Fill(dt);
+            db.DbDataConn(query).Fill(dt);
             DataList2.DataSource = dt;
             DataList2.DataBind();
 
             DataTable dt2 = new DataTable();
-            db.userConn(s).Fill(dt2);
+            db.DbDataConn(query2).Fill(dt2);
             DataList3.DataSource = dt2;
             DataList3.DataBind();
         }
