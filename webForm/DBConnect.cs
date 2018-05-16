@@ -108,20 +108,22 @@ namespace webForm
         // update statement for user
         public void UpdateUser(string firstname, string lastname, string email, int phone)
         {
-            string query = "UPDATE users SET first_name = '" + firstname + "', last_name = '" + lastname + "', email = '" + email + "', phone = "
-                + phone + " WHERE id = " + Student.ID + ";";
+            string query = "UPDATE users SET first_name = @firstname, last_name = @lastname, email = @email, phone = @phone WHERE id = " + Student.ID + ";";
 
             // open connection
             if (this.OpenConnection() == true)
             {
                 // create command 
-                MySqlCommand cmd = new MySqlCommand();
-                // assign query
-                cmd.CommandText = query;
-                // assign the connection using Connection
-                cmd.Connection = Connection;
-                //execute query
+                MySqlCommand cmd = new MySqlCommand(query, Connection);
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@firstname", firstname);
+                cmd.Parameters.AddWithValue("@lastname", lastname);
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@phone", phone);
+
+                // execute query
                 cmd.ExecuteNonQuery();
+
                 // close connection
                 Connection.Close();
             }
@@ -279,7 +281,8 @@ namespace webForm
         {
             Connection.Open();
             MySqlCommand cmd = Connection.CreateCommand();
-            cmd.CommandText = "SELECT * FROM ad WHERE title LIKE '%" + input + "%' AND price BETWEEN " + min + " AND " + max + ";";
+            cmd.CommandText = "SELECT * FROM ad WHERE title LIKE '%" + input + "%' " +
+                "AND price BETWEEN " + min + " AND " + max + ";";
             cmd.ExecuteNonQuery();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             Connection.Close();

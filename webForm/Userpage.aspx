@@ -53,12 +53,12 @@
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Update information</button>
                 <div id="demo" class="collapse" style="margin-top:3%;">
                     <div class="form-group">
-                        <asp:Label ID="Firstn" runat="server" Text="Label">Firstname</asp:Label>
+                        <asp:Label ID="Firstn" runat="server" Text="Label">First name</asp:Label>
                         <asp:TextBox ID="Firstname" runat="server" class="form-control" onkeypress="validateNum(event)">
                         </asp:TextBox>
                     </div>
                     <div class="form-group">
-                        <asp:Label ID="Lastn" runat="server" Text="Label">Lastname</asp:Label>
+                        <asp:Label ID="Lastn" runat="server" Text="Label">Last name</asp:Label>
                         <asp:TextBox ID="Lastname" runat="server" class="form-control" onkeypress='validateNum(event)'></asp:TextBox>
                     </div>
                     <div class="form-group">
@@ -70,7 +70,7 @@
                         <asp:TextBox ID="Password" type="password" runat="server" class="form-control" required="required"></asp:TextBox>
                     </div>--%>
                     <div class="form-group">
-                        <asp:Label ID="Phon" runat="server" Text="Label">Phonenumber</asp:Label>
+                        <asp:Label ID="Phon" runat="server" Text="Label">Phone number</asp:Label>
                         <asp:TextBox ID="Phonenumber" runat="server" class="form-control" onkeypress='validateLetter(event)'></asp:TextBox>
                     </div>
                     <div class="form-group">

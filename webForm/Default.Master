@@ -113,7 +113,6 @@
 }
     </style>
 </head>
-
 <body>
     <script>
         function validateint(evt) {
@@ -139,8 +138,8 @@
                     </div>
                     <div>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="Registrer.aspx"><span class="glyphicon glyphicon-user"></span>Registrer</a></li>
-                            <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+                            <li><a href="Registrer.aspx"><span class="glyphicon glyphicon-user">&nbsp;</span>Register</a></li>
+                            <li><a href="Login.aspx"><span class="glyphicon glyphicon-log-in">&nbsp;</span>Log in</a></li>
                         </ul>
                     </div>
                 </div>
@@ -162,7 +161,6 @@
                         </ul>
                     </div>
 
-
                     <div class="nav navbar-nav navbar-right">
                         <div class="dropdown">
                             <button class="dropbtn">
@@ -182,20 +180,9 @@
     <%   }
 
     %>
-
-
-
     <div>
         <asp:ContentPlaceHolder ID="Body" runat="server">
         </asp:ContentPlaceHolder>
     </div>
-
-    <%--<footer class="fixed-bottom">
-        <div class="footer-copyright py-3 text-center">
-            © 2018 Copyright:
-        <p>Frederik Kehlet, Andreas Hansen, Martin Jensen, Mike Pedersen, Frederik Aarup </p>
-        </div>
-    </footer>--%>
-
 </body>
 </html>
