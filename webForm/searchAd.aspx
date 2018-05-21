@@ -15,6 +15,7 @@
                         <asp:TextBox ID="minPrice" runat="server" placeholder="Minimum price" CssClass="form-control"></asp:TextBox>
                         <asp:TextBox ID="maxPrice" runat="server" placeholder="Maximum price" CssClass="form-control"></asp:TextBox>
                         <asp:Button ID="searchButton" runat="server" Text="Search" OnClick="searchButton_Click" class="btn btn-md btn-info" />
+                        <span><i>If you want to see all ads, leave everything empty and hit "Search"</i></span>
                     </li>
                 </ul>
             </form>

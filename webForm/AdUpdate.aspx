@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
     <div class="container">
         <div class="row vertical-offset-100">
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-8">
                 <form id="form1" runat="server">
                     <h3>Update ad</h3>
                     <div class="form-group">

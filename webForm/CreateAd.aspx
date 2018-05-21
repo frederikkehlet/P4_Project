@@ -1,9 +1,9 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="CreateAd.aspx.cs" Inherits="webForm.CreateAd" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="Body" runat="server">
-    <div class="container">
+    <div class="container" style="color:grey;">
         <div class="row vertical-offset-100">
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-8">
                 <form id="form1" runat="server">
                     <h3>Create an ad</h3>
                     <div class="form-group">
@@ -28,14 +28,14 @@
                     </div>
 
                     <div class="form-group">
-                        <asp:Label ID="Description1" runat="server" Text="Label">Description:</asp:Label>
-                        <asp:TextBox ID="Description" runat="server" class="form-control"></asp:TextBox>
+                        <asp:Label ID="Description1" runat="server" Text="Label">Short description:</asp:Label>
+                        <asp:TextBox ID="Description" runat="server" class="form-control" type="text" TextMode="MultiLine" MaxLength="200"></asp:TextBox>
                     </div>
 
                     <div class="form-group">
                         <div class="custom-file">
                             <asp:Label ID="customFile" runat="server" class="custom-file-label">Upload image</asp:Label>
-                            <asp:FileUpload ID="FileUpload" runat="server" class="custom-file" for="customFile" />
+                            <asp:FileUpload ID="FileUpload" runat="server" for="customFile" />
                             <asp:Literal ID="ImageFeedback" runat="server"></asp:Literal>
                         </div>
                     </div>

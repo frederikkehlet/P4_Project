@@ -131,7 +131,7 @@
     %>
     <div class="card">
         <div class="container-fluid">
-            <nav class="navbar navbar">
+            <nav class="navbar navbar col-lg-12 col-md-12 col-sm-12">
                 <div class="container">
                     <div class="navbar-header pull-left">
                         <a class="navbar-brand" href="Default.aspx">Student Market</a>
@@ -151,7 +151,7 @@
         { %>
     <div class="card">
         <div class="container-fluid">
-            <nav class="navbar navbar">
+            <nav class="navbar navbar col-lg-12 col-md-12 col-sm-12">
                 <div class="container">
                     <div class="navbar-header pull-left">
                         <a class="navbar-brand" href="Default.aspx">Student Market</a>

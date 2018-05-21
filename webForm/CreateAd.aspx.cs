@@ -48,9 +48,9 @@ namespace webForm
                     ImageFeedback.Visible = true;
                     ImageFeedback.Text = "<span style='color:green;'>Image Uploaded Sucessfully</span>";  //after Sucessfully uploaded image
                 }
-                catch (Exception em)
+                catch (Exception ex)
                 {
-                    Feedback.Text = em.Message;
+                    Feedback.Text = "<span style='color:red;'>" + ex.Message + "</span>";
                 }
             }
         }

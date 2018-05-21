@@ -34,10 +34,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <div class="container" style="margin-top:2%;">
+    <div class="container-fluid" style="margin-top:2%;">
         <div class="row vertical-offset-0">
-            <form id="formInfo" runat="server" class="col-md-12">
-            <div class="col-md-4" style="border:1px solid white; border-right-color: black;">  
+            <form id="formInfo" runat="server">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6" style="border:1px solid white; border-right-color: black;">  
                     <h3>My account</h3>
                 <div style="line-height:200%;">
                     <b>First Name:</b>
@@ -75,20 +75,21 @@
                     </div>
                     <div class="form-group">
                         <table class="table-responsive" style="width:100%;">
-                            <tr>
+                            <tr>      
                                 <td style="padding-right:4%;">
-                                    <asp:Button ID="deleteButton" runat="server" Text="Delete account" OnClick="deleteButton_Click" OnClientClick = "return confirm('Are you sure you want to delete your account?');" class="btn btn-lg btn-block btn-danger btn-signin" />
+                                    <asp:Button ID="deleteButton" runat="server" Text="Delete account" OnClick="deleteButton_Click" OnClientClick = "return confirm('Are you sure you want to delete your account?');" class="btn btn-sm btn-block btn-danger btn-signin" />
                                 </td>
                                 <td>
-                                    <asp:Button ID="editButton" runat="server" Text="Update account" OnClick="editButton_Click" class="btn btn-lg btn-block btn-primary btn-signin" />
+                                    <asp:Button ID="editButton" runat="server" Text="Update account" OnClick="editButton_Click" class="btn btn-sm btn-block btn-primary btn-signin" />
                                 </td>
                             </tr>
-                        </table>                  
+                        </table> 
+                        <asp:Literal ID="feedback" runat="server"></asp:Literal>
                     </div>
                     </div>
                 
             </div>
-            <div class="col-md-8"">   
+            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 ">   
                 <h3>My ads</h3>
                     <asp:DataList ID="DataList1" runat="server">
                     <ItemTemplate>

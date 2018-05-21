@@ -76,11 +76,11 @@ namespace webForm
                 Student.Phone = Convert.ToInt32(Phonenumber.Text);
 
             Student std = new Student();
-            std.UserEdited(Student.FirstName,Student.LastName,Student.Email,Student.Phone);
+
+            std.UserEdited(Student.FirstName, Student.LastName, Student.Email, Student.Phone);
 
             // refresh page
-            Response.Redirect("~/Userpage.aspx");
+            //Response.Redirect("~/Userpage.aspx");
         }
-
     }
 }

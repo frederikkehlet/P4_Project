@@ -268,7 +268,7 @@ namespace webForm
                 }
                 catch (Exception)
                 {
-                    throw;
+                    throw new Exception("Something went wrong. Please try again.");
                 }
                 finally
                 {
