@@ -27,13 +27,17 @@ namespace webForm
                 connection.DbDataConn(query).Fill(dt);
                 DataList1.DataSource = dt;
                 DataList1.DataBind();
-            }
 
-            FirstNameLiteral.Text = Student.FirstName;
-            LastNameLiteral.Text = Student.LastName;
-            EmailLiteral.Text = Student.Email;
-            PhoneLiteral.Text = Convert.ToString(Student.Phone);
+                FirstNameLiteral.Text = Student.FirstName;
+                LastNameLiteral.Text = Student.LastName;
+                EmailLiteral.Text = Student.Email;
+                PhoneLiteral.Text = Convert.ToString(Student.Phone);
 
+                Firstname.Attributes.Add("value", Student.FirstName);
+                Lastname.Attributes.Add("value", Student.LastName);
+                Email.Attributes.Add("value", Student.Email);
+                Phonenumber.Attributes.Add("value", Convert.ToString(Student.Phone));
+            }     
         }
         
         
@@ -80,7 +84,7 @@ namespace webForm
             std.UserEdited(Student.FirstName, Student.LastName, Student.Email, Student.Phone);
 
             // refresh page
-            //Response.Redirect("~/Userpage.aspx");
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

@@ -11,8 +11,7 @@ namespace webForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            User_Name.Text = Student.FirstName;
-        
+            User_Name.Text = Student.FirstName;     
         }
 
         protected void logOut_Click(object sender, EventArgs e)

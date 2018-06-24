@@ -68,7 +68,7 @@ namespace webForm
             ad.AdEdited();
 
             // refresh after update
-            Response.Redirect("~/AdUpdate.aspx?AD_ID="+ ad.Ad_id);
+            Response.Redirect("~/Userpage.aspx");
         }
     }
 }

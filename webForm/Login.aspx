@@ -20,7 +20,7 @@
                 <form runat="server">
                     <span id="reauth-email" class="reauth-email"></span>
                     <div class="form-group">
-                        <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email address" required="required"></asp:TextBox>
+                        <asp:TextBox runat="server" type="email" ID="inputEmail" class="form-control" placeholder="Email" required="required"></asp:TextBox>
                         <asp:Literal runat="server" ID="Emailerror"></asp:Literal>
                     </div>
                     <div class="form-group">
@@ -31,7 +31,7 @@
                         <asp:Button ID="loginButton" runat="server" class="btn btn-lg btn-primary btn-block btn-signin" type="submit" OnClick="loginClick" Text="Log in" />
                     </div>   
                 </form>
-                <span>Don't have a user? <a href="Registrer.aspx">Register </a>here.</span><br />
+                <span>Don't have a user? Register <a href="Registrer.aspx">here.</a></span><br />
             </div>
         </div>
     </div>

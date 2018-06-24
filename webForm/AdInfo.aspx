@@ -59,7 +59,8 @@
                                     <h4 class="my-3"><b>Seller info</u></h4>
                                     <hr style="border-color:black;"/>
                                     <span class="glyphicon glyphicon-user">&nbsp;</span><p style="display:inline;"><%#Eval("first_name")%> <%#Eval("last_name")%></p><br />
-                                    <span class="glyphicon glyphicon-envelope">&nbsp;</span><p style="display:inline;"><%#Eval("email")%></p><br />
+                                    <span class="glyphicon glyphicon-envelope">&nbsp;</span>
+                                        <p style="display:inline;"><%#Eval("email")%> <a href="mailto:<%#Eval("email")%>?subject=I'm%20interested%20in%20your%20ad%20on%20Student%20Market" class="btn btn-info">Contact</a></p><br />
                                     <span class="glyphicon glyphicon-earphone">&nbsp;</span><p style="display:inline;"><%#Eval("phone")%></p>
                                 </ItemTemplate>
                             </asp:DataList>

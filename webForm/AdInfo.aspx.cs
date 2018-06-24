@@ -21,7 +21,7 @@ namespace webForm
         public void showAdd()
         {
             string query = "SELECT * FROM ad WHERE ad_id = " + Request.QueryString["AD_ID"] + ";";
-            string query2 = "select distinct users.first_name,users.last_name,users.email,users.phone from users join ad on ad.user_id = users.id where ad.ad_id =" + Request.QueryString["AD_ID"] + ";";
+            string query2 = "SELECT users.first_name,users.last_name,users.email,users.phone FROM users JOIN ad ON ad.user_id = users.id WHERE ad.ad_id =" + Request.QueryString["AD_ID"] + ";";
             DBConnect db = new DBConnect();
             DataTable dt = new DataTable();
             db.DbDataConn(query).Fill(dt);

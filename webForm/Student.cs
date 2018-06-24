@@ -32,7 +32,7 @@ namespace webForm
 
         /* this STATIC constructor is used for when the user 
          is logged into the system we do not want to be able to access the pwd */
-        static Student(){ }
+        // static Student(){ }
 
         private string hashedPassword(string password)
         {
@@ -47,8 +47,6 @@ namespace webForm
             {
                 DBConnect connection = new DBConnect();
                 connection.InsertUser(FirstName, LastName, Email, Phone, Password);
-                List<string> result = connection.SelectUser("SELECT * FROM users WHERE email = '" + Email + "';");
-                //ID = int.Parse(result[0]);
             }
             catch (Exception)
             {

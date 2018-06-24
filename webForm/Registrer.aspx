@@ -71,7 +71,7 @@
                             <asp:Button ID="submitButton" runat="server" Text="Register" OnClick="submitButton_Click" class="btn btn-lg btn-primary btn-block btn-signin" />
                         </div>   
                     </div>            
-                    <span>Already have a user? <a href="Login.aspx">Log in</a> here.</span><br />
+                    <span>Already have a user? Log in <a href="Login.aspx">here.</a></span><br />
                     <asp:Literal ID="feedback" runat="server"></asp:Literal>
                 </form>
             </div>
